@@ -1,0 +1,24 @@
+{
+  "name": "block-puzzle-facebook-automation",
+  "version": "1.0.0",
+  "description": "Autonomous cloud-based publisher for Facebook Pages & Reels (Block Puzzle: Blast & Drop)",
+  "main": "src/publisher.js",
+  "scripts": {
+    "start": "node src/publisher.js",
+    "batch-videos": "node tools/batch_process_videos.js",
+    "generate-captions": "node tools/generate_captions.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "keywords": [
+    "facebook",
+    "meta",
+    "automation",
+    "reels",
+    "github-actions",
+    "block-puzzle"
+  ],
+  "author": "VovaMuradyan",
+  "license": "MIT"
+}

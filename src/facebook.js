@@ -1,0 +1,136 @@
+const fs = require('fs');
+const path = require('path');
+
+const GRAPH_API_BASE = 'https://graph.facebook.com/v20.0';
+const GRAPH_VIDEO_BASE = 'https://graph-video.facebook.com/v20.0';
+
+/**
+ * Fetch all Facebook Pages accessible by the user token.
+ */
+async function getPages(userAccessToken) {
+  const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category,perms&access_token=${userAccessToken}`;
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (data.error) {
+    throw new Error(`Meta API Error [getPages]: ${data.error.message} (code ${data.error.code})`);
+  }
+
+  return data.data || [];
+}
+
+/**
+ * Helper to delay execution for retries/backoff
+ */
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Publish a Video/Reel to a Facebook Page with up to 3 retries.
+ */
+async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isReel = true) {
+  let attempt = 0;
+  const maxRetries = 3;
+  let lastError = null;
+
+  while (attempt < maxRetries) {
+    attempt++;
+    try {
+      console.log(`[FB API] Attempt ${attempt}/${maxRetries} uploading video to Page ID ${pageId}...`);
+      
+      const fileBuffer = fs.readFileSync(videoPath);
+      const filename = path.basename(videoPath);
+      
+      const formData = new FormData();
+      formData.append('access_token', pageAccessToken);
+      formData.append('description', caption);
+      if (isReel) {
+        formData.append('is_reel', 'true');
+      }
+      formData.append('source', new Blob([fileBuffer]), filename);
+
+      const endpoint = `${GRAPH_VIDEO_BASE}/${pageId}/videos`;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await res.json();
+
+      if (result.error) {
+        // Check for Rate Limit codes
+        const code = result.error.code;
+        if ([4, 17, 32, 613].includes(code)) {
+          console.warn(`[FB API] Rate limit reached (code ${code}). Backing off...`);
+          await sleep(10000 * attempt);
+        }
+        throw new Error(`Meta Error (${code}): ${result.error.message}`);
+      }
+
+      console.log(`[FB API] Video published successfully! Post/Video ID: ${result.id}`);
+      return result.id;
+    } catch (err) {
+      lastError = err;
+      console.error(`[FB API] Attempt ${attempt} failed: ${err.message}`);
+      if (attempt < maxRetries) {
+        await sleep(3000 * attempt);
+      }
+    }
+  }
+
+  throw lastError;
+}
+
+/**
+ * Publish a Photo to a Facebook Page with retries.
+ */
+async function publishPhotoPost(pageId, pageAccessToken, photoPath, caption) {
+  let attempt = 0;
+  const maxRetries = 3;
+  let lastError = null;
+
+  while (attempt < maxRetries) {
+    attempt++;
+    try {
+      console.log(`[FB API] Attempt ${attempt}/${maxRetries} uploading photo to Page ID ${pageId}...`);
+      
+      const fileBuffer = fs.readFileSync(photoPath);
+      const filename = path.basename(photoPath);
+
+      const formData = new FormData();
+      formData.append('access_token', pageAccessToken);
+      formData.append('caption', caption);
+      formData.append('source', new Blob([fileBuffer]), filename);
+
+      const endpoint = `${GRAPH_API_BASE}/${pageId}/photos`;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await res.json();
+
+      if (result.error) {
+        throw new Error(`Meta Error (${result.error.code}): ${result.error.message}`);
+      }
+
+      console.log(`[FB API] Photo published successfully! Photo/Post ID: ${result.id}`);
+      return result.id;
+    } catch (err) {
+      lastError = err;
+      console.error(`[FB API] Attempt ${attempt} failed: ${err.message}`);
+      if (attempt < maxRetries) {
+        await sleep(3000 * attempt);
+      }
+    }
+  }
+
+  throw lastError;
+}
+
+module.exports = {
+  getPages,
+  publishVideoPost,
+  publishPhotoPost
+};
