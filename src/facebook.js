@@ -11,7 +11,8 @@ async function getAllPagesGrouped(userTokens) {
   const tokens = Array.isArray(userTokens) ? userTokens : [userTokens];
   const accountsPages = [];
 
-  for (const token of tokens) {
+  for (let idx = 0; idx < tokens.length; idx++) {
+    const token = tokens[idx];
     if (!token) continue;
     try {
       const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category&access_token=${token}`;
@@ -19,7 +20,7 @@ async function getAllPagesGrouped(userTokens) {
       const data = await res.json();
 
       if (data.error) {
-        console.error(`[FB API] Warning fetching pages for token (...${token.substr(-8)}): ${data.error.message}`);
+        console.warn(`[FB API] Warning for Token #${idx + 1} (...${token.slice(-8)}): ${data.error.message} (code ${data.error.code}). Skipping token.`);
         continue;
       }
 
@@ -28,7 +29,7 @@ async function getAllPagesGrouped(userTokens) {
         accountsPages.push(pages);
       }
     } catch (err) {
-      console.error(`[FB API] Error requesting pages for token: ${err.message}`);
+      console.error(`[FB API] Error requesting pages for token #${idx + 1}: ${err.message}`);
     }
   }
 
@@ -93,8 +94,11 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
       const result = await res.json();
 
       if (result.error) {
-        // Check for Rate Limit codes
         const code = result.error.code;
+        // Don't retry if token is expired or session invalid (code 190)
+        if (code === 190) {
+          throw new Error(`Meta Token Expiry/Logout (190): ${result.error.message}`);
+        }
         if ([4, 17, 32, 613].includes(code)) {
           console.warn(`[FB API] Rate limit reached (code ${code}). Backing off...`);
           await sleep(10000 * attempt);
@@ -107,6 +111,7 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
     } catch (err) {
       lastError = err;
       console.error(`[FB API] Attempt ${attempt} failed: ${err.message}`);
+      if (err.message.includes('190')) break; // don't retry expired token
       if (attempt < maxRetries) {
         await sleep(3000 * attempt);
       }
@@ -146,7 +151,11 @@ async function publishPhotoPost(pageId, pageAccessToken, photoPath, caption) {
       const result = await res.json();
 
       if (result.error) {
-        throw new Error(`Meta Error (${result.error.code}): ${result.error.message}`);
+        const code = result.error.code;
+        if (code === 190) {
+          throw new Error(`Meta Token Expiry/Logout (190): ${result.error.message}`);
+        }
+        throw new Error(`Meta Error (${code}): ${result.error.message}`);
       }
 
       console.log(`[FB API] Photo published successfully! Photo/Post ID: ${result.id}`);
@@ -154,6 +163,7 @@ async function publishPhotoPost(pageId, pageAccessToken, photoPath, caption) {
     } catch (err) {
       lastError = err;
       console.error(`[FB API] Attempt ${attempt} failed: ${err.message}`);
+      if (err.message.includes('190')) break;
       if (attempt < maxRetries) {
         await sleep(3000 * attempt);
       }
