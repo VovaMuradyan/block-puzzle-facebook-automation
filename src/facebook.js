@@ -5,11 +5,11 @@ const GRAPH_API_BASE = 'https://graph.facebook.com/v20.0';
 const GRAPH_VIDEO_BASE = 'https://graph-video.facebook.com/v20.0';
 
 /**
- * Fetch all Facebook Pages accessible by a list of user tokens (or single token).
+ * Fetch Facebook Pages grouped per user token for account interleaving.
  */
-async function getAllPages(userTokens) {
+async function getAllPagesGrouped(userTokens) {
   const tokens = Array.isArray(userTokens) ? userTokens : [userTokens];
-  const pageMap = new Map();
+  const accountsPages = [];
 
   for (const token of tokens) {
     if (!token) continue;
@@ -24,17 +24,33 @@ async function getAllPages(userTokens) {
       }
 
       const pages = data.data || [];
-      for (const p of pages) {
-        if (!pageMap.has(p.id)) {
-          pageMap.set(p.id, p);
-        }
+      if (pages.length > 0) {
+        accountsPages.push(pages);
       }
     } catch (err) {
       console.error(`[FB API] Error requesting pages for token: ${err.message}`);
     }
   }
 
-  return Array.from(pageMap.values());
+  // Interleave pages across accounts: [Acc1_Page1, Acc2_Page1, Acc1_Page2, Acc2_Page2...]
+  const interleavedPages = [];
+  let maxPagesInAnyAccount = 0;
+  accountsPages.forEach(arr => {
+    if (arr.length > maxPagesInAnyAccount) maxPagesInAnyAccount = arr.length;
+  });
+
+  for (let i = 0; i < maxPagesInAnyAccount; i++) {
+    for (const accPages of accountsPages) {
+      if (accPages[i]) {
+        // Prevent duplicate page IDs if same page belongs to multiple tokens
+        if (!interleavedPages.some(p => p.id === accPages[i].id)) {
+          interleavedPages.push(accPages[i]);
+        }
+      }
+    }
+  }
+
+  return interleavedPages;
 }
 
 /**
@@ -148,7 +164,8 @@ async function publishPhotoPost(pageId, pageAccessToken, photoPath, caption) {
 }
 
 module.exports = {
-  getAllPages,
+  getAllPagesGrouped,
   publishVideoPost,
-  publishPhotoPost
+  publishPhotoPost,
+  sleep
 };

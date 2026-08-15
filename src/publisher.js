@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { getAllPages, publishVideoPost, publishPhotoPost } = require('./facebook');
+const { getAllPagesGrouped, publishVideoPost, publishPhotoPost, sleep } = require('./facebook');
 const { loadState, canPostToPage, hasUsedComboRecently, logPublishEvent } = require('./state');
 
 // Load .env manually if exists without requiring external packages
@@ -54,11 +54,11 @@ async function runPublisher() {
 
   const state = loadState();
 
-  // Step 1: Auto-discover Facebook Pages from Meta API (across all user tokens)
+  // Step 1: Auto-discover Facebook Pages from Meta API (Interleaved across accounts)
   let pages = [];
   try {
-    pages = await getAllPages(userTokens);
-    console.log(`[Publisher] Meta API returned ${pages.length} total managed Facebook Pages:`);
+    pages = await getAllPagesGrouped(userTokens);
+    console.log(`[Publisher] Interleaved ${pages.length} Pages across accounts for smooth distribution:`);
     pages.forEach(p => console.log(` - ${p.name} (ID: ${p.id})`));
   } catch (err) {
     console.error(`[Publisher] Failed to fetch Facebook Pages: ${err.message}`);
@@ -70,7 +70,9 @@ async function runPublisher() {
     return;
   }
 
-  // Step 2: Iterate through each Page and enforce limits
+  let postsPublishedThisRun = 0;
+
+  // Step 2: Iterate through each Page with Staggered Delays & Rate Limits
   for (const page of pages) {
     const pageId = page.id;
     const pageName = page.name;
@@ -84,6 +86,13 @@ async function runPublisher() {
       const lastPostTime = pageState ? pageState.last_post_at : 'Never';
       console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 60 minutes between posts.`);
       continue;
+    }
+
+    // Add Stagger Delay between consecutive posts to prevent sudden bulk bursts (60-120 seconds pause)
+    if (postsPublishedThisRun > 0) {
+      const staggerSeconds = Math.floor(Math.random() * 60) + 60; // 60 to 120 seconds delay
+      console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
+      await sleep(staggerSeconds * 1000);
     }
 
     // Pick media file and caption not recently used
@@ -151,6 +160,7 @@ async function runPublisher() {
       console.log(`========================================\n`);
 
       logPublishEvent(state, pageId, pageName, fbPostId, selectedMedia, selectedCaption.id, 'SUCCESS');
+      postsPublishedThisRun++;
     } catch (err) {
       console.error(`\n========================================`);
       console.error(`FAILED`);
@@ -162,7 +172,7 @@ async function runPublisher() {
     }
   }
 
-  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}`);
+  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}. Published ${postsPublishedThisRun} post(s) this run.`);
 }
 
 if (require.main === module) {

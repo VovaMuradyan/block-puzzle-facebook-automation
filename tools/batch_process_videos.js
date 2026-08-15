@@ -18,7 +18,7 @@ const sources = [
 
 let clipCount = 0;
 
-console.log('Starting video batch processing with FFmpeg...');
+console.log('Starting video batch processing with FFmpeg (Full Fit + Blurred Background)...');
 
 sources.forEach((src, srcIndex) => {
   const inputPath = path.join(sourceVideoDir, src.filename);
@@ -33,24 +33,26 @@ sources.forEach((src, srcIndex) => {
 
     clipCount++;
 
-    // Aspect ratio 1: 9:16 vertical (Reels - 720x1280 cropped)
+    // Aspect ratio 1: 9:16 vertical (Reels - Full gameplay fit inside 720x1280 with blurred background)
     const clipName916 = `clip_v${srcIndex + 1}_${clipCount}_9x16.mp4`;
     const outPath916 = path.join(outputDir, clipName916);
-    const cmd916 = `"${ffmpegPath}" -y -ss ${startTime} -i "${inputPath}" -t ${duration} -vf "crop=1080:1920:0:(ih-1920)/2,scale=720:1280" -c:v libx264 -crf 26 -preset fast -an "${outPath916}"`;
+    const filter916 = `"split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,gblur=sigma=20[bg];[b]scale=720:1280:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2"`;
+    const cmd916 = `"${ffmpegPath}" -y -ss ${startTime} -i "${inputPath}" -t ${duration} -filter_complex ${filter916} -c:v libx264 -crf 26 -preset fast -an "${outPath916}"`;
     try {
       execSync(cmd916, { stdio: 'pipe' });
-      console.log(`[+] Created Reel clip ${clipCount}: ${clipName916}`);
+      console.log(`[+] Created Full-Fit Reel clip ${clipCount}: ${clipName916}`);
     } catch (err) {
       console.error(`[-] Failed to generate ${clipName916}:`, err.message);
     }
 
-    // Aspect ratio 2: 1:1 square (Feed post - 720x720 cropped)
+    // Aspect ratio 2: 1:1 square (Feed post - Full gameplay fit inside 720x720 with blurred background)
     const clipName11 = `clip_v${srcIndex + 1}_${clipCount}_1x1.mp4`;
     const outPath11 = path.join(outputDir, clipName11);
-    const cmd11 = `"${ffmpegPath}" -y -ss ${startTime} -i "${inputPath}" -t ${duration} -vf "crop=1080:1080:0:(ih-1080)/2,scale=720:720" -c:v libx264 -crf 26 -preset fast -an "${outPath11}"`;
+    const filter11 = `"split[a][b];[a]scale=720:720:force_original_aspect_ratio=increase,crop=720:720,gblur=sigma=20[bg];[b]scale=720:720:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2"`;
+    const cmd11 = `"${ffmpegPath}" -y -ss ${startTime} -i "${inputPath}" -t ${duration} -filter_complex ${filter11} -c:v libx264 -crf 26 -preset fast -an "${outPath11}"`;
     try {
       execSync(cmd11, { stdio: 'pipe' });
-      console.log(`[+] Created Square clip ${clipCount}: ${clipName11}`);
+      console.log(`[+] Created Full-Fit Square clip ${clipCount}: ${clipName11}`);
     } catch (err) {
       console.error(`[-] Failed to generate ${clipName11}:`, err.message);
     }
@@ -60,21 +62,3 @@ sources.forEach((src, srcIndex) => {
 });
 
 console.log(`\nVideo batch processing completed! Created clips in ${outputDir}`);
-
-// Copy existing image assets
-const sourceImages = [
-  'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\c07eebca-2f56-4e4a-9858-bb35e6471379\\blockpuzzle_avatar_1786730804321.jpg',
-  'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\c07eebca-2f56-4e4a-9858-bb35e6471379\\blockpuzzle_banner_1786730816599.jpg',
-  'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\tempmediaStorage\\media_1786732452399.png'
-];
-
-sourceImages.forEach((img, idx) => {
-  if (fs.existsSync(img)) {
-    const ext = path.extname(img);
-    const dest = path.join(imageOutputDir, `promo_image_${idx + 1}${ext}`);
-    fs.copyFileSync(img, dest);
-    console.log(`[+] Copied image ${path.basename(dest)}`);
-  }
-});
-
-console.log('Media generation finished.');
