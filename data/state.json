@@ -1388,5 +1388,6 @@
       "status": "SUCCESS",
       "error": null
     }
-  ]
+  ],
+  "last_active_game": "game1"
 }
