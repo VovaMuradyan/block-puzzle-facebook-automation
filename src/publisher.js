@@ -26,7 +26,9 @@ async function runPublisher() {
   console.log(`[Publisher] Execution started at ${new Date().toISOString()}`);
   console.log(`====================================================`);
 
-  const userToken = process.env.META_USER_ACCESS_TOKEN;
+  const rawToken = process.env.META_USER_ACCESS_TOKEN || '';
+  const userToken = rawToken.trim().replace(/[\r\n]/g, '');
+
   if (!userToken) {
     console.error(`[Publisher] CRITICAL ERROR: META_USER_ACCESS_TOKEN environment variable is missing.`);
     process.exit(1);
