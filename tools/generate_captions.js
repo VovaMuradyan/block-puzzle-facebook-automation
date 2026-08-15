@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const playStoreLink = 'https://play.google.com/store/apps/details?id=com.tetris.royale';
+// Google Play Store URL with full UTM referral campaign tracking
+const trackedPlayStoreLink = 'https://play.google.com/store/apps/details?id=com.tetris.royale&referrer=utm_source%3Dfacebook%26utm_medium%3Dorganic_reels%26utm_campaign%3Dblock_puzzle_auto';
 
 const hooks = [
   "Can you beat this score?",
@@ -43,13 +44,13 @@ const subtexts = [
 ];
 
 const ctas = [
-  `Play now on Google Play: ${playStoreLink}`,
-  `Download free on Google Play 👇\n${playStoreLink}`,
-  `Try it yourself: ${playStoreLink}`,
-  `Grab it free today: ${playStoreLink}`,
-  `Join the fun: ${playStoreLink}`,
-  `Link to play: ${playStoreLink}`,
-  `Download Block Puzzle now: ${playStoreLink}`
+  `Play now on Google Play: ${trackedPlayStoreLink}`,
+  `Download free on Google Play 👇\n${trackedPlayStoreLink}`,
+  `Try it yourself: ${trackedPlayStoreLink}`,
+  `Grab it free today: ${trackedPlayStoreLink}`,
+  `Join the fun: ${trackedPlayStoreLink}`,
+  `Link to play: ${trackedPlayStoreLink}`,
+  `Download Block Puzzle now: ${trackedPlayStoreLink}`
 ];
 
 const hashtags = [
@@ -84,4 +85,4 @@ for (let i = 0; i < hooks.length; i++) {
 
 const outputPath = path.join(__dirname, '..', 'data', 'captions.json');
 fs.writeFileSync(outputPath, JSON.stringify(captions, null, 2), 'utf8');
-console.log(`Generated ${captions.length} captions in ${outputPath}`);
+console.log(`Generated ${captions.length} UTM-tracked captions in ${outputPath}`);
