@@ -219,6 +219,182 @@
       "last_success_at": "2026-08-15T15:32:57.413Z",
       "last_error": null,
       "total_posts": 1
+    },
+    "1065551069968804": {
+      "page_id": "1065551069968804",
+      "page_name": "Հետաքրքիր Պատմություններ",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:26:27.309Z",
+      "last_media_id": "clip_v1_1_9x16.mp4",
+      "last_caption_id": "cap_180",
+      "last_success_at": "2026-08-15T16:26:27.309Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1046502328538724": {
+      "page_id": "1046502328538724",
+      "page_name": "Интересные истории",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:26:36.236Z",
+      "last_media_id": "clip_v3_31_1x1.mp4",
+      "last_caption_id": "cap_007",
+      "last_success_at": "2026-08-15T16:26:36.236Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1007616745768998": {
+      "page_id": "1007616745768998",
+      "page_name": "Life Story",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:26:46.328Z",
+      "last_media_id": "clip_v2_13_1x1.mp4",
+      "last_caption_id": "cap_126",
+      "last_success_at": "2026-08-15T16:26:46.328Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1010457232146746": {
+      "page_id": "1010457232146746",
+      "page_name": "News USA",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:26:54.967Z",
+      "last_media_id": "clip_v2_21_1x1.mp4",
+      "last_caption_id": "cap_039",
+      "last_success_at": "2026-08-15T16:26:54.967Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1063747036814448": {
+      "page_id": "1063747036814448",
+      "page_name": "NewsFrance",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:26:59.290Z",
+      "last_media_id": "clip_v1_11_1x1.mp4",
+      "last_caption_id": "cap_151",
+      "last_success_at": "2026-08-15T16:26:59.290Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "992311910635065": {
+      "page_id": "992311910635065",
+      "page_name": "Techno News",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:08.139Z",
+      "last_media_id": "clip_v1_6_1x1.mp4",
+      "last_caption_id": "cap_017",
+      "last_success_at": "2026-08-15T16:27:08.139Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "967202876485164": {
+      "page_id": "967202876485164",
+      "page_name": "Finance News",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:18.239Z",
+      "last_media_id": "clip_v2_21_1x1.mp4",
+      "last_caption_id": "cap_065",
+      "last_success_at": "2026-08-15T16:27:18.239Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "956483270889278": {
+      "page_id": "956483270889278",
+      "page_name": "Sports News",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:36.139Z",
+      "last_media_id": "clip_v3_25_9x16.mp4",
+      "last_caption_id": "cap_151",
+      "last_success_at": "2026-08-15T16:27:36.139Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1049972611526514": {
+      "page_id": "1049972611526514",
+      "page_name": "Arm News",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:46.811Z",
+      "last_media_id": "clip_v2_12_1x1.mp4",
+      "last_caption_id": "cap_179",
+      "last_success_at": "2026-08-15T16:27:46.811Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "986803337854211": {
+      "page_id": "986803337854211",
+      "page_name": "Новости Армении",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:52.428Z",
+      "last_media_id": "clip_v1_1_1x1.mp4",
+      "last_caption_id": "cap_078",
+      "last_success_at": "2026-08-15T16:27:52.428Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "999052209960184": {
+      "page_id": "999052209960184",
+      "page_name": "World News Politic",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:27:57.926Z",
+      "last_media_id": "clip_v3_26_9x16.mp4",
+      "last_caption_id": "cap_131",
+      "last_success_at": "2026-08-15T16:27:57.926Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1005746672623466": {
+      "page_id": "1005746672623466",
+      "page_name": "News Germany",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:28:05.959Z",
+      "last_media_id": "clip_v2_22_9x16.mp4",
+      "last_caption_id": "cap_081",
+      "last_success_at": "2026-08-15T16:28:05.959Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1003187416210293": {
+      "page_id": "1003187416210293",
+      "page_name": "News World",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:28:13.671Z",
+      "last_media_id": "clip_v1_2_1x1.mp4",
+      "last_caption_id": "cap_147",
+      "last_success_at": "2026-08-15T16:28:13.671Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "1059370087250374": {
+      "page_id": "1059370087250374",
+      "page_name": "Armenian News",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:28:22.771Z",
+      "last_media_id": "clip_v1_4_1x1.mp4",
+      "last_caption_id": "cap_176",
+      "last_success_at": "2026-08-15T16:28:22.771Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "932708589935603": {
+      "page_id": "932708589935603",
+      "page_name": "News UK",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:28:29.101Z",
+      "last_media_id": "clip_v2_17_9x16.mp4",
+      "last_caption_id": "cap_053",
+      "last_success_at": "2026-08-15T16:28:29.101Z",
+      "last_error": null,
+      "total_posts": 1
+    },
+    "659612323900011": {
+      "page_id": "659612323900011",
+      "page_name": "Vova",
+      "enabled": true,
+      "last_post_at": "2026-08-15T16:28:35.985Z",
+      "last_media_id": "clip_v3_37_1x1.mp4",
+      "last_caption_id": "cap_180",
+      "last_success_at": "2026-08-15T16:28:35.985Z",
+      "last_error": null,
+      "total_posts": 1
     }
   },
   "history": [
@@ -507,6 +683,182 @@
       "caption_id": "cap_108",
       "status": "FAILED",
       "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1786811187309_p4p0l",
+      "page_id": "1065551069968804",
+      "page_name": "Հետաքրքիր Պատմություններ",
+      "timestamp": "2026-08-15T16:26:27.309Z",
+      "fb_post_id": "1363579595893237",
+      "media_filename": "clip_v1_1_9x16.mp4",
+      "caption_id": "cap_180",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811196236_vtcdu",
+      "page_id": "1046502328538724",
+      "page_name": "Интересные истории",
+      "timestamp": "2026-08-15T16:26:36.236Z",
+      "fb_post_id": "1585193299626705",
+      "media_filename": "clip_v3_31_1x1.mp4",
+      "caption_id": "cap_007",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811206328_nmypp",
+      "page_id": "1007616745768998",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-15T16:26:46.328Z",
+      "fb_post_id": "1430721299106573",
+      "media_filename": "clip_v2_13_1x1.mp4",
+      "caption_id": "cap_126",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811214967_lewm7",
+      "page_id": "1010457232146746",
+      "page_name": "News USA",
+      "timestamp": "2026-08-15T16:26:54.967Z",
+      "fb_post_id": "1080948017794497",
+      "media_filename": "clip_v2_21_1x1.mp4",
+      "caption_id": "cap_039",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811219290_z1lov",
+      "page_id": "1063747036814448",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-08-15T16:26:59.290Z",
+      "fb_post_id": "845461991984862",
+      "media_filename": "clip_v1_11_1x1.mp4",
+      "caption_id": "cap_151",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811228139_yr456",
+      "page_id": "992311910635065",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-15T16:27:08.139Z",
+      "fb_post_id": "1443312541083125",
+      "media_filename": "clip_v1_6_1x1.mp4",
+      "caption_id": "cap_017",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811238239_8ywq2",
+      "page_id": "967202876485164",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-15T16:27:18.239Z",
+      "fb_post_id": "2545149579262672",
+      "media_filename": "clip_v2_21_1x1.mp4",
+      "caption_id": "cap_065",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811256139_kmo5e",
+      "page_id": "956483270889278",
+      "page_name": "Sports News",
+      "timestamp": "2026-08-15T16:27:36.139Z",
+      "fb_post_id": "1689105116078949",
+      "media_filename": "clip_v3_25_9x16.mp4",
+      "caption_id": "cap_151",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811266811_hq765",
+      "page_id": "1049972611526514",
+      "page_name": "Arm News",
+      "timestamp": "2026-08-15T16:27:46.811Z",
+      "fb_post_id": "1045969405026064",
+      "media_filename": "clip_v2_12_1x1.mp4",
+      "caption_id": "cap_179",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811272428_p4ac1",
+      "page_id": "986803337854211",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-08-15T16:27:52.428Z",
+      "fb_post_id": "1038360362240807",
+      "media_filename": "clip_v1_1_1x1.mp4",
+      "caption_id": "cap_078",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811277926_nir9e",
+      "page_id": "999052209960184",
+      "page_name": "World News Politic",
+      "timestamp": "2026-08-15T16:27:57.926Z",
+      "fb_post_id": "1589369879305863",
+      "media_filename": "clip_v3_26_9x16.mp4",
+      "caption_id": "cap_131",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811285959_mn9i8",
+      "page_id": "1005746672623466",
+      "page_name": "News Germany",
+      "timestamp": "2026-08-15T16:28:05.959Z",
+      "fb_post_id": "1602119957915999",
+      "media_filename": "clip_v2_22_9x16.mp4",
+      "caption_id": "cap_081",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811293671_n2e66",
+      "page_id": "1003187416210293",
+      "page_name": "News World",
+      "timestamp": "2026-08-15T16:28:13.671Z",
+      "fb_post_id": "1082184300959849",
+      "media_filename": "clip_v1_2_1x1.mp4",
+      "caption_id": "cap_147",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811302771_813u7",
+      "page_id": "1059370087250374",
+      "page_name": "Armenian News",
+      "timestamp": "2026-08-15T16:28:22.771Z",
+      "fb_post_id": "1812170593529632",
+      "media_filename": "clip_v1_4_1x1.mp4",
+      "caption_id": "cap_176",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811309101_nuzb0",
+      "page_id": "932708589935603",
+      "page_name": "News UK",
+      "timestamp": "2026-08-15T16:28:29.101Z",
+      "fb_post_id": "1421015079933243",
+      "media_filename": "clip_v2_17_9x16.mp4",
+      "caption_id": "cap_053",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786811315985_xlo7e",
+      "page_id": "659612323900011",
+      "page_name": "Vova",
+      "timestamp": "2026-08-15T16:28:35.985Z",
+      "fb_post_id": "3477154055800294",
+      "media_filename": "clip_v3_37_1x1.mp4",
+      "caption_id": "cap_180",
+      "status": "SUCCESS",
+      "error": null
     }
   ]
 }
