@@ -441,6 +441,17 @@
       "caption_id": "cap_084",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1786808081730_1psc1",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-15T15:34:41.730Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v2_13_1x1.mp4",
+      "caption_id": "cap_066",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
     }
   ]
 }

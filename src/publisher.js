@@ -3,7 +3,23 @@ const path = require('path');
 const { getPages, publishVideoPost, publishPhotoPost } = require('./facebook');
 const { loadState, canPostToPage, hasUsedComboRecently, logPublishEvent } = require('./state');
 
-require('dotenv').config();
+// Load .env manually if exists without requiring external packages
+const envPath = path.join(__dirname, '..', '.env');
+if (fs.existsSync(envPath)) {
+  const envLines = fs.readFileSync(envPath, 'utf8').split('\n');
+  for (const line of envLines) {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+      const idx = trimmed.indexOf('=');
+      const key = trimmed.substring(0, idx).trim();
+      let val = trimmed.substring(idx + 1).trim();
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      process.env[key] = val;
+    }
+  }
+}
 
 async function runPublisher() {
   console.log(`====================================================`);

@@ -8,7 +8,7 @@ const GRAPH_VIDEO_BASE = 'https://graph-video.facebook.com/v20.0';
  * Fetch all Facebook Pages accessible by the user token.
  */
 async function getPages(userAccessToken) {
-  const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category,perms&access_token=${userAccessToken}`;
+  const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category&access_token=${userAccessToken}`;
   const res = await fetch(url);
   const data = await res.json();
 
