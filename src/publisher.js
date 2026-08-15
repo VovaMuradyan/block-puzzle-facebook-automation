@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getAllPagesGrouped, publishVideoPost, publishPhotoPost, sleep } = require('./facebook');
-const { loadState, canPostToPage, hasUsedComboRecently, logPublishEvent } = require('./state');
+const { loadState, canPostToPage, hasUsedComboRecently, logPublishEvent, saveState } = require('./state');
 
 // Load .env manually if exists without requiring external packages
 const envPath = path.join(__dirname, '..', '.env');
@@ -34,25 +34,42 @@ async function runPublisher() {
     process.exit(1);
   }
 
-  console.log(`[Publisher] Authenticating Meta API with ${userTokens.length} Access Token(s)...`);
+  const state = loadState();
 
-  // Load captions and state
-  const captionsPath = path.join(__dirname, '..', 'data', 'captions.json');
+  // Multi-Game Alternation Logic (Game 1 <-> Game 2)
+  const currentGame = (state.last_active_game === 'game1') ? 'game2' : 'game1';
+  state.last_active_game = currentGame;
+  saveState(state);
+
+  const gameName = (currentGame === 'game1') ? 'Block Puzzle: Blast & Drop' : 'Flappy Earn';
+  console.log(`[Multi-Game] Active Game for this 30-min run: [${currentGame.toUpperCase()}] (${gameName})`);
+
+  // Load game-specific captions
+  const captionsFile = (currentGame === 'game1') ? 'game1_captions.json' : 'game2_captions.json';
+  let captionsPath = path.join(__dirname, '..', 'data', captionsFile);
   if (!fs.existsSync(captionsPath)) {
-    console.error(`[Publisher] ERROR: captions.json file not found at ${captionsPath}`);
+    captionsPath = path.join(__dirname, '..', 'data', 'captions.json');
+  }
+  
+  if (!fs.existsSync(captionsPath)) {
+    console.error(`[Publisher] ERROR: Captions file not found at ${captionsPath}`);
     process.exit(1);
   }
   const captions = JSON.parse(fs.readFileSync(captionsPath, 'utf8'));
 
-  const videosDir = path.join(__dirname, '..', 'media', 'videos');
-  const photosDir = path.join(__dirname, '..', 'media', 'images');
-  
-  const videoFiles = fs.existsSync(videosDir) ? fs.readdirSync(videosDir).filter(f => f.endsWith('.mp4')) : [];
-  const photoFiles = fs.existsSync(photosDir) ? fs.readdirSync(photosDir).filter(f => f.match(/\.(jpg|png|jpeg)$/i)) : [];
+  // Load game-specific media
+  const gameMediaDir = path.join(__dirname, '..', 'media', currentGame);
+  const videosDir = path.join(gameMediaDir, 'videos');
+  const photosDir = path.join(gameMediaDir, 'images');
 
-  console.log(`[Publisher] Assets available: ${videoFiles.length} videos, ${photoFiles.length} photos, ${captions.length} captions.`);
+  // Fallback to default media if game-specific folder empty
+  const actualVideosDir = fs.existsSync(videosDir) && fs.readdirSync(videosDir).length > 0 ? videosDir : path.join(__dirname, '..', 'media', 'videos');
+  const actualPhotosDir = fs.existsSync(photosDir) && fs.readdirSync(photosDir).length > 0 ? photosDir : path.join(__dirname, '..', 'media', 'images');
 
-  const state = loadState();
+  const videoFiles = fs.existsSync(actualVideosDir) ? fs.readdirSync(actualVideosDir).filter(f => f.endsWith('.mp4')) : [];
+  const photoFiles = fs.existsSync(actualPhotosDir) ? fs.readdirSync(actualPhotosDir).filter(f => f.match(/\.(jpg|png|jpeg)$/i)) : [];
+
+  console.log(`[Publisher] Assets for ${gameName}: ${videoFiles.length} videos, ${photoFiles.length} photos, ${captions.length} captions.`);
 
   // Step 1: Auto-discover Facebook Pages from Meta API (Interleaved across accounts)
   let pages = [];
@@ -79,7 +96,7 @@ async function runPublisher() {
     const pageToken = page.access_token;
     const pageState = state.pages[pageId];
 
-    console.log(`\n--- Processing Page: ${pageName} (${pageId}) ---`);
+    console.log(`\n--- Processing Page: ${pageName} (${pageId}) [Game: ${gameName}] ---`);
 
     // Rule: Each page max 1 post per 60 minutes
     if (!canPostToPage(pageState, 60)) {
@@ -137,8 +154,8 @@ async function runPublisher() {
       continue;
     }
 
-    const mediaPath = isVideo ? path.join(videosDir, selectedMedia) : path.join(photosDir, selectedMedia);
-    const isReel = isVideo && selectedMedia.includes('9x16');
+    const mediaPath = isVideo ? path.join(actualVideosDir, selectedMedia) : path.join(actualPhotosDir, selectedMedia);
+    const isReel = isVideo && (selectedMedia.includes('9x16') || selectedMedia.includes('flappy'));
 
     console.log(`[Publisher] Selected asset: ${selectedMedia} (${isReel ? 'FB Reel' : isVideo ? 'FB Video' : 'FB Photo'})`);
     console.log(`[Publisher] Selected caption ID: ${selectedCaption.id} ("${selectedCaption.hook}")`);
@@ -153,6 +170,7 @@ async function runPublisher() {
 
       console.log(`\n========================================`);
       console.log(`${new Date().toISOString()}`);
+      console.log(`Game: ${gameName}`);
       console.log(`Page: ${pageName}`);
       console.log(`POSTED`);
       console.log(`${selectedMedia}`);
@@ -164,6 +182,7 @@ async function runPublisher() {
     } catch (err) {
       console.error(`\n========================================`);
       console.error(`FAILED`);
+      console.error(`Game: ${gameName}`);
       console.error(`Page: ${pageName}`);
       console.error(`Reason: ${err.message}`);
       console.error(`========================================\n`);
@@ -172,7 +191,7 @@ async function runPublisher() {
     }
   }
 
-  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}. Published ${postsPublishedThisRun} post(s) this run.`);
+  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}. Published ${postsPublishedThisRun} post(s) for ${gameName}.`);
 }
 
 if (require.main === module) {
