@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Google Play Store URL with full UTM referral campaign tracking
-const trackedPlayStoreLink = 'https://play.google.com/store/apps/details?id=com.tetris.royale&referrer=utm_source%3Dfacebook%26utm_medium%3Dorganic_reels%26utm_campaign%3Dblock_puzzle_auto';
+// Rebrandly short link with live click tracking & Google Play UTM parameters
+const trackedPlayStoreLink = 'https://rebrand.ly/BlockPuzzlePlay-';
 
 const hooks = [
   "Can you beat this score?",
@@ -85,4 +85,4 @@ for (let i = 0; i < hooks.length; i++) {
 
 const outputPath = path.join(__dirname, '..', 'data', 'captions.json');
 fs.writeFileSync(outputPath, JSON.stringify(captions, null, 2), 'utf8');
-console.log(`Generated ${captions.length} UTM-tracked captions in ${outputPath}`);
+console.log(`Generated ${captions.length} Rebrandly tracked captions in ${outputPath}`);
