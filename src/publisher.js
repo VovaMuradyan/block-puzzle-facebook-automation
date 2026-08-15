@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { getPages, publishVideoPost, publishPhotoPost } = require('./facebook');
+const { getAllPages, publishVideoPost, publishPhotoPost } = require('./facebook');
 const { loadState, canPostToPage, hasUsedComboRecently, logPublishEvent } = require('./state');
 
 // Load .env manually if exists without requiring external packages
@@ -26,13 +26,15 @@ async function runPublisher() {
   console.log(`[Publisher] Execution started at ${new Date().toISOString()}`);
   console.log(`====================================================`);
 
-  const rawToken = process.env.META_USER_ACCESS_TOKEN || '';
-  const userToken = rawToken.trim().replace(/[\r\n]/g, '');
+  const rawTokens = (process.env.META_USER_ACCESS_TOKEN || process.env.META_USER_ACCESS_TOKENS || '').split(',');
+  const userTokens = rawTokens.map(t => t.trim().replace(/[\r\n]/g, '')).filter(t => t.length > 0);
 
-  if (!userToken) {
+  if (userTokens.length === 0) {
     console.error(`[Publisher] CRITICAL ERROR: META_USER_ACCESS_TOKEN environment variable is missing.`);
     process.exit(1);
   }
+
+  console.log(`[Publisher] Authenticating Meta API with ${userTokens.length} Access Token(s)...`);
 
   // Load captions and state
   const captionsPath = path.join(__dirname, '..', 'data', 'captions.json');
@@ -52,11 +54,11 @@ async function runPublisher() {
 
   const state = loadState();
 
-  // Step 1: Auto-discover Facebook Pages from Meta API
+  // Step 1: Auto-discover Facebook Pages from Meta API (across all user tokens)
   let pages = [];
   try {
-    pages = await getPages(userToken);
-    console.log(`[Publisher] Meta API returned ${pages.length} managed Facebook Pages:`);
+    pages = await getAllPages(userTokens);
+    console.log(`[Publisher] Meta API returned ${pages.length} total managed Facebook Pages:`);
     pages.forEach(p => console.log(` - ${p.name} (ID: ${p.id})`));
   } catch (err) {
     console.error(`[Publisher] Failed to fetch Facebook Pages: ${err.message}`);
@@ -64,7 +66,7 @@ async function runPublisher() {
   }
 
   if (pages.length === 0) {
-    console.warn(`[Publisher] Warning: No Facebook Pages found for this Meta account.`);
+    console.warn(`[Publisher] Warning: No Facebook Pages found for the provided Meta account(s).`);
     return;
   }
 

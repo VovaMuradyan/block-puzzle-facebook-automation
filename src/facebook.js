@@ -5,18 +5,36 @@ const GRAPH_API_BASE = 'https://graph.facebook.com/v20.0';
 const GRAPH_VIDEO_BASE = 'https://graph-video.facebook.com/v20.0';
 
 /**
- * Fetch all Facebook Pages accessible by the user token.
+ * Fetch all Facebook Pages accessible by a list of user tokens (or single token).
  */
-async function getPages(userAccessToken) {
-  const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category&access_token=${userAccessToken}`;
-  const res = await fetch(url);
-  const data = await res.json();
+async function getAllPages(userTokens) {
+  const tokens = Array.isArray(userTokens) ? userTokens : [userTokens];
+  const pageMap = new Map();
 
-  if (data.error) {
-    throw new Error(`Meta API Error [getPages]: ${data.error.message} (code ${data.error.code})`);
+  for (const token of tokens) {
+    if (!token) continue;
+    try {
+      const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category&access_token=${token}`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.error) {
+        console.error(`[FB API] Warning fetching pages for token (...${token.substr(-8)}): ${data.error.message}`);
+        continue;
+      }
+
+      const pages = data.data || [];
+      for (const p of pages) {
+        if (!pageMap.has(p.id)) {
+          pageMap.set(p.id, p);
+        }
+      }
+    } catch (err) {
+      console.error(`[FB API] Error requesting pages for token: ${err.message}`);
+    }
   }
 
-  return data.data || [];
+  return Array.from(pageMap.values());
 }
 
 /**
@@ -130,7 +148,7 @@ async function publishPhotoPost(pageId, pageAccessToken, photoPath, caption) {
 }
 
 module.exports = {
-  getPages,
+  getAllPages,
   publishVideoPost,
   publishPhotoPost
 };
