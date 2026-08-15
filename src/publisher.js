@@ -98,16 +98,16 @@ async function runPublisher() {
 
     console.log(`\n--- Processing Page: ${pageName} (${pageId}) [Game: ${gameName}] ---`);
 
-    // Rule: Each page max 1 post per 60 minutes
-    if (!canPostToPage(pageState, 60)) {
+    // Rule: Each page gets 1 post every 30 minutes (alternating games)
+    if (!canPostToPage(pageState, 30)) {
       const lastPostTime = pageState ? pageState.last_post_at : 'Never';
-      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 60 minutes between posts.`);
+      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 30 minutes between posts.`);
       continue;
     }
 
-    // Add Stagger Delay between consecutive posts to prevent sudden bulk bursts (60-120 seconds pause)
+    // Anti-ban Stagger Delay between consecutive page posts (30-45 seconds pause)
     if (postsPublishedThisRun > 0) {
-      const staggerSeconds = Math.floor(Math.random() * 60) + 60; // 60 to 120 seconds delay
+      const staggerSeconds = Math.floor(Math.random() * 15) + 30; // 30 to 45 seconds delay
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
     }
