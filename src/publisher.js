@@ -125,6 +125,7 @@ async function runPublisher() {
     const shuffledVideos = [...videoFiles].sort(() => Math.random() - 0.5);
     const shuffledCaptions = [...captions].sort(() => Math.random() - 0.5);
 
+    // Force 100% Videos / Reels selection ONLY
     for (const v of shuffledVideos) {
       for (const c of shuffledCaptions) {
         if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
@@ -137,20 +138,11 @@ async function runPublisher() {
       if (selectedMedia) break;
     }
 
-    // Fallback to photos if no unused video combination found
-    if (!selectedMedia && photoFiles.length > 0) {
-      const shuffledPhotos = [...photoFiles].sort(() => Math.random() - 0.5);
-      for (const p of shuffledPhotos) {
-        for (const c of shuffledCaptions) {
-          if (!hasUsedComboRecently(state, pageId, p, c.id, 7)) {
-            selectedMedia = p;
-            selectedCaption = c;
-            isVideo = false;
-            break;
-          }
-        }
-        if (selectedMedia) break;
-      }
+    // Fallback: ALWAYS pick a video clip (never post photos/screenshots)
+    if (!selectedMedia && shuffledVideos.length > 0) {
+      selectedMedia = shuffledVideos[Math.floor(Math.random() * shuffledVideos.length)];
+      selectedCaption = shuffledCaptions[Math.floor(Math.random() * shuffledCaptions.length)];
+      isVideo = true;
     }
 
     if (!selectedMedia || !selectedCaption) {
