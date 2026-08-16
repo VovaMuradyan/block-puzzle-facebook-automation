@@ -173,8 +173,8 @@ async function runPublisher() {
       continue;
     }
 
-    const mediaPath = isVideo ? path.join(actualVideosDir, selectedMedia) : path.join(actualPhotosDir, selectedMedia);
-    const isReel = isVideo && (selectedMedia.includes('9x16') || selectedMedia.includes('flappy'));
+    const mediaPath = path.join(videosDir, selectedMedia);
+    const isReel = selectedMedia.includes('9x16') || selectedMedia.includes('flappy');
 
     console.log(`[Publisher] Selected asset: ${selectedMedia} (${isReel ? 'FB Reel' : isVideo ? 'FB Video' : 'FB Photo'})`);
     console.log(`[Publisher] Selected caption ID: ${selectedCaption.id} ("${selectedCaption.hook}")`);
