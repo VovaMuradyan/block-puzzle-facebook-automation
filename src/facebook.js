@@ -4,6 +4,38 @@ const path = require('path');
 const GRAPH_API_BASE = 'https://graph.facebook.com/v20.0';
 const GRAPH_VIDEO_BASE = 'https://graph-video.facebook.com/v20.0';
 
+// Load App Config if available
+let appConfig = [];
+const appsConfigPath = path.join(__dirname, '..', 'config', 'apps.json');
+if (fs.existsSync(appsConfigPath)) {
+  try {
+    appConfig = JSON.parse(fs.readFileSync(appsConfigPath, 'utf8'));
+  } catch (e) {}
+}
+
+/**
+ * Automatically exchange short-lived user token for 60-Day Long-Lived Token
+ */
+async function getLongLivedTokenIfPossible(token, accountIndex) {
+  if (!token) return token;
+  const cfg = appConfig[accountIndex] || appConfig[0];
+  if (!cfg || !cfg.appId || !cfg.appSecret) return token;
+
+  try {
+    const url = `${GRAPH_API_BASE}/oauth/access_token?grant_type=fb_exchange_token&client_id=${cfg.appId}&client_secret=${cfg.appSecret}&fb_exchange_token=${token.trim()}`;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (data.access_token) {
+      console.log(`[FB API] Successfully upgraded Token #${accountIndex + 1} to 60-DAY LONG-LIVED TOKEN (expires in ${Math.round(data.expires_in / 86400)} days)!`);
+      return data.access_token;
+    }
+  } catch (err) {
+    console.warn(`[FB API] Could not exchange token #${accountIndex + 1}: ${err.message}`);
+  }
+  return token;
+}
+
 /**
  * Fetch Facebook Pages grouped per user token for account interleaving.
  */
@@ -11,9 +43,20 @@ async function getAllPagesGrouped(userTokens) {
   const tokens = Array.isArray(userTokens) ? userTokens : [userTokens];
   const accountsPages = [];
 
+  // Load cached permanent page tokens if exist
+  const cachePath = path.join(__dirname, '..', 'data', 'page_tokens.json');
+  let cachedPageTokens = {};
+  if (fs.existsSync(cachePath)) {
+    try { cachedPageTokens = JSON.parse(fs.readFileSync(cachePath, 'utf8')); } catch (e) {}
+  }
+
   for (let idx = 0; idx < tokens.length; idx++) {
-    const token = tokens[idx];
+    let token = tokens[idx];
     if (!token) continue;
+
+    // Auto-upgrade token to 60-day long-lived token
+    token = await getLongLivedTokenIfPossible(token, idx);
+
     try {
       const url = `${GRAPH_API_BASE}/me/accounts?fields=id,name,access_token,category&access_token=${token}`;
       const res = await fetch(url);
@@ -26,12 +69,21 @@ async function getAllPagesGrouped(userTokens) {
 
       const pages = data.data || [];
       if (pages.length > 0) {
+        // Cache permanent page tokens
+        pages.forEach(p => {
+          cachedPageTokens[p.id] = { id: p.id, name: p.name, access_token: p.access_token, updated_at: new Date().toISOString() };
+        });
         accountsPages.push(pages);
       }
     } catch (err) {
       console.error(`[FB API] Error requesting pages for token #${idx + 1}: ${err.message}`);
     }
   }
+
+  // Save updated permanent page tokens to cache file
+  try {
+    fs.writeFileSync(cachePath, JSON.stringify(cachedPageTokens, null, 2), 'utf8');
+  } catch (e) {}
 
   // Interleave pages across accounts: [Acc1_Page1, Acc2_Page1, Acc1_Page2, Acc2_Page2...]
   const interleavedPages = [];
@@ -43,7 +95,6 @@ async function getAllPagesGrouped(userTokens) {
   for (let i = 0; i < maxPagesInAnyAccount; i++) {
     for (const accPages of accountsPages) {
       if (accPages[i]) {
-        // Prevent duplicate page IDs if same page belongs to multiple tokens
         if (!interleavedPages.some(p => p.id === accPages[i].id)) {
           interleavedPages.push(accPages[i]);
         }
@@ -95,7 +146,6 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
 
       if (result.error) {
         const code = result.error.code;
-        // Don't retry if token is expired or session invalid (code 190)
         if (code === 190) {
           throw new Error(`Meta Token Expiry/Logout (190): ${result.error.message}`);
         }
@@ -111,7 +161,7 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
     } catch (err) {
       lastError = err;
       console.error(`[FB API] Attempt ${attempt} failed: ${err.message}`);
-      if (err.message.includes('190')) break; // don't retry expired token
+      if (err.message.includes('190')) break;
       if (attempt < maxRetries) {
         await sleep(3000 * attempt);
       }

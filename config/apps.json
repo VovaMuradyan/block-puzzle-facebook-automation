@@ -1,0 +1,17 @@
+[
+  {
+    "accountId": 1,
+    "appId": "1073407681882821",
+    "appSecret": "695887f45101df8eb588596d02458384"
+  },
+  {
+    "accountId": 2,
+    "appId": "1026455723356122",
+    "appSecret": "176164adb68249e63982b8fda6f686cb"
+  },
+  {
+    "accountId": 3,
+    "appId": "1737470417405012",
+    "appSecret": "deb795798a71db5088b35d1e3c98533e"
+  }
+]
