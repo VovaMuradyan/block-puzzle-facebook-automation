@@ -197,6 +197,7 @@ async function runPublisher() {
       console.log(`========================================\n`);
 
       logPublishEvent(state, pageId, pageName, fbPostId, selectedMedia, selectedCaption.id, 'SUCCESS', null, pageGame);
+      saveState(state);
       postsPublishedThisRun++;
     } catch (err) {
       console.error(`\n========================================`);
@@ -207,6 +208,7 @@ async function runPublisher() {
       console.error(`========================================\n`);
 
       logPublishEvent(state, pageId, pageName, null, selectedMedia, selectedCaption.id, 'FAILED', err.message, pageGame);
+      saveState(state);
     }
   }
 
