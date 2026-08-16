@@ -15,12 +15,12 @@
       "page_id": "1081652578373833",
       "page_name": "Sona Hovsepyan photography ",
       "enabled": true,
-      "last_post_at": "2026-08-15T15:29:10.176Z",
-      "last_media_id": "clip_v3_33_9x16.mp4",
-      "last_caption_id": "cap_032",
-      "last_success_at": "2026-08-15T15:29:10.176Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:19:50 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:47:34.422Z",
+      "last_media_id": "flappy_v3_19_1x1.mp4",
+      "last_caption_id": "flappy_cap_073",
+      "last_success_at": "2026-08-16T06:47:34.422Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1025467117317668": {
       "page_id": "1025467117317668",
@@ -30,7 +30,7 @@
       "last_media_id": "clip_v3_37_9x16.mp4",
       "last_caption_id": "cap_170",
       "last_success_at": "2026-08-15T15:29:17.258Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:21:42 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1044570355399595": {
@@ -41,7 +41,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:23:22 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 0
     },
     "955889374282401": {
@@ -52,19 +52,19 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:25:08 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 0
     },
     "980891351776683": {
       "page_id": "980891351776683",
       "page_name": "NewsFrance",
       "enabled": true,
-      "last_post_at": "2026-08-15T15:30:46.502Z",
-      "last_media_id": "clip_v1_8_9x16.mp4",
-      "last_caption_id": "cap_161",
-      "last_success_at": "2026-08-15T15:30:46.502Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:27:07 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:57:05.594Z",
+      "last_media_id": "flappy_v1_2_1x1.mp4",
+      "last_caption_id": "flappy_cap_049",
+      "last_success_at": "2026-08-16T06:57:05.594Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "972279415972899": {
       "page_id": "972279415972899",
@@ -74,19 +74,19 @@
       "last_media_id": "clip_v2_12_9x16.mp4",
       "last_caption_id": "cap_173",
       "last_success_at": "2026-08-15T15:30:58.987Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:29:03 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "981754708359714": {
       "page_id": "981754708359714",
       "page_name": "Finance News",
       "enabled": true,
-      "last_post_at": "2026-08-15T15:31:09.076Z",
-      "last_media_id": "clip_v3_36_9x16.mp4",
-      "last_caption_id": "cap_072",
-      "last_success_at": "2026-08-15T15:31:09.076Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:30:54 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T07:02:05.751Z",
+      "last_media_id": "flappy_v4_32_9x16.mp4",
+      "last_caption_id": "flappy_cap_041",
+      "last_success_at": "2026-08-16T07:02:05.751Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1013596608500462": {
       "page_id": "1013596608500462",
@@ -235,12 +235,12 @@
       "page_id": "1046502328538724",
       "page_name": "Интересные истории",
       "enabled": true,
-      "last_post_at": "2026-08-15T16:26:36.236Z",
-      "last_media_id": "clip_v3_31_1x1.mp4",
-      "last_caption_id": "cap_007",
-      "last_success_at": "2026-08-15T16:26:36.236Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:18:39 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:46:39.344Z",
+      "last_media_id": "flappy_v1_2_9x16.mp4",
+      "last_caption_id": "flappy_cap_053",
+      "last_success_at": "2026-08-16T06:46:39.344Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1007616745768998": {
       "page_id": "1007616745768998",
@@ -250,7 +250,7 @@
       "last_media_id": "clip_v2_13_1x1.mp4",
       "last_caption_id": "cap_126",
       "last_success_at": "2026-08-15T16:26:46.328Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:20:23 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1010457232146746": {
@@ -261,7 +261,7 @@
       "last_media_id": "clip_v2_21_1x1.mp4",
       "last_caption_id": "cap_039",
       "last_success_at": "2026-08-15T16:26:54.967Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:22:14 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1063747036814448": {
@@ -272,7 +272,7 @@
       "last_media_id": "clip_v1_11_1x1.mp4",
       "last_caption_id": "cap_151",
       "last_success_at": "2026-08-15T16:26:59.290Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:23:53 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "992311910635065": {
@@ -283,19 +283,19 @@
       "last_media_id": "clip_v1_6_1x1.mp4",
       "last_caption_id": "cap_017",
       "last_success_at": "2026-08-15T16:27:08.139Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:25:50 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "967202876485164": {
       "page_id": "967202876485164",
       "page_name": "Finance News",
       "enabled": true,
-      "last_post_at": "2026-08-15T16:27:18.239Z",
-      "last_media_id": "clip_v2_21_1x1.mp4",
-      "last_caption_id": "cap_065",
-      "last_success_at": "2026-08-15T16:27:18.239Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:27:42 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:58:48.653Z",
+      "last_media_id": "flappy_v4_32_9x16.mp4",
+      "last_caption_id": "flappy_cap_054",
+      "last_success_at": "2026-08-16T06:58:48.653Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "956483270889278": {
       "page_id": "956483270889278",
@@ -305,7 +305,7 @@
       "last_media_id": "clip_v3_25_9x16.mp4",
       "last_caption_id": "cap_151",
       "last_success_at": "2026-08-15T16:27:36.139Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:29:40 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1049972611526514": {
@@ -411,45 +411,45 @@
       "page_id": "941948625677476",
       "page_name": "World News Politic",
       "enabled": true,
-      "last_post_at": "2026-08-15T16:47:05.561Z",
-      "last_media_id": "clip_v3_35_9x16.mp4",
-      "last_caption_id": "cap_144",
-      "last_success_at": "2026-08-15T16:47:05.561Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:19:17 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:48:21.666Z",
+      "last_media_id": "flappy_v5_41_9x16.mp4",
+      "last_caption_id": "flappy_cap_001",
+      "last_success_at": "2026-08-16T06:48:21.666Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1023729887487860": {
       "page_id": "1023729887487860",
       "page_name": "News USA",
       "enabled": true,
-      "last_post_at": "2026-08-15T17:15:57.909Z",
-      "last_media_id": "clip_v3_39_1x1.mp4",
-      "last_caption_id": "cap_165",
-      "last_success_at": "2026-08-15T17:15:57.909Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:21:06 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:50:48.541Z",
+      "last_media_id": "flappy_v5_39_9x16.mp4",
+      "last_caption_id": "flappy_cap_032",
+      "last_success_at": "2026-08-16T06:50:48.541Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1015023978356570": {
       "page_id": "1015023978356570",
       "page_name": "News  UK",
       "enabled": true,
-      "last_post_at": "2026-08-15T17:17:11.852Z",
-      "last_media_id": "clip_v1_10_1x1.mp4",
-      "last_caption_id": "cap_056",
-      "last_success_at": "2026-08-15T17:17:11.852Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:22:52 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:53:05.612Z",
+      "last_media_id": "flappy_v4_32_9x16.mp4",
+      "last_caption_id": "flappy_cap_064",
+      "last_success_at": "2026-08-16T06:53:05.612Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "967869283082164": {
       "page_id": "967869283082164",
       "page_name": "News Germany ",
       "enabled": true,
-      "last_post_at": "2026-08-15T17:19:03.902Z",
-      "last_media_id": "clip_v3_26_9x16.mp4",
-      "last_caption_id": "cap_101",
-      "last_success_at": "2026-08-15T17:19:03.902Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:24:31 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T06:55:24.314Z",
+      "last_media_id": "flappy_v5_38_9x16.mp4",
+      "last_caption_id": "flappy_cap_001",
+      "last_success_at": "2026-08-16T06:55:24.314Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1029051096955450": {
       "page_id": "1029051096955450",
@@ -459,19 +459,19 @@
       "last_media_id": "clip_v3_31_9x16.mp4",
       "last_caption_id": "cap_149",
       "last_success_at": "2026-08-15T17:21:02.758Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:26:24 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1041013719091165": {
       "page_id": "1041013719091165",
       "page_name": "Armenian News",
       "enabled": true,
-      "last_post_at": "2026-08-15T17:22:24.004Z",
-      "last_media_id": "clip_v2_14_1x1.mp4",
-      "last_caption_id": "cap_030",
-      "last_success_at": "2026-08-15T17:22:24.004Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:28:26 PDT.",
-      "total_posts": 1
+      "last_post_at": "2026-08-16T07:00:23.814Z",
+      "last_media_id": "flappy_v2_10_9x16.mp4",
+      "last_caption_id": "flappy_cap_003",
+      "last_success_at": "2026-08-16T07:00:23.814Z",
+      "last_error": null,
+      "total_posts": 2
     },
     "1026989580492051": {
       "page_id": "1026989580492051",
@@ -481,7 +481,7 @@
       "last_media_id": "clip_v1_4_9x16.mp4",
       "last_caption_id": "cap_064",
       "last_success_at": "2026-08-15T17:23:35.107Z",
-      "last_error": "Meta Token Expiry/Logout (190): Error validating access token: Session has expired on Saturday, 15-Aug-26 14:00:00 PDT. The current time is Saturday, 15-Aug-26 23:30:14 PDT.",
+      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
       "total_posts": 1
     },
     "1003689749492949": {
@@ -1924,6 +1924,248 @@
       "fb_post_id": null,
       "media_filename": "flappy_v2_16_1x1.mp4",
       "caption_id": "flappy_cap_033",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786862794433_zva8d",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T06:46:34.433Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_43_1x1.mp4",
+      "caption_id": "flappy_cap_007",
+      "status": "FAILED",
+      "error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions."
+    },
+    {
+      "id": "post_1786862799344_u01hk",
+      "page_id": "1046502328538724",
+      "page_name": "Интересные истории",
+      "timestamp": "2026-08-16T06:46:39.344Z",
+      "fb_post_id": "1374071581355159",
+      "media_filename": "flappy_v1_2_9x16.mp4",
+      "caption_id": "flappy_cap_053",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786862854422_vmgtg",
+      "page_id": "1081652578373833",
+      "page_name": "Sona Hovsepyan photography ",
+      "timestamp": "2026-08-16T06:47:34.422Z",
+      "fb_post_id": "1371038571166210",
+      "media_filename": "flappy_v3_19_1x1.mp4",
+      "caption_id": "flappy_cap_073",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786862901666_y357c",
+      "page_id": "941948625677476",
+      "page_name": "World News Politic",
+      "timestamp": "2026-08-16T06:48:21.666Z",
+      "fb_post_id": "1915411869423565",
+      "media_filename": "flappy_v5_41_9x16.mp4",
+      "caption_id": "flappy_cap_001",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786862948880_g485m",
+      "page_id": "1007616745768998",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T06:49:08.880Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_27_1x1.mp4",
+      "caption_id": "flappy_cap_052",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863001865_gif76",
+      "page_id": "1025467117317668",
+      "page_name": "Интересные Новости",
+      "timestamp": "2026-08-16T06:50:01.865Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_7_9x16.mp4",
+      "caption_id": "flappy_cap_046",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863048541_ttd37",
+      "page_id": "1023729887487860",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T06:50:48.541Z",
+      "fb_post_id": "1070055392037676",
+      "media_filename": "flappy_v5_39_9x16.mp4",
+      "caption_id": "flappy_cap_032",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863091417_pxkfv",
+      "page_id": "1010457232146746",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T06:51:31.417Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_34_9x16.mp4",
+      "caption_id": "flappy_cap_019",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863139598_kg517",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T06:52:19.598Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_26_9x16.mp4",
+      "caption_id": "flappy_cap_027",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863185612_9poo6",
+      "page_id": "1015023978356570",
+      "page_name": "News  UK",
+      "timestamp": "2026-08-16T06:53:05.612Z",
+      "fb_post_id": "1522678645841864",
+      "media_filename": "flappy_v4_32_9x16.mp4",
+      "caption_id": "flappy_cap_064",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863233043_tndze",
+      "page_id": "1063747036814448",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-08-16T06:53:53.043Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_7_9x16.mp4",
+      "caption_id": "flappy_cap_008",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863273576_pgt8m",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T06:54:33.576Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_33_1x1.mp4",
+      "caption_id": "flappy_cap_070",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863324314_0u4a3",
+      "page_id": "967869283082164",
+      "page_name": "News Germany ",
+      "timestamp": "2026-08-16T06:55:24.314Z",
+      "fb_post_id": "3924747067834514",
+      "media_filename": "flappy_v5_38_9x16.mp4",
+      "caption_id": "flappy_cap_001",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863369863_5pvlu",
+      "page_id": "992311910635065",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-16T06:56:09.863Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_7_1x1.mp4",
+      "caption_id": "flappy_cap_124",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863425594_66kcl",
+      "page_id": "980891351776683",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-08-16T06:57:05.594Z",
+      "fb_post_id": "937058509436873",
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_049",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863477862_939mr",
+      "page_id": "1029051096955450",
+      "page_name": "newsFrance",
+      "timestamp": "2026-08-16T06:57:57.862Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_35_9x16.mp4",
+      "caption_id": "flappy_cap_040",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863528653_jyztr",
+      "page_id": "967202876485164",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-16T06:58:48.653Z",
+      "fb_post_id": "1440232357969944",
+      "media_filename": "flappy_v4_32_9x16.mp4",
+      "caption_id": "flappy_cap_054",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863575414_y7whn",
+      "page_id": "972279415972899",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-16T06:59:35.414Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_26_9x16.mp4",
+      "caption_id": "flappy_cap_040",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863623814_t7mj7",
+      "page_id": "1041013719091165",
+      "page_name": "Armenian News",
+      "timestamp": "2026-08-16T07:00:23.814Z",
+      "fb_post_id": "1014164361444793",
+      "media_filename": "flappy_v2_10_9x16.mp4",
+      "caption_id": "flappy_cap_003",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863674331_bss6t",
+      "page_id": "956483270889278",
+      "page_name": "Sports News",
+      "timestamp": "2026-08-16T07:01:14.331Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_5_1x1.mp4",
+      "caption_id": "flappy_cap_071",
+      "status": "FAILED",
+      "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786863725751_4gwem",
+      "page_id": "981754708359714",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-16T07:02:05.751Z",
+      "fb_post_id": "1764393801382501",
+      "media_filename": "flappy_v4_32_9x16.mp4",
+      "caption_id": "flappy_cap_041",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786863768150_wfi4w",
+      "page_id": "1026989580492051",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-08-16T07:02:48.150Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v6_51_1x1.mp4",
+      "caption_id": "flappy_cap_094",
       "status": "FAILED",
       "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
     }
