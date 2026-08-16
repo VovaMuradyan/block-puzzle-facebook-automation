@@ -136,9 +136,9 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
       const match = caption.match(/https:\/\/rebrand\.ly\/[^\s\n]+/);
       if (match) ctaUrl = match[0];
 
-      // Attach Call-To-Action button directly to Facebook Video/Reel
+      // Attach English Call-To-Action button ("Install Now" / "Play Game") directly to Facebook Video/Reel
       const ctaPayload = JSON.stringify({
-        type: 'USE_APP',
+        type: 'INSTALL_MOBILE_APP',
         value: {
           link: ctaUrl
         }
