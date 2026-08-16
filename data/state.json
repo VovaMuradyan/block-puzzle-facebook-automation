@@ -4,12 +4,12 @@
       "page_id": "1065551069968804",
       "page_name": "Հետաքրքիր Պատմություններ",
       "enabled": true,
-      "last_post_at": "2026-08-16T13:25:55.912Z",
-      "last_media_id": "flappy_v1_2_9x16.mp4",
-      "last_caption_id": "flappy_cap_076",
-      "last_success_at": "2026-08-16T13:25:55.912Z",
+      "last_post_at": "2026-08-16T14:40:05.368Z",
+      "last_media_id": "clip_v3_32_9x16.mp4",
+      "last_caption_id": "cap_164",
+      "last_success_at": "2026-08-16T14:40:05.368Z",
       "last_error": null,
-      "total_posts": 1
+      "total_posts": 2
     },
     "1261572070372241": {
       "page_id": "1261572070372241",
@@ -1121,6 +1121,17 @@
       "fb_post_id": "1041534511819062",
       "media_filename": "flappy_v3_23_9x16.mp4",
       "caption_id": "flappy_cap_014",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1786891205368_rs29g",
+      "page_id": "1065551069968804",
+      "page_name": "Հետաքրքիր Պատմություններ",
+      "timestamp": "2026-08-16T14:40:05.368Z",
+      "fb_post_id": "1044864951786405",
+      "media_filename": "clip_v3_32_9x16.mp4",
+      "caption_id": "cap_164",
       "status": "SUCCESS",
       "error": null
     }
