@@ -8,7 +8,7 @@
       "last_media_id": "clip_v3_36_1x1.mp4",
       "last_caption_id": "cap_102",
       "last_success_at": "2026-08-15T15:29:04.700Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1081652578373833": {
@@ -19,7 +19,7 @@
       "last_media_id": "flappy_v3_19_1x1.mp4",
       "last_caption_id": "flappy_cap_073",
       "last_success_at": "2026-08-16T06:47:34.422Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1025467117317668": {
@@ -30,7 +30,7 @@
       "last_media_id": "clip_v3_37_9x16.mp4",
       "last_caption_id": "cap_170",
       "last_success_at": "2026-08-15T15:29:17.258Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1044570355399595": {
@@ -41,7 +41,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 0
     },
     "955889374282401": {
@@ -52,7 +52,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 0
     },
     "980891351776683": {
@@ -63,7 +63,7 @@
       "last_media_id": "flappy_v1_2_1x1.mp4",
       "last_caption_id": "flappy_cap_049",
       "last_success_at": "2026-08-16T06:57:05.594Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "972279415972899": {
@@ -74,7 +74,7 @@
       "last_media_id": "clip_v2_12_9x16.mp4",
       "last_caption_id": "cap_173",
       "last_success_at": "2026-08-15T15:30:58.987Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "981754708359714": {
@@ -85,7 +85,7 @@
       "last_media_id": "flappy_v4_32_9x16.mp4",
       "last_caption_id": "flappy_cap_041",
       "last_success_at": "2026-08-16T07:02:05.751Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1013596608500462": {
@@ -96,7 +96,7 @@
       "last_media_id": "flappy_v4_31_9x16.mp4",
       "last_caption_id": "flappy_cap_013",
       "last_success_at": "2026-08-16T07:04:16.564Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1028439447014510": {
@@ -107,7 +107,7 @@
       "last_media_id": "clip_v3_35_1x1.mp4",
       "last_caption_id": "cap_014",
       "last_success_at": "2026-08-15T15:31:33.204Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "976336998902044": {
@@ -118,7 +118,7 @@
       "last_media_id": "flappy_v2_11_9x16.mp4",
       "last_caption_id": "flappy_cap_024",
       "last_success_at": "2026-08-16T07:08:55.104Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1019171044609911": {
@@ -129,7 +129,7 @@
       "last_media_id": "flappy_v1_3_1x1.mp4",
       "last_caption_id": "flappy_cap_093",
       "last_success_at": "2026-08-16T07:11:29.284Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "971929612675846": {
@@ -140,7 +140,7 @@
       "last_media_id": "clip_v2_23_9x16.mp4",
       "last_caption_id": "cap_008",
       "last_success_at": "2026-08-15T15:31:51.873Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1011810412013184": {
@@ -151,7 +151,7 @@
       "last_media_id": "flappy_v5_41_1x1.mp4",
       "last_caption_id": "flappy_cap_030",
       "last_success_at": "2026-08-16T07:16:07.740Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "934080953130911": {
@@ -162,7 +162,7 @@
       "last_media_id": "clip_v1_6_9x16.mp4",
       "last_caption_id": "cap_111",
       "last_success_at": "2026-08-15T15:32:17.552Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1026560763869287": {
@@ -173,7 +173,7 @@
       "last_media_id": "flappy_v1_1_9x16.mp4",
       "last_caption_id": "flappy_cap_065",
       "last_success_at": "2026-08-16T07:20:19.961Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1001537396372542": {
@@ -184,7 +184,7 @@
       "last_media_id": "flappy_v5_38_9x16.mp4",
       "last_caption_id": "flappy_cap_004",
       "last_success_at": "2026-08-16T07:21:03.734Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "109018824655538": {
@@ -195,7 +195,7 @@
       "last_media_id": "flappy_v1_3_1x1.mp4",
       "last_caption_id": "flappy_cap_052",
       "last_success_at": "2026-08-16T07:21:44.051Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1733439930249579": {
@@ -206,7 +206,7 @@
       "last_media_id": "flappy_v5_43_9x16.mp4",
       "last_caption_id": "flappy_cap_004",
       "last_success_at": "2026-08-16T07:22:32.948Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "176102472989597": {
@@ -217,7 +217,7 @@
       "last_media_id": "clip_v3_35_9x16.mp4",
       "last_caption_id": "cap_084",
       "last_success_at": "2026-08-15T15:32:57.413Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1065551069968804": {
@@ -228,7 +228,7 @@
       "last_media_id": "clip_v1_2_9x16.mp4",
       "last_caption_id": "cap_132",
       "last_success_at": "2026-08-15T19:49:32.661Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1046502328538724": {
@@ -239,7 +239,7 @@
       "last_media_id": "flappy_v1_2_9x16.mp4",
       "last_caption_id": "flappy_cap_053",
       "last_success_at": "2026-08-16T06:46:39.344Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1007616745768998": {
@@ -250,7 +250,7 @@
       "last_media_id": "clip_v2_13_1x1.mp4",
       "last_caption_id": "cap_126",
       "last_success_at": "2026-08-15T16:26:46.328Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1010457232146746": {
@@ -261,7 +261,7 @@
       "last_media_id": "clip_v2_21_1x1.mp4",
       "last_caption_id": "cap_039",
       "last_success_at": "2026-08-15T16:26:54.967Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1063747036814448": {
@@ -272,7 +272,7 @@
       "last_media_id": "clip_v1_11_1x1.mp4",
       "last_caption_id": "cap_151",
       "last_success_at": "2026-08-15T16:26:59.290Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "992311910635065": {
@@ -283,7 +283,7 @@
       "last_media_id": "clip_v1_6_1x1.mp4",
       "last_caption_id": "cap_017",
       "last_success_at": "2026-08-15T16:27:08.139Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "967202876485164": {
@@ -294,7 +294,7 @@
       "last_media_id": "flappy_v4_32_9x16.mp4",
       "last_caption_id": "flappy_cap_054",
       "last_success_at": "2026-08-16T06:58:48.653Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "956483270889278": {
@@ -305,7 +305,7 @@
       "last_media_id": "clip_v3_25_9x16.mp4",
       "last_caption_id": "cap_151",
       "last_success_at": "2026-08-15T16:27:36.139Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1049972611526514": {
@@ -316,7 +316,7 @@
       "last_media_id": "clip_v2_12_1x1.mp4",
       "last_caption_id": "cap_179",
       "last_success_at": "2026-08-15T16:27:46.811Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "986803337854211": {
@@ -327,7 +327,7 @@
       "last_media_id": "flappy_v6_44_9x16.mp4",
       "last_caption_id": "flappy_cap_068",
       "last_success_at": "2026-08-16T07:05:55.381Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "999052209960184": {
@@ -338,7 +338,7 @@
       "last_media_id": "flappy_v5_38_1x1.mp4",
       "last_caption_id": "flappy_cap_026",
       "last_success_at": "2026-08-16T07:08:11.394Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "1005746672623466": {
@@ -349,7 +349,7 @@
       "last_media_id": "flappy_v4_29_9x16.mp4",
       "last_caption_id": "flappy_cap_088",
       "last_success_at": "2026-08-16T07:10:35.400Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "1003187416210293": {
@@ -360,7 +360,7 @@
       "last_media_id": "flappy_v1_1_1x1.mp4",
       "last_caption_id": "flappy_cap_071",
       "last_success_at": "2026-08-16T07:13:03.781Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "1059370087250374": {
@@ -371,7 +371,7 @@
       "last_media_id": "clip_v3_24_1x1.mp4",
       "last_caption_id": "cap_013",
       "last_success_at": "2026-08-15T17:34:18.215Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "932708589935603": {
@@ -382,7 +382,7 @@
       "last_media_id": "flappy_v1_2_1x1.mp4",
       "last_caption_id": "flappy_cap_051",
       "last_success_at": "2026-08-16T07:17:27.906Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "659612323900011": {
@@ -393,7 +393,7 @@
       "last_media_id": "flappy_v4_32_9x16.mp4",
       "last_caption_id": "flappy_cap_017",
       "last_success_at": "2026-08-16T07:19:37.649Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 3
     },
     "1010279908836025": {
@@ -404,7 +404,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 0
     },
     "941948625677476": {
@@ -415,7 +415,7 @@
       "last_media_id": "flappy_v5_41_9x16.mp4",
       "last_caption_id": "flappy_cap_001",
       "last_success_at": "2026-08-16T06:48:21.666Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1023729887487860": {
@@ -426,7 +426,7 @@
       "last_media_id": "flappy_v5_39_9x16.mp4",
       "last_caption_id": "flappy_cap_032",
       "last_success_at": "2026-08-16T06:50:48.541Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1015023978356570": {
@@ -437,7 +437,7 @@
       "last_media_id": "flappy_v4_32_9x16.mp4",
       "last_caption_id": "flappy_cap_064",
       "last_success_at": "2026-08-16T06:53:05.612Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "967869283082164": {
@@ -448,7 +448,7 @@
       "last_media_id": "flappy_v5_38_9x16.mp4",
       "last_caption_id": "flappy_cap_001",
       "last_success_at": "2026-08-16T06:55:24.314Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1029051096955450": {
@@ -459,7 +459,7 @@
       "last_media_id": "clip_v3_31_9x16.mp4",
       "last_caption_id": "cap_149",
       "last_success_at": "2026-08-15T17:21:02.758Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1041013719091165": {
@@ -470,7 +470,7 @@
       "last_media_id": "flappy_v2_10_9x16.mp4",
       "last_caption_id": "flappy_cap_003",
       "last_success_at": "2026-08-16T07:00:23.814Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1026989580492051": {
@@ -481,7 +481,7 @@
       "last_media_id": "clip_v1_4_9x16.mp4",
       "last_caption_id": "cap_064",
       "last_success_at": "2026-08-15T17:23:35.107Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "1003689749492949": {
@@ -492,7 +492,7 @@
       "last_media_id": "clip_v1_1_9x16.mp4",
       "last_caption_id": "cap_082",
       "last_success_at": "2026-08-15T17:24:46.664Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "906871965852313": {
@@ -503,7 +503,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 0
     },
     "898082573399487": {
@@ -514,7 +514,7 @@
       "last_media_id": "flappy_v1_3_9x16.mp4",
       "last_caption_id": "flappy_cap_003",
       "last_success_at": "2026-08-16T07:09:47.166Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "994685927058225": {
@@ -525,7 +525,7 @@
       "last_media_id": "clip_v1_4_9x16.mp4",
       "last_caption_id": "cap_174",
       "last_success_at": "2026-08-15T17:29:48.599Z",
-      "last_error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file.",
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 1
     },
     "969864446213380": {
@@ -536,7 +536,7 @@
       "last_media_id": "flappy_v5_41_9x16.mp4",
       "last_caption_id": "flappy_cap_004",
       "last_success_at": "2026-08-16T07:14:26.410Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "1015641344967912": {
@@ -547,7 +547,7 @@
       "last_media_id": "flappy_v6_44_1x1.mp4",
       "last_caption_id": "flappy_cap_015",
       "last_success_at": "2026-08-16T07:16:50.648Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     },
     "934176896453645": {
@@ -558,7 +558,7 @@
       "last_media_id": "flappy_v4_31_1x1.mp4",
       "last_caption_id": "flappy_cap_022",
       "last_success_at": "2026-08-16T07:18:50.583Z",
-      "last_error": null,
+      "last_error": "Meta Error (390): There was a problem uploading your video file. Please try again.",
       "total_posts": 2
     }
   },
@@ -2465,7 +2465,568 @@
       "caption_id": "flappy_cap_029",
       "status": "FAILED",
       "error": "Meta Error (382): The video file you tried to upload is too small. Please try again with a larger file."
+    },
+    {
+      "id": "post_1786867154286_iyga7",
+      "page_id": "1065551069968804",
+      "page_name": "Հետաքրքիր Պատմություններ",
+      "timestamp": "2026-08-16T07:59:14.286Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_39_1x1.mp4",
+      "caption_id": "flappy_cap_032",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867164069_oy9so",
+      "page_id": "1261572070372241",
+      "page_name": "Block Puzzle: Block Royale",
+      "timestamp": "2026-08-16T07:59:24.069Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v6_44_1x1.mp4",
+      "caption_id": "flappy_cap_007",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867173660_bltnh",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T07:59:33.660Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_3_9x16.mp4",
+      "caption_id": "flappy_cap_067",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867183237_b84x1",
+      "page_id": "1046502328538724",
+      "page_name": "Интересные истории",
+      "timestamp": "2026-08-16T07:59:43.237Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_017",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867192808_iovjq",
+      "page_id": "1081652578373833",
+      "page_name": "Sona Hovsepyan photography ",
+      "timestamp": "2026-08-16T07:59:52.808Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_1x1.mp4",
+      "caption_id": "flappy_cap_106",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867202584_xmbb3",
+      "page_id": "941948625677476",
+      "page_name": "World News Politic",
+      "timestamp": "2026-08-16T08:00:02.584Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_39_1x1.mp4",
+      "caption_id": "flappy_cap_108",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867212260_7p5w9",
+      "page_id": "1007616745768998",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T08:00:12.260Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v6_44_1x1.mp4",
+      "caption_id": "flappy_cap_057",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867222088_dx0ps",
+      "page_id": "1025467117317668",
+      "page_name": "Интересные Новости",
+      "timestamp": "2026-08-16T08:00:22.088Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_9x16.mp4",
+      "caption_id": "flappy_cap_081",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867231726_nivn3",
+      "page_id": "1023729887487860",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T08:00:31.726Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_11_1x1.mp4",
+      "caption_id": "flappy_cap_092",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867241593_fkp7b",
+      "page_id": "1010457232146746",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T08:00:41.593Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_20_9x16.mp4",
+      "caption_id": "flappy_cap_126",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867251403_ch3hj",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-16T08:00:51.403Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_40_9x16.mp4",
+      "caption_id": "flappy_cap_036",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867261173_u8ewb",
+      "page_id": "1015023978356570",
+      "page_name": "News  UK",
+      "timestamp": "2026-08-16T08:01:01.173Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_066",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867270808_180g5",
+      "page_id": "1063747036814448",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-08-16T08:01:10.808Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_24_9x16.mp4",
+      "caption_id": "flappy_cap_064",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867280459_c2vwq",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-16T08:01:20.459Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_1x1.mp4",
+      "caption_id": "flappy_cap_108",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867290116_yvl16",
+      "page_id": "967869283082164",
+      "page_name": "News Germany ",
+      "timestamp": "2026-08-16T08:01:30.116Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v6_44_9x16.mp4",
+      "caption_id": "flappy_cap_052",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867299792_hkw0x",
+      "page_id": "992311910635065",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-16T08:01:39.792Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_10_9x16.mp4",
+      "caption_id": "flappy_cap_069",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867309379_2k2eg",
+      "page_id": "980891351776683",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-08-16T08:01:49.379Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_30_9x16.mp4",
+      "caption_id": "flappy_cap_081",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867319012_d242j",
+      "page_id": "1029051096955450",
+      "page_name": "newsFrance",
+      "timestamp": "2026-08-16T08:01:59.012Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_006",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867328766_5xisd",
+      "page_id": "967202876485164",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-16T08:02:08.766Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_11_9x16.mp4",
+      "caption_id": "flappy_cap_026",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867338446_fy77l",
+      "page_id": "972279415972899",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-16T08:02:18.446Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_115",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867347999_1kenx",
+      "page_id": "1041013719091165",
+      "page_name": "Armenian News",
+      "timestamp": "2026-08-16T08:02:27.999Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_38_9x16.mp4",
+      "caption_id": "flappy_cap_091",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867357571_ad6k0",
+      "page_id": "956483270889278",
+      "page_name": "Sports News",
+      "timestamp": "2026-08-16T08:02:37.570Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_38_9x16.mp4",
+      "caption_id": "flappy_cap_071",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867367154_vvrti",
+      "page_id": "981754708359714",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-16T08:02:47.154Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_30_9x16.mp4",
+      "caption_id": "flappy_cap_090",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867376701_szke7",
+      "page_id": "1026989580492051",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-08-16T08:02:56.701Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_11_1x1.mp4",
+      "caption_id": "flappy_cap_064",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867386213_3j90c",
+      "page_id": "1049972611526514",
+      "page_name": "Arm News",
+      "timestamp": "2026-08-16T08:03:06.213Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_11_1x1.mp4",
+      "caption_id": "flappy_cap_021",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867395798_42ytm",
+      "page_id": "1013596608500462",
+      "page_name": "Sports News",
+      "timestamp": "2026-08-16T08:03:15.798Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_24_9x16.mp4",
+      "caption_id": "flappy_cap_004",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867405261_25fjw",
+      "page_id": "1003689749492949",
+      "page_name": "Arm News",
+      "timestamp": "2026-08-16T08:03:25.261Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_28_9x16.mp4",
+      "caption_id": "flappy_cap_067",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867414834_ek3i8",
+      "page_id": "986803337854211",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-08-16T08:03:34.834Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_124",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867424544_ic24s",
+      "page_id": "1028439447014510",
+      "page_name": "Arm News",
+      "timestamp": "2026-08-16T08:03:44.544Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_10_9x16.mp4",
+      "caption_id": "flappy_cap_064",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867434189_81hqu",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-16T08:03:54.189Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_24_9x16.mp4",
+      "caption_id": "flappy_cap_036",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867443861_y4kyd",
+      "page_id": "999052209960184",
+      "page_name": "World News Politic",
+      "timestamp": "2026-08-16T08:04:03.861Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_090",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867453594_d9rb2",
+      "page_id": "976336998902044",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-08-16T08:04:13.594Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_28_9x16.mp4",
+      "caption_id": "flappy_cap_013",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867463235_c86c6",
+      "page_id": "898082573399487",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-16T08:04:23.235Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_1x1.mp4",
+      "caption_id": "flappy_cap_107",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867472949_f0zk6",
+      "page_id": "1005746672623466",
+      "page_name": "News Germany",
+      "timestamp": "2026-08-16T08:04:32.949Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_39_1x1.mp4",
+      "caption_id": "flappy_cap_016",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867482608_apuso",
+      "page_id": "1019171044609911",
+      "page_name": "World News Politic",
+      "timestamp": "2026-08-16T08:04:42.608Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_011",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867492246_1lj00",
+      "page_id": "994685927058225",
+      "page_name": "News World",
+      "timestamp": "2026-08-16T08:04:52.246Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_20_1x1.mp4",
+      "caption_id": "flappy_cap_067",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867501944_sy6e3",
+      "page_id": "1003187416210293",
+      "page_name": "News World",
+      "timestamp": "2026-08-16T08:05:01.944Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_36_9x16.mp4",
+      "caption_id": "flappy_cap_072",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867511649_aqxso",
+      "page_id": "971929612675846",
+      "page_name": "News Germany",
+      "timestamp": "2026-08-16T08:05:11.649Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_38_9x16.mp4",
+      "caption_id": "flappy_cap_005",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867521231_eo69g",
+      "page_id": "969864446213380",
+      "page_name": "Finance News",
+      "timestamp": "2026-08-16T08:05:21.231Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v6_44_9x16.mp4",
+      "caption_id": "flappy_cap_089",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867530773_fnk59",
+      "page_id": "1059370087250374",
+      "page_name": "Armenian News",
+      "timestamp": "2026-08-16T08:05:30.773Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_1x1.mp4",
+      "caption_id": "flappy_cap_027",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867540364_66nsd",
+      "page_id": "1011810412013184",
+      "page_name": "News World",
+      "timestamp": "2026-08-16T08:05:40.364Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_19_1x1.mp4",
+      "caption_id": "flappy_cap_089",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867549884_ficbm",
+      "page_id": "1015641344967912",
+      "page_name": "Sports News",
+      "timestamp": "2026-08-16T08:05:49.884Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_23_9x16.mp4",
+      "caption_id": "flappy_cap_083",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867559478_e90ip",
+      "page_id": "932708589935603",
+      "page_name": "News UK",
+      "timestamp": "2026-08-16T08:05:59.478Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_9x16.mp4",
+      "caption_id": "flappy_cap_064",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867569011_gzrs3",
+      "page_id": "934080953130911",
+      "page_name": "Armenian News",
+      "timestamp": "2026-08-16T08:06:09.011Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_40_1x1.mp4",
+      "caption_id": "flappy_cap_082",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867578549_c8ul8",
+      "page_id": "934176896453645",
+      "page_name": "Techno News",
+      "timestamp": "2026-08-16T08:06:18.549Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_19_9x16.mp4",
+      "caption_id": "flappy_cap_057",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867588093_f0tt4",
+      "page_id": "659612323900011",
+      "page_name": "Vova",
+      "timestamp": "2026-08-16T08:06:28.093Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v1_2_1x1.mp4",
+      "caption_id": "flappy_cap_007",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867597741_dwn7q",
+      "page_id": "1026560763869287",
+      "page_name": "News Uk",
+      "timestamp": "2026-08-16T08:06:37.741Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v4_30_9x16.mp4",
+      "caption_id": "flappy_cap_123",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867607261_3t7mi",
+      "page_id": "1001537396372542",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-16T08:06:47.261Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_10_9x16.mp4",
+      "caption_id": "flappy_cap_027",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867616851_12zxc",
+      "page_id": "109018824655538",
+      "page_name": "St_family_shop",
+      "timestamp": "2026-08-16T08:06:56.851Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v5_40_9x16.mp4",
+      "caption_id": "flappy_cap_100",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867626468_mlwvg",
+      "page_id": "1733439930249579",
+      "page_name": "NL International",
+      "timestamp": "2026-08-16T08:07:06.468Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v2_12_1x1.mp4",
+      "caption_id": "flappy_cap_060",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
+    },
+    {
+      "id": "post_1786867636126_su1nl",
+      "page_id": "176102472989597",
+      "page_name": "Творческие идеи - Удобная жизнь",
+      "timestamp": "2026-08-16T08:07:16.126Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_v3_23_1x1.mp4",
+      "caption_id": "flappy_cap_101",
+      "status": "FAILED",
+      "error": "Meta Error (390): There was a problem uploading your video file. Please try again."
     }
   ],
-  "last_active_game": "game1"
+  "last_active_game": "game2"
 }
