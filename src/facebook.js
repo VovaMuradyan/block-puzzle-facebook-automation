@@ -144,6 +144,7 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
         }
       });
       formData.append('call_to_action', ctaPayload);
+      formData.append('published', 'true');
       formData.append('source', new Blob([fileBuffer], { type: 'video/mp4' }), filename);
 
       const endpoint = `${GRAPH_VIDEO_BASE}/${pageId}/videos`;
