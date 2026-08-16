@@ -45,7 +45,7 @@ function hasUsedComboRecently(state, pageId, mediaFilename, captionId, daysWindo
   });
 }
 
-function logPublishEvent(state, pageId, pageName, fbPostId, mediaFilename, captionId, status, errorMsg = null) {
+function logPublishEvent(state, pageId, pageName, fbPostId, mediaFilename, captionId, status, errorMsg = null, gameId = 'game1') {
   const nowIso = new Date().toISOString();
   
   if (!state.pages[pageId]) {
@@ -58,7 +58,8 @@ function logPublishEvent(state, pageId, pageName, fbPostId, mediaFilename, capti
       last_caption_id: null,
       last_success_at: null,
       last_error: null,
-      total_posts: 0
+      total_posts: 0,
+      last_game: null
     };
   }
 
@@ -70,6 +71,7 @@ function logPublishEvent(state, pageId, pageName, fbPostId, mediaFilename, capti
     p.last_success_at = nowIso;
     p.last_media_id = mediaFilename;
     p.last_caption_id = captionId;
+    p.last_game = gameId;
     p.last_error = null;
     p.total_posts = (p.total_posts || 0) + 1;
   } else {

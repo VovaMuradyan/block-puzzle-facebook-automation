@@ -36,7 +36,7 @@ async function runPublisher() {
 
   const state = loadState();
 
-  // Multi-Game Alternation Logic (Game 1 <-> Game 2)
+  // Global Multi-Game Alternation
   const currentGame = (state.last_active_game === 'game1') ? 'game2' : 'game1';
   state.last_active_game = currentGame;
   saveState(state);
@@ -98,20 +98,43 @@ async function runPublisher() {
     const pageId = page.id;
     const pageName = page.name;
     const pageToken = page.access_token;
-    const pageState = state.pages[pageId];
+    const pageState = state.pages[pageId] || {};
 
-    console.log(`\n--- Processing Page: ${pageName} (${pageId}) [Game: ${gameName}] ---`);
-
-    // Rule: Each page gets 1 post every 30 minutes (alternating games)
+    // Rule 1: Strictly 1 post per page every 30 minutes
     if (!canPostToPage(pageState, 30)) {
-      const lastPostTime = pageState ? pageState.last_post_at : 'Never';
+      const lastPostTime = pageState.last_post_at ? new Date(pageState.last_post_at).toLocaleTimeString() : 'Never';
       console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 30 minutes between posts.`);
+      continue;
+    }
+
+    // Rule 2: Alternate Game 1 <-> Game 2 individually for THIS page
+    const pageGame = (pageState.last_game === 'game1') ? 'game2' : 'game1';
+    const pageGameName = (pageGame === 'game1') ? 'Block Puzzle: Blast & Drop' : 'Flappy Earn';
+
+    console.log(`\n--- Processing Page: ${pageName} (${pageId}) [Selected Game: ${pageGame.toUpperCase()} (${pageGameName})] ---`);
+
+    // Load game-specific captions
+    const captionsFile = (pageGame === 'game1') ? 'game1_captions.json' : 'game2_captions.json';
+    let captionsPath = path.join(__dirname, '..', 'data', captionsFile);
+    if (!fs.existsSync(captionsPath)) {
+      captionsPath = path.join(__dirname, '..', 'data', 'captions.json');
+    }
+    const captions = JSON.parse(fs.readFileSync(captionsPath, 'utf8'));
+
+    // Load game-specific videos
+    const videosDir = path.join(__dirname, '..', 'media', pageGame, 'videos');
+    const videoFiles = fs.existsSync(videosDir)
+      ? fs.readdirSync(videosDir).filter(f => f.endsWith('.mp4') && fs.statSync(path.join(videosDir, f)).size > 50000)
+      : [];
+
+    if (videoFiles.length === 0) {
+      console.warn(`[Publisher] Warning: No valid videos found for ${pageGame}`);
       continue;
     }
 
     // Anti-ban Stagger Delay between consecutive page posts (5-10 seconds pause)
     if (postsPublishedThisRun > 0) {
-      const staggerSeconds = Math.floor(Math.random() * 6) + 5; // 5 to 10 seconds delay
+      const staggerSeconds = Math.floor(Math.random() * 6) + 5;
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
     }
@@ -173,17 +196,17 @@ async function runPublisher() {
       console.log(`Facebook ID: ${fbPostId}`);
       console.log(`========================================\n`);
 
-      logPublishEvent(state, pageId, pageName, fbPostId, selectedMedia, selectedCaption.id, 'SUCCESS');
+      logPublishEvent(state, pageId, pageName, fbPostId, selectedMedia, selectedCaption.id, 'SUCCESS', null, pageGame);
       postsPublishedThisRun++;
     } catch (err) {
       console.error(`\n========================================`);
       console.error(`FAILED`);
-      console.error(`Game: ${gameName}`);
+      console.error(`Game: ${pageGameName}`);
       console.error(`Page: ${pageName}`);
       console.error(`Reason: ${err.message}`);
       console.error(`========================================\n`);
 
-      logPublishEvent(state, pageId, pageName, null, selectedMedia, selectedCaption.id, 'FAILED', err.message);
+      logPublishEvent(state, pageId, pageName, null, selectedMedia, selectedCaption.id, 'FAILED', err.message, pageGame);
     }
   }
 
