@@ -109,9 +109,9 @@ async function runPublisher() {
       continue;
     }
 
-    // Anti-ban Stagger Delay between consecutive page posts (30-45 seconds pause)
+    // Anti-ban Stagger Delay between consecutive page posts (5-10 seconds pause)
     if (postsPublishedThisRun > 0) {
-      const staggerSeconds = Math.floor(Math.random() * 15) + 30; // 30 to 45 seconds delay
+      const staggerSeconds = Math.floor(Math.random() * 6) + 5; // 5 to 10 seconds delay
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
     }
