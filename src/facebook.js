@@ -131,10 +131,19 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
       const formData = new FormData();
       formData.append('access_token', pageAccessToken);
       formData.append('description', caption);
-      if (isReel) {
-        formData.append('is_reel', 'true');
-      }
-      formData.append('source', new Blob([fileBuffer]), filename);
+      // Extract CTA link from caption
+      let ctaUrl = 'https://rebrand.ly/BlockPuzzlePlay-';
+      const match = caption.match(/https:\/\/rebrand\.ly\/[^\s\n]+/);
+      if (match) ctaUrl = match[0];
+
+      // Attach Call-To-Action button directly to Facebook Video/Reel
+      const ctaPayload = JSON.stringify({
+        type: 'USE_APP',
+        value: {
+          link: ctaUrl
+        }
+      });
+      formData.append('call_to_action', ctaPayload);
 
       const endpoint = `${GRAPH_VIDEO_BASE}/${pageId}/videos`;
       const res = await fetch(endpoint, {
