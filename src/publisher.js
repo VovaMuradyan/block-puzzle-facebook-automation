@@ -66,8 +66,12 @@ async function runPublisher() {
   const actualVideosDir = fs.existsSync(videosDir) && fs.readdirSync(videosDir).length > 0 ? videosDir : path.join(__dirname, '..', 'media', 'videos');
   const actualPhotosDir = fs.existsSync(photosDir) && fs.readdirSync(photosDir).length > 0 ? photosDir : path.join(__dirname, '..', 'media', 'images');
 
-  const videoFiles = fs.existsSync(actualVideosDir) ? fs.readdirSync(actualVideosDir).filter(f => f.endsWith('.mp4')) : [];
-  const photoFiles = fs.existsSync(actualPhotosDir) ? fs.readdirSync(actualPhotosDir).filter(f => f.match(/\.(jpg|png|jpeg)$/i)) : [];
+  const videoFiles = fs.existsSync(actualVideosDir)
+    ? fs.readdirSync(actualVideosDir).filter(f => f.endsWith('.mp4') && fs.statSync(path.join(actualVideosDir, f)).size > 500000)
+    : [];
+  const photoFiles = fs.existsSync(actualPhotosDir)
+    ? fs.readdirSync(actualPhotosDir).filter(f => f.match(/\.(jpg|png|jpeg)$/i) && fs.statSync(path.join(actualPhotosDir, f)).size > 50000)
+    : [];
 
   console.log(`[Publisher] Assets for ${gameName}: ${videoFiles.length} videos, ${photoFiles.length} photos, ${captions.length} captions.`);
 
