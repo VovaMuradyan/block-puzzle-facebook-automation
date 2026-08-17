@@ -102,6 +102,14 @@ async function getAllPagesGrouped(userTokens) {
     }
   }
 
+  // Fallback / Guarantee: Add any cached page tokens that were not returned by live user tokens
+  const cachedArray = Object.values(cachedPageTokens);
+  cachedArray.forEach(cp => {
+    if (!interleavedPages.some(p => p.id === cp.id)) {
+      interleavedPages.push({ id: cp.id, name: cp.name, access_token: cp.access_token });
+    }
+  });
+
   return interleavedPages;
 }
 
