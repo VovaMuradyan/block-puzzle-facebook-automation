@@ -13765,7 +13765,51 @@
       "caption_id": "flappy_cap_063",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1787004826747_kgyh3",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-17T22:13:46.747Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v3_26_1x1.mp4",
+      "caption_id": "cap_186",
+      "status": "FAILED",
+      "error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions."
+    },
+    {
+      "id": "post_1787004851643_4tdcv",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-17T22:14:11.643Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v2_20_9x16.mp4",
+      "caption_id": "cap_166",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787004875512_77uhe",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-17T22:14:35.512Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v3_34_9x16.mp4",
+      "caption_id": "cap_115",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787004885882_ideei",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-17T22:14:45.882Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v1_6_1x1.mp4",
+      "caption_id": "cap_015",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game2"
+  "last_active_game": "game1"
 }
