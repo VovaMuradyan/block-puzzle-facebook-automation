@@ -1,6 +1,6 @@
 const runPublisher = require('../src/publisher');
 
-function getMsUntilNextInterval(intervalMinutes = 15) {
+function getMsUntilNextInterval(intervalMinutes = 30) {
   const now = new Date();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
@@ -15,7 +15,7 @@ function getMsUntilNextInterval(intervalMinutes = 15) {
 
 async function startDaemon() {
   console.log('===========================================================');
-  console.log('🚀 24/7 High-Frequency Daemon Facebook Publisher Started (15-Min Intervals)');
+  console.log('🚀 24/7 Anti-Ban Safe Daemon Facebook Publisher Started (30-Min Intervals)');
   console.log('===========================================================');
 
   // Trigger first immediate run
@@ -26,15 +26,15 @@ async function startDaemon() {
     console.error('[Daemon] Initial run error:', err.message);
   }
 
-  // Schedule loop sharp at :00, :15, :30, :45 minute marks
+  // Schedule loop sharp at :00 and :30 minute marks
   const scheduleNext = () => {
-    const delayMs = getMsUntilNextInterval(15);
+    const delayMs = getMsUntilNextInterval(30);
     const nextTime = new Date(Date.now() + delayMs).toLocaleTimeString();
     console.log(`\n[Daemon] Next scheduled publication run at ${nextTime} (in ${Math.round(delayMs / 1000 / 60)} minutes)...`);
 
     setTimeout(async () => {
       try {
-        console.log(`\n[Daemon] Triggering scheduled 15-min run at ${new Date().toISOString()}...`);
+        console.log(`\n[Daemon] Triggering scheduled 30-min run at ${new Date().toISOString()}...`);
         await runPublisher();
       } catch (err) {
         console.error('[Daemon] Scheduled run error:', err.message);
