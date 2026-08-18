@@ -148,29 +148,18 @@ async function runPublisher() {
     const shuffledVideos = [...videoFiles].sort(() => Math.random() - 0.5);
     const shuffledCaptions = [...captions].sort(() => Math.random() - 0.5);
 
-    // For Flappy Earn (game2), strictly alternate between Video 1 and Video 2
+    // EXCLUSIVELY use the 4 new 40-second videos created today (2 for Block Puzzle, 2 for Flappy Earn)
     if (pageGame === 'game2') {
+      // Flappy Earn (game2): Strictly alternate between Video 1 and Video 2 created today
       const lastVideo = pageState.last_flappy_video || 'flappy_intro_scene_40s_2.mp4';
       const nextVideo = (lastVideo === 'flappy_intro_scene_40s.mp4') ? 'flappy_intro_scene_40s_2.mp4' : 'flappy_intro_scene_40s.mp4';
-      if (videoFiles.includes(nextVideo)) {
-        selectedMedia = nextVideo;
-      } else {
-        selectedMedia = videoFiles[0];
-      }
+      selectedMedia = nextVideo;
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // For Block Puzzle (game1), strictly rotate between 40s intro videos (1, 2, 3)
-      const puzzle40sClips = ['block_puzzle_intro_scene_40s.mp4', 'block_puzzle_intro_scene_40s_2.mp4', 'block_puzzle_intro_scene_40s_3.mp4']
-        .filter(v => videoFiles.includes(v));
-      
-      if (puzzle40sClips.length > 0) {
-        const lastPuzzle = pageState.last_puzzle_video || puzzle40sClips[puzzle40sClips.length - 1];
-        const lastIdx = puzzle40sClips.indexOf(lastPuzzle);
-        const nextIdx = (lastIdx + 1) % puzzle40sClips.length;
-        selectedMedia = puzzle40sClips[nextIdx];
-      } else {
-        selectedMedia = videoFiles[0];
-      }
+      // Block Puzzle (game1): Strictly alternate between Video 1 and Video 2 created today
+      const lastVideo = pageState.last_puzzle_video || 'block_puzzle_intro_scene_40s_2.mp4';
+      const nextVideo = (lastVideo === 'block_puzzle_intro_scene_40s.mp4') ? 'block_puzzle_intro_scene_40s_2.mp4' : 'block_puzzle_intro_scene_40s.mp4';
+      selectedMedia = nextVideo;
       pageState.last_puzzle_video = selectedMedia;
     }
 
