@@ -24911,7 +24911,51 @@
       "caption_id": "cap_142",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1787066950139_3mbtc",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T15:29:10.139Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s.mp4",
+      "caption_id": "cap_127",
+      "status": "FAILED",
+      "error": "Meta Error (368): We limit how often you can post, comment or do other things in a given amount of time in order to help protect the community from spam. You can try again later. Learn More"
+    },
+    {
+      "id": "post_1787066961853_yilhv",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T15:29:21.853Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s.mp4",
+      "caption_id": "cap_160",
+      "status": "FAILED",
+      "error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее"
+    },
+    {
+      "id": "post_1787066972858_z68r2",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-18T15:29:32.858Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s.mp4",
+      "caption_id": "cap_010",
+      "status": "FAILED",
+      "error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее"
+    },
+    {
+      "id": "post_1787066982943_xdzvc",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-18T15:29:42.943Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s.mp4",
+      "caption_id": "cap_186",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game1"
+  "last_active_game": "game2"
 }
