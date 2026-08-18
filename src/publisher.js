@@ -159,17 +159,21 @@ async function runPublisher() {
       }
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // For Block Puzzle (game1), pick fresh video combo
-      for (const v of shuffledVideos) {
-        for (const c of shuffledCaptions) {
-          if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
-            selectedMedia = v;
-            selectedCaption = c;
-            isVideo = true;
-            break;
+      // For Block Puzzle (game1), prioritize new 40s intro video
+      if (videoFiles.includes('block_puzzle_intro_scene_40s.mp4')) {
+        selectedMedia = 'block_puzzle_intro_scene_40s.mp4';
+      } else {
+        for (const v of shuffledVideos) {
+          for (const c of shuffledCaptions) {
+            if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
+              selectedMedia = v;
+              selectedCaption = c;
+              isVideo = true;
+              break;
+            }
           }
+          if (selectedMedia) break;
         }
-        if (selectedMedia) break;
       }
     }
 
