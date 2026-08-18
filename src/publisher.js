@@ -144,28 +144,37 @@ async function runPublisher() {
     let selectedCaption = null;
     let isVideo = true;
 
-    // Shuffle videos to randomize selection
+    // Shuffle videos and captions
     const shuffledVideos = [...videoFiles].sort(() => Math.random() - 0.5);
     const shuffledCaptions = [...captions].sort(() => Math.random() - 0.5);
 
-    // Force 100% Videos / Reels selection ONLY
-    for (const v of shuffledVideos) {
-      for (const c of shuffledCaptions) {
-        if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
-          selectedMedia = v;
-          selectedCaption = c;
-          isVideo = true;
-          break;
-        }
+    // For Flappy Earn (game2), strictly alternate between Video 1 and Video 2
+    if (pageGame === 'game2') {
+      const lastVideo = pageState.last_flappy_video || 'flappy_intro_scene_40s_2.mp4';
+      const nextVideo = (lastVideo === 'flappy_intro_scene_40s.mp4') ? 'flappy_intro_scene_40s_2.mp4' : 'flappy_intro_scene_40s.mp4';
+      if (videoFiles.includes(nextVideo)) {
+        selectedMedia = nextVideo;
+      } else {
+        selectedMedia = videoFiles[0];
       }
-      if (selectedMedia) break;
+      pageState.last_flappy_video = selectedMedia;
+    } else {
+      // For Block Puzzle (game1), pick fresh video combo
+      for (const v of shuffledVideos) {
+        for (const c of shuffledCaptions) {
+          if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
+            selectedMedia = v;
+            selectedCaption = c;
+            isVideo = true;
+            break;
+          }
+        }
+        if (selectedMedia) break;
+      }
     }
 
-    // Fallback: ALWAYS pick a video clip (never post photos/screenshots)
-    if (!selectedMedia && shuffledVideos.length > 0) {
-      selectedMedia = shuffledVideos[Math.floor(Math.random() * shuffledVideos.length)];
+    if (!selectedCaption) {
       selectedCaption = shuffledCaptions[Math.floor(Math.random() * shuffledCaptions.length)];
-      isVideo = true;
     }
 
     if (!selectedMedia || !selectedCaption) {
