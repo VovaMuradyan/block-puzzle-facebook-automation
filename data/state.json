@@ -23610,7 +23610,51 @@
       "caption_id": "cap_106",
       "status": "FAILED",
       "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
+    },
+    {
+      "id": "post_1787060421941_463fr",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T13:40:21.941Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v2_13_9x16.mp4",
+      "caption_id": "cap_162",
+      "status": "FAILED",
+      "error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions."
+    },
+    {
+      "id": "post_1787060441600_723uz",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T13:40:41.600Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v1_10_9x16.mp4",
+      "caption_id": "cap_059",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787060458963_sv8ft",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-18T13:40:58.963Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v2_14_1x1.mp4",
+      "caption_id": "cap_081",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787060468803_g1s5c",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-18T13:41:08.803Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v2_12_1x1.mp4",
+      "caption_id": "cap_093",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game2"
+  "last_active_game": "game1"
 }
