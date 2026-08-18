@@ -159,22 +159,19 @@ async function runPublisher() {
       }
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // For Block Puzzle (game1), prioritize new 40s intro video
-      if (videoFiles.includes('block_puzzle_intro_scene_40s.mp4')) {
-        selectedMedia = 'block_puzzle_intro_scene_40s.mp4';
+      // For Block Puzzle (game1), strictly rotate between 40s intro videos (1, 2, 3)
+      const puzzle40sClips = ['block_puzzle_intro_scene_40s.mp4', 'block_puzzle_intro_scene_40s_2.mp4', 'block_puzzle_intro_scene_40s_3.mp4']
+        .filter(v => videoFiles.includes(v));
+      
+      if (puzzle40sClips.length > 0) {
+        const lastPuzzle = pageState.last_puzzle_video || puzzle40sClips[puzzle40sClips.length - 1];
+        const lastIdx = puzzle40sClips.indexOf(lastPuzzle);
+        const nextIdx = (lastIdx + 1) % puzzle40sClips.length;
+        selectedMedia = puzzle40sClips[nextIdx];
       } else {
-        for (const v of shuffledVideos) {
-          for (const c of shuffledCaptions) {
-            if (!hasUsedComboRecently(state, pageId, v, c.id, 7)) {
-              selectedMedia = v;
-              selectedCaption = c;
-              isVideo = true;
-              break;
-            }
-          }
-          if (selectedMedia) break;
-        }
+        selectedMedia = videoFiles[0];
       }
+      pageState.last_puzzle_video = selectedMedia;
     }
 
     if (!selectedCaption) {
