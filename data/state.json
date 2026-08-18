@@ -32,7 +32,7 @@
       "last_media_id": null,
       "last_caption_id": null,
       "last_success_at": null,
-      "last_error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions.",
+      "last_error": "Meta Error (368): We limit how often you can post, comment or do other things in a given amount of time in order to help protect the community from spam. You can try again later. Learn More",
       "total_posts": 0
     },
     "1046502328538724": {
@@ -21234,7 +21234,51 @@
       "caption_id": "cap_048",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1787048210837_metl2",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T10:16:50.837Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v1_10_1x1.mp4",
+      "caption_id": "cap_117",
+      "status": "FAILED",
+      "error": "Meta Error (368): We limit how often you can post, comment or do other things in a given amount of time in order to help protect the community from spam. You can try again later. Learn More"
+    },
+    {
+      "id": "post_1787048231129_z4m54",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-18T10:17:11.129Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v3_39_9x16.mp4",
+      "caption_id": "cap_030",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787048242810_dnxva",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-18T10:17:22.810Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v3_24_1x1.mp4",
+      "caption_id": "cap_168",
+      "status": "FAILED",
+      "error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее"
+    },
+    {
+      "id": "post_1787048253358_nkjni",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-18T10:17:33.358Z",
+      "fb_post_id": null,
+      "media_filename": "clip_v3_35_9x16.mp4",
+      "caption_id": "cap_163",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game1"
+  "last_active_game": "game2"
 }
