@@ -166,15 +166,13 @@ async function runPublisher() {
       selectedMedia = flappyList[nextIdx];
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // Block Puzzle (game1): EXCLUSIVELY animal ad videos & speaking Dog/Cat promos
+      // Block Puzzle (game1): EXCLUSIVELY the 5 animal ad videos (Dog & Cat)
       const puzzleList = [
         'block_puzzle_ad_dog_2232.mp4',
         'block_puzzle_ad_dog_2229.mp4',
         'block_puzzle_ad_dog_2224.mp4',
         'block_puzzle_ad_cat_2223.mp4',
-        'block_puzzle_ad_dog_2223.mp4',
-        'block_puzzle_ad_create_2236.mp4',
-        'block_puzzle_ad_create_2235.mp4'
+        'block_puzzle_ad_dog_2223.mp4'
       ].filter(v => videoFiles.includes(v));
 
       const lastVideo = pageState.last_puzzle_video || puzzleList[puzzleList.length - 1];
