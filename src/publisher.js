@@ -148,15 +148,16 @@ async function runPublisher() {
     const shuffledVideos = [...videoFiles].sort(() => Math.random() - 0.5);
     const shuffledCaptions = [...captions].sort(() => Math.random() - 0.5);
 
-    // EXCLUSIVELY use the 5 standalone clips for Flappy Earn and 5 standalone clips for Block Puzzle
+    // EXCLUSIVELY use animal ad videos for BOTH games (Capybara, Raccoon, Parrot, Dog, Cat, Otter)
     if (pageGame === 'game2') {
-      // Flappy Earn (game2): 5 standalone videos
+      // Flappy Earn (game2): EXCLUSIVELY animal ad videos
       const flappyList = [
-        'flappy_intro_scene_40s.mp4',
-        'flappy_intro_scene_40s_2.mp4',
-        'flappy_cinematic_v3.mp4',
-        'flappy_epic_v4.mp4',
-        'flappy_dynamic_v5.mp4'
+        'flappy_ad_capybara_2308.mp4',
+        'flappy_ad_raccoon_2259.mp4',
+        'flappy_ad_parrot_2258.mp4',
+        'flappy_ad_cat_2254.mp4',
+        'flappy_ad_dog_2253.mp4',
+        'flappy_ad_otter_2310.mp4'
       ].filter(v => videoFiles.includes(v));
 
       const lastVideo = pageState.last_flappy_video || flappyList[flappyList.length - 1];
@@ -165,15 +166,15 @@ async function runPublisher() {
       selectedMedia = flappyList[nextIdx];
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // Block Puzzle (game1): EXCLUSIVELY the 7 viral speaking Dog/Cat and promo ad videos
+      // Block Puzzle (game1): EXCLUSIVELY animal ad videos & speaking Dog/Cat promos
       const puzzleList = [
-        'block_puzzle_ad_create_2236.mp4',
-        'block_puzzle_ad_create_2235.mp4',
         'block_puzzle_ad_dog_2232.mp4',
         'block_puzzle_ad_dog_2229.mp4',
         'block_puzzle_ad_dog_2224.mp4',
         'block_puzzle_ad_cat_2223.mp4',
-        'block_puzzle_ad_dog_2223.mp4'
+        'block_puzzle_ad_dog_2223.mp4',
+        'block_puzzle_ad_create_2236.mp4',
+        'block_puzzle_ad_create_2235.mp4'
       ].filter(v => videoFiles.includes(v));
 
       const lastVideo = pageState.last_puzzle_video || puzzleList[puzzleList.length - 1];
