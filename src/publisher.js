@@ -148,18 +148,36 @@ async function runPublisher() {
     const shuffledVideos = [...videoFiles].sort(() => Math.random() - 0.5);
     const shuffledCaptions = [...captions].sort(() => Math.random() - 0.5);
 
-    // EXCLUSIVELY use the 4 new 40-second videos created today (2 for Block Puzzle, 2 for Flappy Earn)
+    // EXCLUSIVELY use the 5 standalone clips for Flappy Earn and 5 standalone clips for Block Puzzle
     if (pageGame === 'game2') {
-      // Flappy Earn (game2): Strictly alternate between Video 1 and Video 2 created today
-      const lastVideo = pageState.last_flappy_video || 'flappy_intro_scene_40s_2.mp4';
-      const nextVideo = (lastVideo === 'flappy_intro_scene_40s.mp4') ? 'flappy_intro_scene_40s_2.mp4' : 'flappy_intro_scene_40s.mp4';
-      selectedMedia = nextVideo;
+      // Flappy Earn (game2): 5 standalone videos
+      const flappyList = [
+        'flappy_intro_scene_40s.mp4',
+        'flappy_intro_scene_40s_2.mp4',
+        'flappy_cinematic_v3.mp4',
+        'flappy_epic_v4.mp4',
+        'flappy_dynamic_v5.mp4'
+      ].filter(v => videoFiles.includes(v));
+
+      const lastVideo = pageState.last_flappy_video || flappyList[flappyList.length - 1];
+      const lastIdx = flappyList.indexOf(lastVideo);
+      const nextIdx = (lastIdx + 1) % flappyList.length;
+      selectedMedia = flappyList[nextIdx];
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // Block Puzzle (game1): Strictly alternate between Video 1 and Video 2 created today
-      const lastVideo = pageState.last_puzzle_video || 'block_puzzle_intro_scene_40s_2.mp4';
-      const nextVideo = (lastVideo === 'block_puzzle_intro_scene_40s.mp4') ? 'block_puzzle_intro_scene_40s_2.mp4' : 'block_puzzle_intro_scene_40s.mp4';
-      selectedMedia = nextVideo;
+      // Block Puzzle (game1): 5 standalone videos
+      const puzzleList = [
+        'block_puzzle_intro_scene_40s.mp4',
+        'block_puzzle_intro_scene_40s_2.mp4',
+        'block_puzzle_sceni_v3.mp4',
+        'block_puzzle_nextscene_v4.mp4',
+        'block_puzzle_lastblock_v5.mp4'
+      ].filter(v => videoFiles.includes(v));
+
+      const lastVideo = pageState.last_puzzle_video || puzzleList[puzzleList.length - 1];
+      const lastIdx = puzzleList.indexOf(lastVideo);
+      const nextIdx = (lastIdx + 1) % puzzleList.length;
+      selectedMedia = puzzleList[nextIdx];
       pageState.last_puzzle_video = selectedMedia;
     }
 
