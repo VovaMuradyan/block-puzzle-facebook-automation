@@ -38,7 +38,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): We limit how often you can post, comment or do other things in a given amount of time in order to help protect the community from spam. You can try again later. Learn More",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_intro_scene_40s.mp4"
+      "last_puzzle_video": "block_puzzle_intro_scene_40s_2.mp4"
     },
     "1046502328538724": {
       "page_id": "1046502328538724",
@@ -148,7 +148,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_intro_scene_40s.mp4"
+      "last_puzzle_video": "block_puzzle_intro_scene_40s_2.mp4"
     },
     "1015023978356570": {
       "page_id": "1015023978356570",
@@ -188,7 +188,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_intro_scene_40s.mp4"
+      "last_puzzle_video": "block_puzzle_intro_scene_40s_2.mp4"
     },
     "967869283082164": {
       "page_id": "967869283082164",
@@ -410,7 +410,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_intro_scene_40s.mp4"
+      "last_puzzle_video": "block_puzzle_intro_scene_40s_2.mp4"
     },
     "999052209960184": {
       "page_id": "999052209960184",
@@ -35324,7 +35324,51 @@
       "caption_id": "cap_178",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1787137118618_z39zy",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-19T10:58:38.618Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s_2.mp4",
+      "caption_id": "cap_177",
+      "status": "FAILED",
+      "error": "Meta Error (368): We limit how often you can post, comment or do other things in a given amount of time in order to help protect the community from spam. You can try again later. Learn More"
+    },
+    {
+      "id": "post_1787137133628_ssps5",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-19T10:58:53.628Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s_2.mp4",
+      "caption_id": "cap_122",
+      "status": "FAILED",
+      "error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее"
+    },
+    {
+      "id": "post_1787137149888_d7a3n",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-19T10:59:09.888Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s_2.mp4",
+      "caption_id": "cap_057",
+      "status": "FAILED",
+      "error": "Meta Error (368): Мы ограничиваем частоту, с которой можно размещать публикации, оставлять комментарии и выполнять другие действия, чтобы защитить наше сообщество от спама. Повторите попытку позже. Подробнее"
+    },
+    {
+      "id": "post_1787137163930_hw0ie",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-19T10:59:23.930Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_intro_scene_40s_2.mp4",
+      "caption_id": "cap_198",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game1"
+  "last_active_game": "game2"
 }
