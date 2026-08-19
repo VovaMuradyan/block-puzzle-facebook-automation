@@ -165,13 +165,20 @@ async function runPublisher() {
       selectedMedia = flappyList[nextIdx];
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // Block Puzzle (game1): 5 standalone videos
+      // Block Puzzle (game1): Standalone videos & Dog/Cat speaking ads
       const puzzleList = [
         'block_puzzle_intro_scene_40s.mp4',
         'block_puzzle_intro_scene_40s_2.mp4',
         'block_puzzle_sceni_v3.mp4',
         'block_puzzle_nextscene_v4.mp4',
-        'block_puzzle_lastblock_v5.mp4'
+        'block_puzzle_lastblock_v5.mp4',
+        'block_puzzle_ad_create_2236.mp4',
+        'block_puzzle_ad_create_2235.mp4',
+        'block_puzzle_ad_dog_2232.mp4',
+        'block_puzzle_ad_dog_2229.mp4',
+        'block_puzzle_ad_dog_2224.mp4',
+        'block_puzzle_ad_cat_2223.mp4',
+        'block_puzzle_ad_dog_2223.mp4'
       ].filter(v => videoFiles.includes(v));
 
       const lastVideo = pageState.last_puzzle_video || puzzleList[puzzleList.length - 1];
