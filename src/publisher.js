@@ -165,13 +165,8 @@ async function runPublisher() {
       selectedMedia = flappyList[nextIdx];
       pageState.last_flappy_video = selectedMedia;
     } else {
-      // Block Puzzle (game1): Standalone videos & Dog/Cat speaking ads
+      // Block Puzzle (game1): EXCLUSIVELY the 7 viral speaking Dog/Cat and promo ad videos
       const puzzleList = [
-        'block_puzzle_intro_scene_40s.mp4',
-        'block_puzzle_intro_scene_40s_2.mp4',
-        'block_puzzle_sceni_v3.mp4',
-        'block_puzzle_nextscene_v4.mp4',
-        'block_puzzle_lastblock_v5.mp4',
         'block_puzzle_ad_create_2236.mp4',
         'block_puzzle_ad_create_2235.mp4',
         'block_puzzle_ad_dog_2232.mp4',
