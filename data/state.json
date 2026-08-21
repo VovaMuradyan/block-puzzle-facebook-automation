@@ -38,7 +38,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1046502328538724": {
       "page_id": "1046502328538724",
@@ -148,7 +148,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1015023978356570": {
       "page_id": "1015023978356570",
@@ -188,7 +188,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "967869283082164": {
       "page_id": "967869283082164",
@@ -410,7 +410,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "999052209960184": {
       "page_id": "999052209960184",
@@ -69171,7 +69171,51 @@
       "caption_id": "flappy_cap_125",
       "status": "SUCCESS",
       "error": null
+    },
+    {
+      "id": "post_1787356232910_hgkzz",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-21T23:50:32.910Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_194",
+      "status": "FAILED",
+      "error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions."
+    },
+    {
+      "id": "post_1787356256914_pd9d7",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-08-21T23:50:56.914Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_181",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787356282212_licjw",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-08-21T23:51:22.212Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_069",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1787356294203_g0jmm",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-08-21T23:51:34.203Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_181",
+      "status": "FAILED",
+      "error": "Meta Error (368): For security reasons, your account has limited access to the site for a few days. If you have any questions, please contact our Help Center."
     }
   ],
-  "last_active_game": "game1"
+  "last_active_game": "game2"
 }
