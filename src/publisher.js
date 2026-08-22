@@ -57,23 +57,7 @@ async function runPublisher() {
   }
   const captions = JSON.parse(fs.readFileSync(captionsPath, 'utf8'));
 
-  // Load game-specific media
-  const gameMediaDir = path.join(__dirname, '..', 'media', currentGame);
-  const videosDir = path.join(gameMediaDir, 'videos');
-  const photosDir = path.join(gameMediaDir, 'images');
-
-  // Fallback to default media if game-specific folder empty
-  const actualVideosDir = fs.existsSync(videosDir) && fs.readdirSync(videosDir).length > 0 ? videosDir : path.join(__dirname, '..', 'media', 'videos');
-  const actualPhotosDir = fs.existsSync(photosDir) && fs.readdirSync(photosDir).length > 0 ? photosDir : path.join(__dirname, '..', 'media', 'images');
-
-  const videoFiles = fs.existsSync(actualVideosDir)
-    ? fs.readdirSync(actualVideosDir).filter(f => f.endsWith('.mp4') && fs.statSync(path.join(actualVideosDir, f)).size > 50000)
-    : [];
-  const photoFiles = fs.existsSync(actualPhotosDir)
-    ? fs.readdirSync(actualPhotosDir).filter(f => f.match(/\.(jpg|png|jpeg)$/i) && fs.statSync(path.join(actualPhotosDir, f)).size > 50000)
-    : [];
-
-  console.log(`[Publisher] Assets for ${gameName}: ${videoFiles.length} videos, ${photoFiles.length} photos, ${captions.length} captions.`);
+  // Top-level initialization complete. Media selection is handled per-page below.
 
   // Step 1: Auto-discover Facebook Pages from Meta API (Interleaved across accounts)
   let pages = [];
@@ -230,7 +214,7 @@ async function runPublisher() {
     }
   }
 
-  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}. Published ${postsPublishedThisRun} post(s) for ${gameName}.`);
+  console.log(`\n[Publisher] Execution completed at ${new Date().toISOString()}. Published ${postsPublishedThisRun} post(s) total across pages.`);
 }
 
 if (require.main === module) {
