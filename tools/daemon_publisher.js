@@ -1,4 +1,5 @@
 const runPublisher = require('../src/publisher');
+const uploadNextTikTokVideo = require('./upload_to_tiktok_browser');
 
 function getMsUntilNextInterval(intervalMinutes = 30) {
   const now = new Date();
@@ -15,13 +16,14 @@ function getMsUntilNextInterval(intervalMinutes = 30) {
 
 async function startDaemon() {
   console.log('===========================================================');
-  console.log('🚀 24/7 Anti-Ban Safe Daemon Facebook Publisher Started (30-Min Intervals)');
+  console.log('🚀 24/7 Multi-Platform Daemon Publisher Started (Facebook + TikTok)');
   console.log('===========================================================');
 
   // Trigger first immediate run
   try {
-    console.log('\n[Daemon] Executing initial immediate publication run...');
+    console.log('\n[Daemon] Executing initial publication run for Facebook & TikTok...');
     await runPublisher();
+    await uploadNextTikTokVideo();
   } catch (err) {
     console.error('[Daemon] Initial run error:', err.message);
   }
@@ -34,8 +36,9 @@ async function startDaemon() {
 
     setTimeout(async () => {
       try {
-        console.log(`\n[Daemon] Triggering scheduled 30-min run at ${new Date().toISOString()}...`);
+        console.log(`\n[Daemon] Triggering scheduled run at ${new Date().toISOString()}...`);
         await runPublisher();
+        await uploadNextTikTokVideo();
       } catch (err) {
         console.error('[Daemon] Scheduled run error:', err.message);
       } finally {
