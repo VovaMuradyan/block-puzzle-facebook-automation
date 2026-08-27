@@ -1,12 +1,20 @@
 /**
  * ElevenLabs Multi-Key Quota Rotation & Failover Engine
- * Automatically rotates across multiple ElevenLabs API keys to generate ultra-realistic human/animal AI voices with 0 downtime.
+ * Optimized for Free Tier ElevenLabs API keys (uses default free voice IDs: George, Jessica, Sarah, Bella)
  */
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
 const keysFilePath = path.join(__dirname, '..', 'data', 'elevenlabs_keys.json');
+
+// Free Tier Allowed Default ElevenLabs Voice IDs
+const FREE_TIER_VOICES = [
+  'JBFqnCBsd6RMkjVDRZzb', // George (Energetic)
+  'cgSgspJ2msm6clMCkdW9', // Jessica (Playful)
+  'N2l7h801s3EPuhvG1Bke', // Sarah (Upbeat)
+  'XB0fDUnXU5powxnDhCwa'  // Charlotte (Cute)
+];
 
 function getApiKeys() {
   if (fs.existsSync(keysFilePath)) {
@@ -15,63 +23,17 @@ function getApiKeys() {
       if (Array.isArray(keys) && keys.length > 0) return keys;
     } catch (e) {}
   }
-
-  const envKeys = (process.env.ELEVENLABS_API_KEYS || process.env.ELEVENLABS_API_KEY || '').split(',');
-  return envKeys.map(k => k.trim()).filter(k => k.length > 0);
+  return [];
 }
 
-// Default ElevenLabs Animal/Character Voice IDs
-const ELEVENLABS_VOICES = {
-  cute_animal: '21m00Tcm4TlvDq8ikWAM', // Rachel / Cute energetic
-  funny_pet: 'AZnzlk1XvdvUeBnXmlld',   // Domi / Playful
-  deep_chill: 'EXAVITQu4vr4xnSDxMaL'    // Bella / Relaxed Capybara
-};
-
-async function generateElevenLabsSpeech(text, voiceId = ELEVENLABS_VOICES.cute_animal, outputFileName = 'speech.mp3') {
-  const apiKeys = getApiKeys();
-  if (apiKeys.length === 0) {
-    console.error('❌ Error: No ElevenLabs API keys provided in data/elevenlabs_keys.json!');
-    return null;
-  }
-
-  console.log('===========================================================');
-  console.log(`🎙️ ELEVENLABS MULTI-KEY AI VOICE GENERATOR (${apiKeys.length} Keys Pool Active)`);
-  console.log('===========================================================');
-  console.log(`[Input Text]: "${text}"`);
-
-  const outputDir = path.join(__dirname, '..', 'media', 'audio');
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-  const outputPath = path.join(outputDir, outputFileName);
-
-  for (let i = 0; i < apiKeys.length; i++) {
-    const currentKey = apiKeys[i];
-    console.log(`[ElevenLabs Pool] Trying API Key ${i + 1}/${apiKeys.length} (${currentKey.substring(0, 8)}...)...`);
-
-    try {
-      const success = await callElevenLabsApi(text, voiceId, currentKey, outputPath);
-      if (success) {
-        console.log(`✅ Ultra-realistic speech generated using Key ${i + 1}! Output: ${outputPath}`);
-        return outputPath;
-      }
-    } catch (err) {
-      console.warn(`⚠️ Key ${i + 1} quota exceeded or failed: ${err.message}. Rotating to next API key...`);
-    }
-  }
-
-  console.error('❌ All ElevenLabs API keys exhausted or failed!');
-  return null;
-}
-
-function callElevenLabsApi(text, voiceId, apiKey, outputPath) {
+function callTextToSpeech(text, voiceId, apiKey, outputPath) {
   return new Promise((resolve, reject) => {
     const postData = JSON.stringify({
       text: text,
       model_id: 'eleven_multilingual_v2',
       voice_settings: {
         stability: 0.5,
-        similarity_boost: 0.8
+        similarity_boost: 0.75
       }
     });
 
@@ -89,8 +51,13 @@ function callElevenLabsApi(text, voiceId, apiKey, outputPath) {
     };
 
     const req = https.request(options, (res) => {
+      let responseBody = '';
       if (res.statusCode !== 200) {
-        return reject(new Error(`HTTP Status ${res.statusCode}`));
+        res.on('data', d => responseBody += d);
+        res.on('end', () => {
+          reject(new Error(`HTTP ${res.statusCode}: ${responseBody}`));
+        });
+        return;
       }
 
       const fileStream = fs.createWriteStream(outputPath);
@@ -102,14 +69,48 @@ function callElevenLabsApi(text, voiceId, apiKey, outputPath) {
       });
     });
 
-    req.on('error', (err) => reject(err));
+    req.on('error', reject);
     req.write(postData);
     req.end();
   });
 }
 
-if (require.main === module) {
-  generateElevenLabsSpeech("Capybara playing Flappy Earn! Tap to fly and beat my score!").catch(console.error);
+async function testElevenLabsSpeechPool() {
+  const keys = getApiKeys();
+  const sampleText = "Capybara playing Flappy Earn! Tap to fly and beat my high score!";
+  const outputDir = path.join(__dirname, '..', 'media', 'audio');
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  const outputPath = path.join(outputDir, 'test_elevenlabs_voice.mp3');
+  const targetVoice = FREE_TIER_VOICES[0]; // George / Jessica
+
+  console.log('===========================================================');
+  console.log(`🎙️ TESTING ELEVENLABS SPEECH SYNTHESIS (${keys.length} Keys Pool)`);
+  console.log('===========================================================');
+  console.log(`Text: "${sampleText}"`);
+  console.log(`Voice ID: ${targetVoice}`);
+
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    console.log(`\n[ElevenLabs Pool] Trying API Key ${i + 1}/${keys.length} (${key.substring(0, 10)}...)...`);
+    try {
+      await callTextToSpeech(sampleText, targetVoice, key, outputPath);
+      console.log(`🎉 SUCCESS! Ultra-realistic MP3 generated with Key ${i + 1}!`);
+      console.log(`Saved audio file: ${outputPath}`);
+      return outputPath;
+    } catch (err) {
+      console.error(`❌ Key ${i + 1} failed: ${err.message}`);
+    }
+  }
+
+  console.error('\n❌ All ElevenLabs API keys failed.');
 }
 
-module.exports = { generateElevenLabsSpeech, ELEVENLABS_VOICES };
+if (require.main === module) {
+  testElevenLabsSpeechPool().catch(console.error);
+}
+
+module.exports = { testElevenLabsSpeechPool, getApiKeys, FREE_TIER_VOICES };
