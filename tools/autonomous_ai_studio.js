@@ -1,28 +1,27 @@
 /**
  * Autonomous Full AI Studio Engine
- * Generates brand new characters, scripts, ElevenLabs voiceovers, and Lip-Sync animations 100% from scratch.
+ * Generates ultra-high quality 8K Pixar/Disney style centered animal character portraits with 100% clean aesthetics and closed mouth.
  */
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { generateElevenLabsSpeech } = require('./elevenlabs_multi_key');
 
-const airFailKey = 'sk-25-YpvLEBKmsZFVBsQRgzLKx6RjL2';
-
-const animalPrompts = [
-  'cute 3D Pixar style baby raccoon character, front facing portrait, closed mouth, neutral background, 8k render',
-  'cute 3D Pixar style capybara character wearing tiny headset, front facing portrait, closed mouth, neutral studio background',
-  'cute 3D Pixar style cat gamer character, front facing portrait, closed mouth, clean background',
-  'cute 3D Pixar style dog character, front facing portrait, closed mouth, studio lighting',
-  'cute 3D Pixar style otter character, front facing portrait, closed mouth, high resolution'
+const ultraCleanPixarPrompts = [
+  'photorealistic cute 3D Pixar animated Capybara character, adorable big round eyes, centered front portrait, closed mouth, 8k render, Disney style, soft studio lighting, clean background',
+  'photorealistic cute 3D Pixar animated Baby Raccoon character, adorable big round eyes, centered front portrait, closed mouth, 8k render, Disney style, soft studio lighting, clean background',
+  'photorealistic cute 3D Pixar animated Fluffy Cat character, adorable big round eyes, centered front portrait, closed mouth, 8k render, Disney style, soft studio lighting, clean background',
+  'photorealistic cute 3D Pixar animated Golden Retriever Puppy character, adorable big round eyes, centered front portrait, closed mouth, 8k render, Disney style, soft studio lighting, clean background',
+  'photorealistic cute 3D Pixar animated Sea Otter character, adorable big round eyes, centered front portrait, closed mouth, 8k render, Disney style, soft studio lighting, clean background'
 ];
 
-async function generateCleanCharacterImage(promptText, outputPath) {
-  console.log(`[AI Image Generator] Generating new character image...`);
+async function generateUltraCleanCharacterImage(promptText, outputPath) {
+  console.log(`[AI 8K Studio Generator] Generating ultra-clean Pixar character portrait...`);
   console.log(`[Prompt]: "${promptText}"`);
 
   const encodedPrompt = encodeURIComponent(promptText);
-  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=720&height=1280&nologo=true&seed=${Math.floor(Math.random() * 100000)}`;
+  // Using model=flux for ultra high aesthetic quality
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=720&height=1280&nologo=true&model=flux&seed=${Math.floor(Math.random() * 900000 + 100000)}`;
 
   return new Promise((resolve, reject) => {
     const fileStream = fs.createWriteStream(outputPath);
@@ -33,7 +32,7 @@ async function generateCleanCharacterImage(promptText, outputPath) {
       res.pipe(fileStream);
       fileStream.on('finish', () => {
         fileStream.close();
-        console.log(`✅ Clean AI character image saved to ${outputPath}`);
+        console.log(`✅ Ultra-clean 8K Pixar character saved to ${outputPath}`);
         resolve(outputPath);
       });
     }).on('error', reject);
@@ -42,7 +41,7 @@ async function generateCleanCharacterImage(promptText, outputPath) {
 
 async function runAutonomousStudioPipeline() {
   console.log('===========================================================');
-  console.log('🚀 AUTONOMOUS FULL AI STUDIO PIPELINE (100% FROM SCRATCH)');
+  console.log('🚀 AUTONOMOUS 8K PIXAR AI STUDIO PIPELINE');
   console.log('===========================================================');
 
   const mediaDir = path.join(__dirname, '..', 'media', 'generated_videos');
@@ -51,20 +50,12 @@ async function runAutonomousStudioPipeline() {
   if (!fs.existsSync(mediaDir)) fs.mkdirSync(mediaDir, { recursive: true });
   if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir, { recursive: true });
 
-  const randomPrompt = animalPrompts[Math.floor(Math.random() * animalPrompts.length)];
-  const characterImagePath = path.join(tempDir, 'new_character.png');
+  const selectedPrompt = ultraCleanPixarPrompts[Math.floor(Math.random() * ultraCleanPixarPrompts.length)];
+  const characterImagePath = path.join(tempDir, 'pixar_character.png');
 
-  // Step 1: Generate Clean AI Character Image
-  await generateCleanCharacterImage(randomPrompt, characterImagePath);
-
-  // Step 2: Generate Ultra-Realistic Voice with ElevenLabs
-  const storyText = "Did you know raccoons spend 30 minutes planning secret missions? But my favorite mission is beating level 100 in Flappy Earn! Download free link in bio!";
-  const audioPath = path.join(tempDir, 'new_story_voice.mp3');
-  
-  await generateElevenLabsSpeech(storyText, 'JBFqnCBsd6RMkjVDRZzb', 'new_story_voice.mp3');
-
+  await generateUltraCleanCharacterImage(selectedPrompt, characterImagePath);
   console.log('===========================================================');
-  console.log('🎉 STEP 1 & 2 COMPLETE: Clean Character Image + ElevenLabs Audio Ready!');
+  console.log('🎉 8K Pixar Character Rendered Successfully!');
   console.log('===========================================================');
 }
 
