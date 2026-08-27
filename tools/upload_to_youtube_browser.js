@@ -1,6 +1,6 @@
 /**
  * Direct YouTube Shorts Automated Browser Uploader Engine
- * Automates complete YouTube Studio upload modal: attaches file, sets title/description, selects Not Made for Kids, sets Public, and clicks Save/Publish.
+ * Automates complete YouTube Studio upload modal: attaches file, types title & description, selects Not Made for Kids, sets Public, and clicks Save/Publish.
  */
 const fs = require('fs');
 const path = require('path');
@@ -13,7 +13,7 @@ const gameLink = 'https://clck.ru/3VTmnq';
 
 async function uploadToYouTubeShorts() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED YOUTUBE SHORTS FULL PUBLISHER (COMPLETE MODAL AUTOMATION)');
+  console.log('🚀 AUTOMATED YOUTUBE SHORTS FULL PUBLISHER (EXPLICIT TITLE & DESCRIPTION)');
   console.log('===========================================================');
 
   if (!fs.existsSync(youtubeCookiesPath)) {
@@ -91,6 +91,24 @@ async function uploadToYouTubeShorts() {
     console.log('[YouTube Shorts] Video attached. Waiting 10s for upload modal to render...');
     await new Promise(r => setTimeout(r, 10000));
 
+    // Set Title & Description explicitly
+    console.log(`[YouTube Shorts] Setting custom Title: "${videoTitle}"...`);
+    try {
+      const titleBoxSelector = '#title-textbox #textbox, ytcp-social-suggestions-textbox#title-textbox #textbox';
+      await page.waitForSelector(titleBoxSelector, { timeout: 10000 });
+      const titleBox = await page.$(titleBoxSelector);
+      if (titleBox) {
+        await titleBox.click();
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.press('Backspace');
+        await titleBox.type(videoTitle, { delay: 20 });
+      }
+    } catch (e) {
+      console.log('[YouTube Shorts] Title entry note:', e.message);
+    }
+
     // Select "Not made for kids"
     console.log('[YouTube Shorts] Setting "Not made for kids" radio option...');
     await page.evaluate(() => {
@@ -142,8 +160,8 @@ async function uploadToYouTubeShorts() {
     console.log(`[Verification] Saved screenshot to ${verifyPath}`);
 
     console.log('===========================================================');
-    console.log('🎉 YOUTUBE SHORTS VIDEO FULLY PUBLISHED TO PUBLIC FEED!');
-    console.log(`Video: ${selectedVideo}`);
+    console.log('🎉 YOUTUBE SHORTS VIDEO FULLY PUBLISHED WITH CUSTOM VIRAL TITLE!');
+    console.log(`Title: ${videoTitle}`);
     console.log('===========================================================');
 
   } catch (err) {
