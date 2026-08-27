@@ -1,6 +1,6 @@
 /**
  * Direct YouTube Shorts Automated Browser Uploader Engine
- * Rotates dynamically through ALL 11 animal videos across both Block Puzzle & Flappy Earn
+ * Includes strict Anti-Ban Safe Rate Limiting (1 post every 6 hours max = 4 videos/day safe limit)
  */
 const fs = require('fs');
 const path = require('path');
@@ -30,6 +30,19 @@ const hashtags = {
 
 const gameLink = 'https://clck.ru/3VTmnq';
 
+function canPostToYouTube(minHoursInterval = 6) {
+  if (!fs.existsSync(socialStatePath)) return true;
+  try {
+    const state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8'));
+    if (!state.last_youtube_post_at) return true;
+
+    const diffHours = (Date.now() - new Date(state.last_youtube_post_at).getTime()) / (1000 * 60 * 60);
+    return diffHours >= minHoursInterval;
+  } catch (e) {
+    return true;
+  }
+}
+
 function getNextYouTubeVideo() {
   let state = { youtubeIndex: 0 };
   if (fs.existsSync(socialStatePath)) {
@@ -42,6 +55,7 @@ function getNextYouTubeVideo() {
   const videoItem = videoQueue[currentIndex % videoQueue.length];
 
   state.youtubeIndex = (currentIndex + 1) % videoQueue.length;
+  state.last_youtube_post_at = new Date().toISOString();
   fs.writeFileSync(socialStatePath, JSON.stringify(state, null, 2));
 
   return videoItem;
@@ -49,8 +63,16 @@ function getNextYouTubeVideo() {
 
 async function uploadToYouTubeShorts() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED YOUTUBE SHORTS DYNAMIC ROTATION PUBLISHER');
+  console.log('🚀 AUTOMATED YOUTUBE SHORTS SAFE PUBLISHER (SAFE INTERVAL: 1 POST / 6 HOURS)');
   console.log('===========================================================');
+
+  if (!canPostToYouTube(6)) {
+    let state = {};
+    try { state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8')); } catch (e) {}
+    const lastTime = state.last_youtube_post_at ? new Date(state.last_youtube_post_at).toLocaleTimeString() : 'Recently';
+    console.log(`[YouTube Anti-Ban] SKIPPED: Last posted at ${lastTime}. Must wait 6 hours between posts to prevent shadowban/rate-limit.`);
+    return;
+  }
 
   if (!fs.existsSync(youtubeCookiesPath)) {
     console.error('❌ Error: data/youtube_cookies.json not found!');
@@ -61,8 +83,7 @@ async function uploadToYouTubeShorts() {
   const videoPath = path.join(__dirname, '..', 'media', item.game, 'videos', item.file);
   const videoTitle = `${item.title} ${hashtags[item.hashtagKey]}`;
 
-  console.log(`[YouTube Shorts Item] Game: ${item.game.toUpperCase()} | Video: ${item.file}`);
-  console.log(`[YouTube Shorts Title]: "${videoTitle}"`);
+  console.log(`[YouTube Shorts Safe Queue] Selected Video: ${item.file} (${item.game.toUpperCase()})`);
 
   const rawCookies = JSON.parse(fs.readFileSync(youtubeCookiesPath, 'utf8'));
   const cookies = rawCookies.map(c => ({
@@ -182,7 +203,7 @@ async function uploadToYouTubeShorts() {
     }
 
     console.log('===========================================================');
-    console.log(`🎉 YOUTUBE SHORTS ROTATION SUCCESSFUL! Video (${item.file}) Published!`);
+    console.log(`🎉 YOUTUBE SHORTS SAFE POST SUCCESSFUL! Next post in 6 hours.`);
     console.log('===========================================================');
 
   } catch (err) {

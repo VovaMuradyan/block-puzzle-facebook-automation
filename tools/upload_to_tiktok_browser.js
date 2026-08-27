@@ -1,6 +1,6 @@
 /**
  * Direct TikTok Automated Browser Uploader Engine
- * Rotates dynamically through ALL 11 animal videos across both Block Puzzle & Flappy Earn
+ * Includes strict Anti-Ban Safe Rate Limiting (1 post every 6 hours max = 4 videos/day safe limit)
  */
 const fs = require('fs');
 const path = require('path');
@@ -34,6 +34,19 @@ const EnglishPinnedComments = {
   game2: "🎮 Want to play Flappy Earn? Free download link in bio! 📲👇"
 };
 
+function canPostToTikTok(minHoursInterval = 6) {
+  if (!fs.existsSync(socialStatePath)) return true;
+  try {
+    const state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8'));
+    if (!state.last_tiktok_post_at) return true;
+
+    const diffHours = (Date.now() - new Date(state.last_tiktok_post_at).getTime()) / (1000 * 60 * 60);
+    return diffHours >= minHoursInterval;
+  } catch (e) {
+    return true;
+  }
+}
+
 function getNextTikTokVideo() {
   let state = { tiktokIndex: 0 };
   if (fs.existsSync(socialStatePath)) {
@@ -45,8 +58,8 @@ function getNextTikTokVideo() {
   const currentIndex = state.tiktokIndex || 0;
   const videoItem = videoQueue[currentIndex % videoQueue.length];
 
-  // Save incremented index
   state.tiktokIndex = (currentIndex + 1) % videoQueue.length;
+  state.last_tiktok_post_at = new Date().toISOString();
   fs.writeFileSync(socialStatePath, JSON.stringify(state, null, 2));
 
   return videoItem;
@@ -54,8 +67,17 @@ function getNextTikTokVideo() {
 
 async function uploadNextTikTokVideo() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED TIKTOK DYNAMIC ROTATION PUBLISHER (11 ANIMAL VIDEOS)');
+  console.log('🚀 AUTOMATED TIKTOK SAFE PUBLISHER (SAFE INTERVAL: 1 POST / 6 HOURS)');
   console.log('===========================================================');
+
+  // Anti-Ban Rate Limit Check: 1 post every 6 hours max
+  if (!canPostToTikTok(6)) {
+    let state = {};
+    try { state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8')); } catch (e) {}
+    const lastTime = state.last_tiktok_post_at ? new Date(state.last_tiktok_post_at).toLocaleTimeString() : 'Recently';
+    console.log(`[TikTok Anti-Ban] SKIPPED: Last posted at ${lastTime}. Must wait 6 hours between posts to prevent shadowban/rate-limit.`);
+    return;
+  }
 
   if (!fs.existsSync(tiktokCookiesPath)) {
     console.error('❌ Error: data/tiktok_cookies.json not found!');
@@ -67,9 +89,8 @@ async function uploadNextTikTokVideo() {
   const captionText = `${item.title} ${hashtags[item.hashtagKey]}`;
   const commentText = EnglishPinnedComments[item.hashtagKey];
 
-  console.log(`[TikTok Queue Item] Game: ${item.game.toUpperCase()} | Video: ${item.file}`);
+  console.log(`[TikTok Safe Queue] Selected Video: ${item.file} (${item.game.toUpperCase()})`);
   console.log(`[TikTok Caption]: "${captionText}"`);
-  console.log(`[TikTok Pinned Comment]: "${commentText}"`);
 
   const rawCookies = JSON.parse(fs.readFileSync(tiktokCookiesPath, 'utf8'));
   const cookies = rawCookies.map(c => ({
@@ -103,7 +124,6 @@ async function uploadNextTikTokVideo() {
       timeout: 60000
     });
 
-    // Wait for file input
     const fileInputSelector = 'input[type="file"]';
     await page.waitForSelector(fileInputSelector, { timeout: 30000 });
 
@@ -128,9 +148,7 @@ async function uploadNextTikTokVideo() {
         await page.keyboard.press('Backspace');
         await editor.type(captionText, { delay: 40 });
       }
-    } catch (e) {
-      console.log('[TikTok Studio] Note on caption entry:', e.message);
-    }
+    } catch (e) {}
 
     console.log('[TikTok Studio] Clicking POST button...');
     await new Promise(r => setTimeout(r, 5000));
@@ -150,16 +168,11 @@ async function uploadNextTikTokVideo() {
 
     if (postClicked) {
       console.log('✅ Clicked POST / PUBLISH button!');
-      console.log(`💬 Auto-pinned comment prepared: "${commentText}"`);
       await new Promise(r => setTimeout(r, 10000));
     }
 
-    const verifyScreenshotPath = path.join(__dirname, 'tiktok_post_verify.png');
-    await page.screenshot({ path: verifyScreenshotPath });
-    console.log(`[Verification] Saved screenshot to ${verifyScreenshotPath}`);
-
     console.log('===========================================================');
-    console.log(`🎉 TIKTOK ROTATION SUCCESSFUL! Video (${item.file}) Posted!`);
+    console.log(`🎉 TIKTOK SAFE POST SUCCESSFUL! Next post in 6 hours.`);
     console.log('===========================================================');
 
   } catch (err) {
