@@ -1,13 +1,12 @@
 /**
  * Direct TikTok Automated Browser Uploader Engine
- * Uses Puppeteer + saved authenticated session cookies to upload videos to TikTok Studio
+ * Uses Puppeteer + saved authenticated session cookies to upload AND click Post on TikTok Studio
  */
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
 const tiktokCookiesPath = path.join(__dirname, '..', 'data', 'tiktok_cookies.json');
-const statePath = path.join(__dirname, '..', 'data', 'state.json');
 
 const blockPuzzleVideos = [
   'block_puzzle_ad_dog_2232.mp4',
@@ -33,7 +32,7 @@ const hashtags = {
 
 async function uploadNextTikTokVideo() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED TIKTOK STUDIO BROWSER PUBLISHER');
+  console.log('🚀 AUTOMATED TIKTOK STUDIO FULL PUBLISHER (UPLOAD + CLICK POST)');
   console.log('===========================================================');
 
   if (!fs.existsSync(tiktokCookiesPath)) {
@@ -51,14 +50,13 @@ async function uploadNextTikTokVideo() {
     httpOnly: c.httpOnly !== undefined ? c.httpOnly : false
   }));
 
-  // Rotate between Game 1 and Game 2
   const selectedVideo = 'flappy_ad_capybara_2308.mp4';
   const videoPath = path.join(__dirname, '..', 'media', 'game2', 'videos', selectedVideo);
-  const captionText = `Capybara playing Flappy Earn! 🦫 Tap to fly and hit the high score! ${hashtags.game2}`;
+  const captionText = `Capybara playing Flappy Earn! 🦫 Tap to fly! ${hashtags.game2}`;
 
   console.log(`[TikTok Studio] Target Video: ${selectedVideo}`);
   console.log(`[TikTok Studio] Target Caption: "${captionText}"`);
-  console.log('[TikTok Studio] Launching browser session with authenticated sessionid cookie...');
+  console.log('[TikTok Studio] Launching browser session...');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -84,21 +82,63 @@ async function uploadNextTikTokVideo() {
 
     console.log(`[TikTok Studio] Current URL: ${page.url()}`);
 
-    // Wait for file input element
+    // Wait for file input
     const fileInputSelector = 'input[type="file"]';
     await page.waitForSelector(fileInputSelector, { timeout: 30000 });
 
-    console.log('[TikTok Studio] Upload input element located! Attaching video file...');
+    console.log('[TikTok Studio] File input located! Attaching video file...');
     const fileInput = await page.$(fileInputSelector);
     await fileInput.uploadFile(videoPath);
 
-    console.log('[TikTok Studio] Video file attached. Waiting 12 seconds for processing...');
-    await new Promise(r => setTimeout(r, 12000));
+    console.log('[TikTok Studio] Video attached. Waiting 15s for video upload processing & preview...');
+    await new Promise(r => setTimeout(r, 15000));
 
-    console.log('===========================================================');
-    console.log('🎉 TIKTOK VIDEO UPLOADED AND PUBLISHED SUCCESSFULLY!');
-    console.log(`Video: ${selectedVideo}`);
-    console.log('===========================================================');
+    // Fill caption text into contenteditable or textarea
+    console.log('[TikTok Studio] Setting caption and hashtags...');
+    try {
+      const editorSelector = 'div[contenteditable="true"], textarea';
+      await page.waitForSelector(editorSelector, { timeout: 10000 });
+      const editor = await page.$(editorSelector);
+      if (editor) {
+        await editor.click();
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.press('Backspace');
+        await editor.type(captionText, { delay: 50 });
+      }
+    } catch (e) {
+      console.log('[TikTok Studio] Note on caption entry:', e.message);
+    }
+
+    console.log('[TikTok Studio] Searching for POST / PUBLISH button...');
+    await new Promise(r => setTimeout(r, 5000));
+
+    // Try clicking Post button
+    const postClicked = await page.evaluate(() => {
+      const buttons = Array.from(document.querySelectorAll('button'));
+      const postBtn = buttons.find(b => {
+        const txt = (b.textContent || '').trim().toLowerCase();
+        return txt === 'post' || txt === 'publish' || txt === 'опубликовать' || txt.includes('post') || txt.includes('опубликовать');
+      });
+      if (postBtn) {
+        postBtn.click();
+        return true;
+      }
+      return false;
+    });
+
+    if (postClicked) {
+      console.log('✅ Clicked POST / PUBLISH button!');
+      await new Promise(r => setTimeout(r, 10000));
+    } else {
+      console.log('⚠️ Could not automatically click post button, taking verification screenshot...');
+    }
+
+    const verifyScreenshotPath = path.join(__dirname, 'tiktok_post_verify.png');
+    await page.screenshot({ path: verifyScreenshotPath });
+    console.log(`[Verification] Saved screenshot to ${verifyScreenshotPath}`);
+
   } catch (err) {
     console.error('[TikTok Studio Error]', err.message);
   } finally {
