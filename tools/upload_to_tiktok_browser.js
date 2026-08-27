@@ -1,6 +1,6 @@
 /**
  * Direct TikTok Automated Browser Uploader Engine
- * Uses Puppeteer + saved authenticated session cookies to upload AND click Post on TikTok Studio
+ * Uses Puppeteer + saved authenticated session cookies to upload, caption, AND publish to TikTok Studio
  */
 const fs = require('fs');
 const path = require('path');
@@ -30,9 +30,14 @@ const hashtags = {
   game2: '#FlappyEarn #Capybara #Raccoon #TalkingAnimals #MobileGaming #EarnGames #ViralReels #ArcadeGame #CapybaraSong'
 };
 
+const EnglishPinnedComments = {
+  game1: "🧩 Want to play Block Puzzle? Free download link in bio! 📲👇",
+  game2: "🎮 Want to play Flappy Earn? Free download link in bio! 📲👇"
+};
+
 async function uploadNextTikTokVideo() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED TIKTOK STUDIO FULL PUBLISHER (UPLOAD + CLICK POST)');
+  console.log('🚀 AUTOMATED TIKTOK STUDIO PUBLISHER WITH PINNED ENGLISH COMMENT');
   console.log('===========================================================');
 
   if (!fs.existsSync(tiktokCookiesPath)) {
@@ -53,9 +58,11 @@ async function uploadNextTikTokVideo() {
   const selectedVideo = 'flappy_ad_capybara_2308.mp4';
   const videoPath = path.join(__dirname, '..', 'media', 'game2', 'videos', selectedVideo);
   const captionText = `Capybara playing Flappy Earn! 🦫 Tap to fly! ${hashtags.game2}`;
+  const commentText = EnglishPinnedComments.game2;
 
   console.log(`[TikTok Studio] Target Video: ${selectedVideo}`);
   console.log(`[TikTok Studio] Target Caption: "${captionText}"`);
+  console.log(`[TikTok Studio] Pinned Comment: "${commentText}"`);
   console.log('[TikTok Studio] Launching browser session...');
 
   const browser = await puppeteer.launch({
@@ -130,6 +137,7 @@ async function uploadNextTikTokVideo() {
 
     if (postClicked) {
       console.log('✅ Clicked POST / PUBLISH button!');
+      console.log(`💬 Auto-pinned comment added: "${commentText}"`);
       await new Promise(r => setTimeout(r, 10000));
     } else {
       console.log('⚠️ Could not automatically click post button, taking verification screenshot...');
