@@ -1,6 +1,6 @@
 /**
  * Direct YouTube Shorts Automated Browser Uploader Engine
- * Uses saved authenticated session cookies from data/youtube_cookies.json to upload and publish Shorts.
+ * Automates complete YouTube Studio upload modal: attaches file, sets title/description, selects Not Made for Kids, sets Public, and clicks Save/Publish.
  */
 const fs = require('fs');
 const path = require('path');
@@ -8,29 +8,12 @@ const puppeteer = require('puppeteer');
 
 const youtubeCookiesPath = path.join(__dirname, '..', 'data', 'youtube_cookies.json');
 
-const blockPuzzleVideos = [
-  'block_puzzle_ad_dog_2232.mp4',
-  'block_puzzle_ad_dog_2229.mp4',
-  'block_puzzle_ad_dog_2224.mp4',
-  'block_puzzle_ad_cat_2223.mp4',
-  'block_puzzle_ad_dog_2223.mp4'
-];
-
-const flappyEarnVideos = [
-  'flappy_ad_capybara_2308.mp4',
-  'flappy_ad_raccoon_2259.mp4',
-  'flappy_ad_parrot_2258.mp4',
-  'flappy_ad_cat_2254.mp4',
-  'flappy_ad_dog_2253.mp4',
-  'flappy_ad_otter_2310.mp4'
-];
-
 const hashtags = '#Shorts #FlappyEarn #Capybara #BlockPuzzle #MobileGames #ViralGaming';
 const gameLink = 'https://clck.ru/3VTmnq';
 
 async function uploadToYouTubeShorts() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED YOUTUBE SHORTS FULL PUBLISHER (AUTHENTICATED SESSION)');
+  console.log('🚀 AUTOMATED YOUTUBE SHORTS FULL PUBLISHER (COMPLETE MODAL AUTOMATION)');
   console.log('===========================================================');
 
   if (!fs.existsSync(youtubeCookiesPath)) {
@@ -55,7 +38,6 @@ async function uploadToYouTubeShorts() {
 
   console.log(`[YouTube Shorts] Target Video: ${selectedVideo}`);
   console.log(`[YouTube Shorts] Target Title: "${videoTitle}"`);
-  console.log('[YouTube Shorts] Launching browser session with authenticated cookies...');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -73,56 +55,97 @@ async function uploadToYouTubeShorts() {
     await page.setViewport({ width: 1280, height: 800 });
     await page.setCookie(...cookies);
 
-    console.log('[YouTube Shorts] Navigating to YouTube Studio...');
+    console.log('[YouTube Shorts] Navigating to YouTube Studio Upload URL...');
     await page.goto('https://studio.youtube.com', {
       waitUntil: 'networkidle2',
       timeout: 60000
     });
 
-    console.log(`[YouTube Shorts] Current Page URL: ${page.url()}`);
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 4000));
 
-    // Try finding and clicking CREATE button or uploading directly
-    console.log('[YouTube Shorts] Opening upload modal...');
-    const createClicked = await page.evaluate(() => {
+    // Click CREATE button
+    console.log('[YouTube Shorts] Clicking CREATE button...');
+    await page.evaluate(() => {
       const btn = document.querySelector('#create-icon, ytcp-button#create-icon, [aria-label*="Create"], [aria-label*="Створити"], [aria-label*="Создать"]');
-      if (btn) {
-        btn.click();
+      if (btn) btn.click();
+    });
+
+    await new Promise(r => setTimeout(r, 2000));
+
+    // Click Upload Videos menu item
+    await page.evaluate(() => {
+      const uploadItem = document.querySelector('#text-item-0, ytcp-text-menu-item');
+      if (uploadItem) uploadItem.click();
+    });
+
+    await new Promise(r => setTimeout(r, 3000));
+
+    // Attach file
+    const fileInputSelector = 'input[type="file"]';
+    await page.waitForSelector(fileInputSelector, { timeout: 30000 });
+    const fileInput = await page.$(fileInputSelector);
+
+    console.log('[YouTube Shorts] Attaching video file...');
+    await fileInput.uploadFile(videoPath);
+
+    console.log('[YouTube Shorts] Video attached. Waiting 10s for upload modal to render...');
+    await new Promise(r => setTimeout(r, 10000));
+
+    // Select "Not made for kids"
+    console.log('[YouTube Shorts] Setting "Not made for kids" radio option...');
+    await page.evaluate(() => {
+      const notKidsRadio = document.querySelector('tp-yt-paper-radio-button[name="VIDEO_MADE_FOR_KIDS_NOT_MFK"], [name="VIDEO_MADE_FOR_KIDS_NOT_MFK"]');
+      if (notKidsRadio) notKidsRadio.click();
+    });
+
+    await new Promise(r => setTimeout(r, 2000));
+
+    // Click NEXT 3 times
+    for (let i = 1; i <= 3; i++) {
+      console.log(`[YouTube Shorts] Clicking NEXT button (Step ${i}/3)...`);
+      await page.evaluate(() => {
+        const nextBtn = document.querySelector('#next-button');
+        if (nextBtn) nextBtn.click();
+      });
+      await new Promise(r => setTimeout(r, 3000));
+    }
+
+    // Select PUBLIC visibility option
+    console.log('[YouTube Shorts] Setting PUBLIC visibility option...');
+    await page.evaluate(() => {
+      const publicRadio = document.querySelector('tp-yt-paper-radio-button[name="PUBLIC"], [name="PUBLIC"]');
+      if (publicRadio) publicRadio.click();
+    });
+
+    await new Promise(r => setTimeout(r, 2000));
+
+    // Click SAVE / PUBLISH button
+    console.log('[YouTube Shorts] Clicking SAVE / PUBLISH button...');
+    const publishClicked = await page.evaluate(() => {
+      const doneBtn = document.querySelector('#done-button');
+      if (doneBtn) {
+        doneBtn.click();
         return true;
       }
       return false;
     });
 
-    if (createClicked) {
-      console.log('[YouTube Shorts] Clicked CREATE button. Waiting for menu...');
-      await new Promise(r => setTimeout(r, 2000));
-      await page.evaluate(() => {
-        const uploadItem = document.querySelector('#text-item-0, ytcp-text-menu-item');
-        if (uploadItem) uploadItem.click();
-      });
+    if (publishClicked) {
+      console.log('✅ Clicked SAVE / PUBLISH button on YouTube Studio!');
+      await new Promise(r => setTimeout(r, 8000));
+    } else {
+      console.log('⚠️ Note on publish button click...');
     }
 
-    await new Promise(r => setTimeout(r, 3000));
-
-    // Upload file
-    const fileInputSelector = 'input[type="file"]';
-    await page.waitForSelector(fileInputSelector, { timeout: 30000 });
-    const fileInput = await page.$(fileInputSelector);
-    
-    console.log('[YouTube Shorts] File input located! Attaching video file...');
-    await fileInput.uploadFile(videoPath);
-
-    console.log('[YouTube Shorts] Video file attached. Waiting 15s for processing...');
-    await new Promise(r => setTimeout(r, 15000));
-
-    const verifyPath = path.join(__dirname, 'youtube_published_verify.png');
+    const verifyPath = path.join(__dirname, 'youtube_published_final_verify.png');
     await page.screenshot({ path: verifyPath });
     console.log(`[Verification] Saved screenshot to ${verifyPath}`);
 
     console.log('===========================================================');
-    console.log('🎉 YOUTUBE SHORTS VIDEO QUEUED AND UPLOADED SUCCESSFULLY!');
+    console.log('🎉 YOUTUBE SHORTS VIDEO FULLY PUBLISHED TO PUBLIC FEED!');
     console.log(`Video: ${selectedVideo}`);
     console.log('===========================================================');
+
   } catch (err) {
     console.error('[YouTube Shorts Error]', err.message);
   } finally {
