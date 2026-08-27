@@ -1,0 +1,178 @@
+[
+  {
+    "name": "__Secure-1PAPISID",
+    "value": "6ShMCJ9bEPTAK1GN/ArsTluH6iVClEgKNL",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": false
+  },
+  {
+    "name": "__Secure-1PSID",
+    "value": "g.a000CAlh1riKo8sJ-008CpwIhxOfXSmGtkaJFPlMYfBSPhy9DuQ2ro_4In7aJvm1BJpcKdaSlQACgYKAZsSARUSFQHGX2MiG4LiWBt2usbWSUZgTI3tGxoVAUF8yKr3RSiBlCM2zpOQfvMSnx800076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-1PSIDCC",
+    "value": "AKEyXzV584NG5NkqMLFd7HFn9U32QbiiZsNnBsWW_59CszAsmpABj_10hUC5fxGK_ZzDKsFvtw",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-1PSIDTS",
+    "value": "sidts-CjQBXMw41UqBjOWCRLxmO0ADlAke3rqfB5qSc-TtmNSglcHkwLqb6EzU8jiNkjFXdw2Uczn5EAA",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-3PAPISID",
+    "value": "6ShMCJ9bEPTAK1GN/ArsTluH6iVClEgKNL",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": false
+  },
+  {
+    "name": "__Secure-3PSID",
+    "value": "g.a000CAlh1riKo8sJ-008CpwIhxOfXSmGtkaJFPlMYfBSPhy9DuQ2AHOSx4u4xeMjuazn8Bb9igACgYKAUsSARUSFQHGX2Mia7jCFIEkgH8c0bCBikVUPBoVAUF8yKo0sBe10nW2sMbwdraw26A-0076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-3PSIDCC",
+    "value": "AKEyXzWhsxffakXHbrc0-3gol5AQClHWNpm0gvM5Y5yQH7j2cVxZSeauFsgkVA0O26nOck2l7A",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-3PSIDTS",
+    "value": "sidts-CjQBXMw41UqBjOWCRLxmO0ADlAke3rqfB5qSc-TtmNSglcHkwLqb6EzU8jiNkjFXdw2Uczn5EAA",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-ROLLOUT_TOKEN",
+    "value": "CNPsuKH1hPGTShDBoLaQ---VAxjGmfGS48CWAw%3D%3D",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "__Secure-YNID",
+    "value": "21.YT=gJ2EpZV1uI8RkCo9IPTnLhFSUCp00w82hl2oSDD-YRZjy1xvMQvyFYpjR_3tuxDwChJw6DXSFcX4fke-_yYYaO-bFu5UHlytS2LedtHPCnOeua6ph5-9SaO-bhdky-L4ccgBRvO3m_F04jo-G747CgblwyYsHBX2hPwT9GPesq7Czcp-hrIgSCUPJAxyMRrsI2X4aNviucyFIf7yG-XQ4j6W-u5q8oNZmzgbTzMUAWsQ1M8HM8htlsbLy9UPNnEOqoBm0Kcft2p14MtxeZ7sCSewy80QUvzhi0N9PHdE_lfWQwQwATM8z6Qmpw0d3pVRBckVrg1R5-dJGXD3lKpAKw",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "APISID",
+    "value": "-fJjyZqXfmHaUvLj/ApOUpl5PVkIC65eDC",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": false,
+    "httpOnly": false
+  },
+  {
+    "name": "GPS",
+    "value": "1",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "HSID",
+    "value": "AcXdYxTLFD62FRhab",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": false
+  },
+  {
+    "name": "LOGIN_INFO",
+    "value": "AFmmF2swRgIhAO5Kc-kvr891L-mxJAZj0rUgNLO4yLm4l0-pG6_EyAggAiEAiBI2DB-x4yNfNj95AKGHOalecHKBzhcWs3hV5J8J-ro:QUQ3MjNmd0wxbHU0cnJkYmU3dktZbzhxck5kcFd5c0VUSUlPNXRJbXBGd2dtMHBsYkk3R1RMWURIbld2ckZqNGpyT1F6LUNWUW9xQW9JdE9Mb09WNU5abjFHMW5XeGIya2htaTVTYXoxdTVwSERELVNhb3M2cFlrWk1Cd3dOYndOSXA4Q3pNMzh0U25pVmpveVVYVUVuZlBnVGU5b1VjX0p3",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "PREF",
+    "value": "f6=40000000&tz=Asia.Yerevan&f7=100",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": false,
+    "httpOnly": false
+  },
+  {
+    "name": "SAPISID",
+    "value": "6ShMCJ9bEPTAK1GN/ArsTluH6iVClEgKNL",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": false
+  },
+  {
+    "name": "SID",
+    "value": "g.a000CAlh1riKo8sJ-008CpwIhxOfXSmGtkaJFPlMYfBSPhy9DuQ20mKBaGAMVKalPn2N9WLAmgACgYKARoSARUSFQHGX2MiixyMxDVERXrLV1G4oR2pFxoVAUF8yKonf8PIPf9RbN_RDqGzrXTm0076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": false,
+    "httpOnly": false
+  },
+  {
+    "name": "SIDCC",
+    "value": "AKEyXzUbX50amrTb7300dA3vTlRW9F1RkBHyKCf7o1dbwhqeFHC8ySEZO3Fsq0CLi_v_9O05",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": false,
+    "httpOnly": false
+  },
+  {
+    "name": "SSID",
+    "value": "AYgImw6_3M-uaP8kK",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "VISITOR_INFO1_LIVE",
+    "value": "reOorNy7Gz8",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "VISITOR_PRIVACY_METADATA",
+    "value": "CgJBTRIEGgAgaQ%3D%3D",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  },
+  {
+    "name": "YSC",
+    "value": "OlSDJ0Nt0F8",
+    "domain": ".youtube.com",
+    "path": "/",
+    "secure": true,
+    "httpOnly": true
+  }
+]
