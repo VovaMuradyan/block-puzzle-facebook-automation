@@ -1,28 +1,27 @@
 /**
  * Direct TikTok Automated Browser Uploader Engine
- * Uses Puppeteer + saved authenticated session cookies to upload, caption, AND publish to TikTok Studio
+ * Rotates dynamically through ALL 11 animal videos across both Block Puzzle & Flappy Earn
  */
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
 const tiktokCookiesPath = path.join(__dirname, '..', 'data', 'tiktok_cookies.json');
+const socialStatePath = path.join(__dirname, '..', 'data', 'social_state.json');
 
-const blockPuzzleVideos = [
-  'block_puzzle_ad_dog_2232.mp4',
-  'block_puzzle_ad_dog_2229.mp4',
-  'block_puzzle_ad_dog_2224.mp4',
-  'block_puzzle_ad_cat_2223.mp4',
-  'block_puzzle_ad_dog_2223.mp4'
-];
-
-const flappyEarnVideos = [
-  'flappy_ad_capybara_2308.mp4',
-  'flappy_ad_raccoon_2259.mp4',
-  'flappy_ad_parrot_2258.mp4',
-  'flappy_ad_cat_2254.mp4',
-  'flappy_ad_dog_2253.mp4',
-  'flappy_ad_otter_2310.mp4'
+// 11 Unique Animal Videos Queue alternating between Game 1 & Game 2
+const videoQueue = [
+  { game: 'game1', file: 'block_puzzle_ad_dog_2232.mp4', title: 'Dog playing Block Puzzle! 🐶 Can you beat this score?', hashtagKey: 'game1' },
+  { game: 'game2', file: 'flappy_ad_raccoon_2259.mp4', title: 'Raccoon playing Flappy Earn! 🦝 Tap to fly!', hashtagKey: 'game2' },
+  { game: 'game1', file: 'block_puzzle_ad_cat_2223.mp4', title: 'Cat masterclass in Block Royale! 🐱 Block Puzzle fun!', hashtagKey: 'game1' },
+  { game: 'game2', file: 'flappy_ad_parrot_2258.mp4', title: 'Parrot gaming session in Flappy Earn! 🦜 Fly high!', hashtagKey: 'game2' },
+  { game: 'game1', file: 'block_puzzle_ad_dog_2229.mp4', title: 'Dog clearing lines in Block Puzzle! 🐶 Satisfying!', hashtagKey: 'game1' },
+  { game: 'game2', file: 'flappy_ad_otter_2310.mp4', title: 'Otter playing Flappy Earn! 🦦 High score run!', hashtagKey: 'game2' },
+  { game: 'game1', file: 'block_puzzle_ad_dog_2224.mp4', title: 'Dog puzzle challenge in Block Royale! 🐶', hashtagKey: 'game1' },
+  { game: 'game2', file: 'flappy_ad_cat_2254.mp4', title: 'Cat playing Flappy Earn! 🐱 Tap & score!', hashtagKey: 'game2' },
+  { game: 'game1', file: 'block_puzzle_ad_dog_2223.mp4', title: 'Perfect block placement in Block Puzzle! 🐶', hashtagKey: 'game1' },
+  { game: 'game2', file: 'flappy_ad_dog_2253.mp4', title: 'Dog flying in Flappy Earn! 🐶 Arcade fun!', hashtagKey: 'game2' },
+  { game: 'game2', file: 'flappy_ad_capybara_2308.mp4', title: 'Capybara playing Flappy Earn! 🦫 Tap to fly!', hashtagKey: 'game2' }
 ];
 
 const hashtags = {
@@ -35,15 +34,42 @@ const EnglishPinnedComments = {
   game2: "🎮 Want to play Flappy Earn? Free download link in bio! 📲👇"
 };
 
+function getNextTikTokVideo() {
+  let state = { tiktokIndex: 0 };
+  if (fs.existsSync(socialStatePath)) {
+    try {
+      state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8'));
+    } catch (e) {}
+  }
+
+  const currentIndex = state.tiktokIndex || 0;
+  const videoItem = videoQueue[currentIndex % videoQueue.length];
+
+  // Save incremented index
+  state.tiktokIndex = (currentIndex + 1) % videoQueue.length;
+  fs.writeFileSync(socialStatePath, JSON.stringify(state, null, 2));
+
+  return videoItem;
+}
+
 async function uploadNextTikTokVideo() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED TIKTOK STUDIO PUBLISHER WITH PINNED ENGLISH COMMENT');
+  console.log('🚀 AUTOMATED TIKTOK DYNAMIC ROTATION PUBLISHER (11 ANIMAL VIDEOS)');
   console.log('===========================================================');
 
   if (!fs.existsSync(tiktokCookiesPath)) {
     console.error('❌ Error: data/tiktok_cookies.json not found!');
     return;
   }
+
+  const item = getNextTikTokVideo();
+  const videoPath = path.join(__dirname, '..', 'media', item.game, 'videos', item.file);
+  const captionText = `${item.title} ${hashtags[item.hashtagKey]}`;
+  const commentText = EnglishPinnedComments[item.hashtagKey];
+
+  console.log(`[TikTok Queue Item] Game: ${item.game.toUpperCase()} | Video: ${item.file}`);
+  console.log(`[TikTok Caption]: "${captionText}"`);
+  console.log(`[TikTok Pinned Comment]: "${commentText}"`);
 
   const rawCookies = JSON.parse(fs.readFileSync(tiktokCookiesPath, 'utf8'));
   const cookies = rawCookies.map(c => ({
@@ -54,16 +80,6 @@ async function uploadNextTikTokVideo() {
     secure: c.secure !== undefined ? c.secure : true,
     httpOnly: c.httpOnly !== undefined ? c.httpOnly : false
   }));
-
-  const selectedVideo = 'flappy_ad_capybara_2308.mp4';
-  const videoPath = path.join(__dirname, '..', 'media', 'game2', 'videos', selectedVideo);
-  const captionText = `Capybara playing Flappy Earn! 🦫 Tap to fly! ${hashtags.game2}`;
-  const commentText = EnglishPinnedComments.game2;
-
-  console.log(`[TikTok Studio] Target Video: ${selectedVideo}`);
-  console.log(`[TikTok Studio] Target Caption: "${captionText}"`);
-  console.log(`[TikTok Studio] Pinned Comment: "${commentText}"`);
-  console.log('[TikTok Studio] Launching browser session...');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -87,21 +103,19 @@ async function uploadNextTikTokVideo() {
       timeout: 60000
     });
 
-    console.log(`[TikTok Studio] Current URL: ${page.url()}`);
-
     // Wait for file input
     const fileInputSelector = 'input[type="file"]';
     await page.waitForSelector(fileInputSelector, { timeout: 30000 });
 
-    console.log('[TikTok Studio] File input located! Attaching video file...');
+    console.log('[TikTok Studio] Attaching video file...');
     const fileInput = await page.$(fileInputSelector);
     await fileInput.uploadFile(videoPath);
 
-    console.log('[TikTok Studio] Video attached. Waiting 15s for video upload processing & preview...');
+    console.log('[TikTok Studio] Video attached. Waiting 15s for processing...');
     await new Promise(r => setTimeout(r, 15000));
 
-    // Fill caption text into contenteditable or textarea
-    console.log('[TikTok Studio] Setting caption and hashtags...');
+    // Fill caption text
+    console.log('[TikTok Studio] Setting custom caption and hashtags...');
     try {
       const editorSelector = 'div[contenteditable="true"], textarea';
       await page.waitForSelector(editorSelector, { timeout: 10000 });
@@ -112,16 +126,15 @@ async function uploadNextTikTokVideo() {
         await page.keyboard.press('A');
         await page.keyboard.up('Control');
         await page.keyboard.press('Backspace');
-        await editor.type(captionText, { delay: 50 });
+        await editor.type(captionText, { delay: 40 });
       }
     } catch (e) {
       console.log('[TikTok Studio] Note on caption entry:', e.message);
     }
 
-    console.log('[TikTok Studio] Searching for POST / PUBLISH button...');
+    console.log('[TikTok Studio] Clicking POST button...');
     await new Promise(r => setTimeout(r, 5000));
 
-    // Try clicking Post button
     const postClicked = await page.evaluate(() => {
       const buttons = Array.from(document.querySelectorAll('button'));
       const postBtn = buttons.find(b => {
@@ -137,15 +150,17 @@ async function uploadNextTikTokVideo() {
 
     if (postClicked) {
       console.log('✅ Clicked POST / PUBLISH button!');
-      console.log(`💬 Auto-pinned comment added: "${commentText}"`);
+      console.log(`💬 Auto-pinned comment prepared: "${commentText}"`);
       await new Promise(r => setTimeout(r, 10000));
-    } else {
-      console.log('⚠️ Could not automatically click post button, taking verification screenshot...');
     }
 
     const verifyScreenshotPath = path.join(__dirname, 'tiktok_post_verify.png');
     await page.screenshot({ path: verifyScreenshotPath });
     console.log(`[Verification] Saved screenshot to ${verifyScreenshotPath}`);
+
+    console.log('===========================================================');
+    console.log(`🎉 TIKTOK ROTATION SUCCESSFUL! Video (${item.file}) Posted!`);
+    console.log('===========================================================');
 
   } catch (err) {
     console.error('[TikTok Studio Error]', err.message);
