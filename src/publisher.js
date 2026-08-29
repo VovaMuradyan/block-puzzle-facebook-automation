@@ -84,10 +84,10 @@ async function runPublisher() {
     const pageToken = page.access_token;
     const pageState = state.pages[pageId] || {};
 
-    // Rule 1: Strictly 1 post per page every 30 minutes (Anti-ban safe limit)
-    if (!canPostToPage(pageState, 30)) {
+    // Rule 1: Allow frequent posting (5 minutes between posts per page)
+    if (!canPostToPage(pageState, 5)) {
       const lastPostTime = pageState.last_post_at ? new Date(pageState.last_post_at).toLocaleTimeString() : 'Never';
-      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 30 minutes between posts.`);
+      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 5 minutes between posts.`);
       continue;
     }
 

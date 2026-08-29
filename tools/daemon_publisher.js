@@ -14,7 +14,7 @@ const postToPinterest = require('./pinterest_poster');
 const postToReddit = require('./reddit_poster');
 const runDiscordBroadcast = require('./discord_bot_promoter');
 
-function getMsUntilNextInterval(intervalMinutes = 30) {
+function getMsUntilNextInterval(intervalMinutes = 5) {
   const now = new Date();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
@@ -85,9 +85,9 @@ async function startDaemon() {
   // Trigger immediate run
   await executeAllPlatformPublishing();
 
-  // Schedule continuous loop every 30 minutes
+  // Schedule continuous loop every 5 minutes (High-Frequency Mode)
   const scheduleNext = () => {
-    const delayMs = getMsUntilNextInterval(30);
+    const delayMs = getMsUntilNextInterval(5);
     const nextTime = new Date(Date.now() + delayMs).toLocaleTimeString();
     console.log(`\n[Daemon] Next scheduled multi-platform run at ${nextTime} (in ${Math.round(delayMs / 1000 / 60)} minutes)...`);
 
