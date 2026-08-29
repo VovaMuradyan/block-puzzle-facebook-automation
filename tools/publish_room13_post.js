@@ -38,7 +38,7 @@ Important: this is only an expression of interest. No profit or revenue is guara
 Subscribe to follow the development of Room13.
 
 🎬 Watch full gameplay video on YouTube:
-https://youtu.be/zOwLtcDn7io`;
+https://youtu.be/pAMgsCMQ8Cw`;
 
 async function publishRoom13ToFacebook() {
   console.log('===========================================================');
@@ -76,7 +76,7 @@ async function publishRoom13ToFacebook() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: customCaption,
-            link: 'https://youtu.be/zOwLtcDn7io',
+            link: 'https://youtu.be/pAMgsCMQ8Cw',
             access_token: page.access_token
           })
         });
