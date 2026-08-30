@@ -1,14 +1,13 @@
 /**
- * 24/7 High-Volume 1:1 Evenly Alternating Master Daemon
+ * 24/7 High-Volume 1:1 Evenly Alternating Master Daemon (Day 2 Update)
  * In each run:
- * - Exactly 20 YouTube Room13 1-Click Redirect Posts (Click picture -> Open YouTube)
+ * - Exactly 20 YouTube Room13 Day 2 Posts (Click picture -> Open https://youtu.be/u6O5FnfPezY)
  * - Exactly 20 Game Video Posts (from the 11 original videos)
  * - Alternating 1-by-1 (Page 1: YouTube -> Page 2: Game -> Page 3: YouTube -> Page 4: Game...)
  */
 const fs = require('fs');
 const path = require('path');
-const { getAllPagesGrouped, publishVideoPost, sleep } = require('../src/facebook');
-const { publish1ClickYouTubeLinkCard } = require('./publish_room13_link_card');
+const { getAllPagesGrouped, publishVideoPost, publishPhotoPost, sleep } = require('../src/facebook');
 const uploadNextTikTokVideo = require('./upload_to_tiktok_browser');
 const uploadToYouTubeShorts = require('./upload_to_youtube_browser');
 
@@ -43,7 +42,8 @@ function saveState(state) {
   fs.writeFileSync(stateFilePath, JSON.stringify(state, null, 2));
 }
 
-const room13Caption = `🎬 Tap the image to watch full gameplay on YouTube! 👇
+const room13Day2Caption = `🎬 Tap the image to watch Day 2 gameplay on YouTube! 👇
+👉 https://youtu.be/u6O5FnfPezY
 
 🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
 
@@ -58,9 +58,10 @@ Important: this is only an expression of interest. No profit or revenue is guara
 
 Subscribe to follow the development of Room13.
 
-👉 https://youtu.be/pAMgsCMQ8Cw`;
+👉 https://youtu.be/u6O5FnfPezY`;
 
-const youtubeLink = 'https://www.youtube.com/watch?v=pAMgsCMQ8Cw';
+const youtubeLink = 'https://www.youtube.com/watch?v=u6O5FnfPezY';
+const photoPath = 'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\8670c2bf-bbad-4d7d-bf87-bb54a9e054f2\\.user_uploaded\\media_1788119261295.jpg';
 
 // 11 Original Game Videos Pool
 const gameVideos = [
@@ -79,7 +80,8 @@ const gameVideos = [
 
 async function execute20x20AlternatingRun() {
   console.log('===========================================================');
-  console.log('🚀 EXECUTING HIGH-VOLUME 1:1 ALTERNATING RUN (20 YOUTUBE + 20 GAMES)');
+  console.log('🚀 EXECUTING 20x20 ALTERNATING RUN (20 DAY 2 YOUTUBE + 20 GAMES)');
+  console.log('Link: https://youtu.be/u6O5FnfPezY');
   console.log('===========================================================');
 
   const rawTokens = (process.env.META_USER_ACCESS_TOKEN || process.env.META_USER_ACCESS_TOKENS || '').split(',');
@@ -99,32 +101,35 @@ async function execute20x20AlternatingRun() {
 
   for (let i = 0; i < pages.length && (ytCount < 20 || gameCount < 20); i++) {
     const page = pages[i];
-    // 1-to-1 Alternation: Even index = YouTube, Odd index = Game Video
     const isYouTubeSlot = (i % 2 === 0);
 
     if (isYouTubeSlot && ytCount < 20) {
-      // 1-Click YouTube Redirect Card
-      console.log(`\n[YT #${ytCount + 1}/20] Publishing 1-Click YouTube Card to: ${page.name}...`);
+      console.log(`\n[YT #${ytCount + 1}/20] Publishing Day 2 YouTube Post to: ${page.name}...`);
       try {
-        const res = await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message: room13Caption,
-            link: youtubeLink,
-            access_token: page.access_token
-          })
-        });
-        const data = await res.json();
-        if (data.error) throw new Error(data.error.message);
-        console.log(`✅ [YouTube Card Success] on ${page.name}! ID: ${data.id}`);
+        let postId;
+        if (fs.existsSync(photoPath)) {
+          postId = await publishPhotoPost(page.id, page.access_token, photoPath, room13Day2Caption);
+        } else {
+          const res = await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: room13Day2Caption,
+              link: youtubeLink,
+              access_token: page.access_token
+            })
+          });
+          const data = await res.json();
+          if (data.error) throw new Error(data.error.message);
+          postId = data.id;
+        }
+        console.log(`✅ [YouTube Day 2 Success] on ${page.name}! ID: ${postId}`);
         ytCount++;
         state.totalYoutubePosts++;
       } catch (err) {
-        console.error(`❌ [YouTube Card Failed] on ${page.name}: ${err.message}`);
+        console.error(`❌ [YouTube Day 2 Failed] on ${page.name}: ${err.message}`);
       }
     } else if (!isYouTubeSlot && gameCount < 20) {
-      // Game Video Post
       const videoItem = gameVideos[gameCount % gameVideos.length];
       const videoPath = path.join(__dirname, '..', 'media', videoItem.game, 'videos', videoItem.file);
       console.log(`\n[GAME #${gameCount + 1}/20] Publishing Game Video (${videoItem.file}) to: ${page.name}...`);
@@ -141,7 +146,7 @@ async function execute20x20AlternatingRun() {
       }
     }
 
-    await sleep(5000); // 5s smooth stagger
+    await sleep(5000);
   }
 
   // Also trigger TikTok & YouTube Shorts
@@ -160,8 +165,8 @@ async function execute20x20AlternatingRun() {
 
 async function startMasterEqualDaemon(intervalMinutes = 5) {
   console.log('===========================================================');
-  console.log('🚀 24/7 20x20 EQUAL ALTERNATING MASTER DAEMON ACTIVATED');
-  console.log('Pattern: 1 YouTube -> 1 Game -> 1 YouTube -> 1 Game (20 each per run!)');
+  console.log('🚀 24/7 20x20 EQUAL ALTERNATING MASTER DAEMON ACTIVATED (DAY 2)');
+  console.log('Link: https://youtu.be/u6O5FnfPezY');
   console.log('===========================================================');
 
   const executeLoop = async () => {

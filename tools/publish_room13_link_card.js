@@ -1,10 +1,10 @@
 /**
- * 1-Click YouTube Redirect Card Publisher for Facebook Pages
- * Publishes native Link Cards where clicking ANYWHERE on the image instantly opens the YouTube video!
+ * 1-Click YouTube Redirect Card Publisher for Facebook Pages (Day 2 Update)
+ * Publishes native Link Cards with the Day 2 Thumbnail and YouTube link https://youtu.be/u6O5FnfPezY
  */
 const fs = require('fs');
 const path = require('path');
-const { getAllPagesGrouped, sleep } = require('../src/facebook');
+const { getAllPagesGrouped, publishPhotoPost, sleep } = require('../src/facebook');
 
 // Load environment variables
 const envPath = path.join(__dirname, '..', '.env');
@@ -24,7 +24,8 @@ if (fs.existsSync(envPath)) {
   }
 }
 
-const customCaption = `🎬 Tap the image to watch full gameplay on YouTube! 👇
+const customCaption = `🎬 Tap the image to watch Day 2 gameplay on YouTube! 👇
+👉 https://youtu.be/u6O5FnfPezY
 
 🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
 
@@ -39,14 +40,15 @@ Important: this is only an expression of interest. No profit or revenue is guara
 
 Subscribe to follow the development of Room13.
 
-👉 https://youtu.be/pAMgsCMQ8Cw`;
+👉 https://youtu.be/u6O5FnfPezY`;
 
-const youtubeLink = 'https://www.youtube.com/watch?v=pAMgsCMQ8Cw';
+const youtubeLink = 'https://www.youtube.com/watch?v=u6O5FnfPezY';
+const photoPath = 'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\8670c2bf-bbad-4d7d-bf87-bb54a9e054f2\\.user_uploaded\\media_1788119261295.jpg';
 
 async function publish1ClickYouTubeLinkCard() {
   console.log('===========================================================');
-  console.log('🔗 PUBLISHING 1-CLICK YOUTUBE REDIRECT CARDS TO FACEBOOK');
-  console.log('(Clicking anywhere on the picture opens YouTube immediately!)');
+  console.log('🔗 PUBLISHING DAY 2 1-CLICK YOUTUBE CARD TO FACEBOOK');
+  console.log('Link: https://youtu.be/u6O5FnfPezY');
   console.log('===========================================================');
 
   const rawTokens = (process.env.META_USER_ACCESS_TOKEN || process.env.META_USER_ACCESS_TOKENS || '').split(',');
@@ -65,23 +67,28 @@ async function publish1ClickYouTubeLinkCard() {
 
   for (let i = 0; i < pages.length; i++) {
     const page = pages[i];
-    console.log(`\n[${i + 1}/${pages.length}] Publishing 1-Click Card to: ${page.name} (ID: ${page.id})...`);
+    console.log(`\n[${i + 1}/${pages.length}] Publishing Day 2 Card to: ${page.name} (ID: ${page.id})...`);
 
     try {
-      const res = await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: customCaption,
-          link: youtubeLink,
-          access_token: page.access_token
-        })
-      });
+      let postId;
+      if (fs.existsSync(photoPath)) {
+        postId = await publishPhotoPost(page.id, page.access_token, photoPath, customCaption);
+      } else {
+        const res = await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: customCaption,
+            link: youtubeLink,
+            access_token: page.access_token
+          })
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error.message);
+        postId = data.id;
+      }
 
-      const data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-
-      console.log(`✅ SUCCESS on ${page.name}! Post ID: ${data.id}`);
+      console.log(`✅ SUCCESS on ${page.name}! Post ID: ${postId}`);
       successCount++;
     } catch (err) {
       console.error(`❌ FAILED on ${page.name}: ${err.message}`);
@@ -94,7 +101,7 @@ async function publish1ClickYouTubeLinkCard() {
   }
 
   console.log('===========================================================');
-  console.log(`🎉 1-CLICK LINK PUBLICATION FINISHED! Success: ${successCount}, Failed: ${failCount}`);
+  console.log(`🎉 DAY 2 PUBLICATION FINISHED! Success: ${successCount}, Failed: ${failCount}`);
   console.log('===========================================================');
 }
 
