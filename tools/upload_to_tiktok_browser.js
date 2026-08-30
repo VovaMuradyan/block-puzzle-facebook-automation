@@ -1,6 +1,6 @@
 /**
  * Direct TikTok Automated Browser Uploader Engine
- * Includes strict Anti-Ban Safe Rate Limiting (1 post every 6 hours max = 4 videos/day safe limit)
+ * Continuous On-Demand Upload Mode for All 11 Animal Videos
  */
 const fs = require('fs');
 const path = require('path');
@@ -29,24 +29,6 @@ const hashtags = {
   game2: '#FlappyEarn #Capybara #Raccoon #TalkingAnimals #MobileGaming #EarnGames #ViralReels #ArcadeGame #CapybaraSong'
 };
 
-const EnglishPinnedComments = {
-  game1: "🧩 Want to play Block Puzzle? Free download link in bio! 📲👇",
-  game2: "🎮 Want to play Flappy Earn? Free download link in bio! 📲👇"
-};
-
-function canPostToTikTok(minHoursInterval = 6) {
-  if (!fs.existsSync(socialStatePath)) return true;
-  try {
-    const state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8'));
-    if (!state.last_tiktok_post_at) return true;
-
-    const diffHours = (Date.now() - new Date(state.last_tiktok_post_at).getTime()) / (1000 * 60 * 60);
-    return diffHours >= minHoursInterval;
-  } catch (e) {
-    return true;
-  }
-}
-
 function getNextTikTokVideo() {
   let state = { tiktokIndex: 0 };
   if (fs.existsSync(socialStatePath)) {
@@ -67,29 +49,19 @@ function getNextTikTokVideo() {
 
 async function uploadNextTikTokVideo() {
   console.log('===========================================================');
-  console.log('🚀 AUTOMATED TIKTOK SAFE PUBLISHER (SAFE INTERVAL: 1 POST / 6 HOURS)');
+  console.log('🚀 AUTOMATED TIKTOK VIDEO PUBLISHER (ACTIVE RUN)');
   console.log('===========================================================');
-
-  // Anti-Ban Rate Limit Check: 1 post every 6 hours max
-  if (!canPostToTikTok(6)) {
-    let state = {};
-    try { state = JSON.parse(fs.readFileSync(socialStatePath, 'utf8')); } catch (e) {}
-    const lastTime = state.last_tiktok_post_at ? new Date(state.last_tiktok_post_at).toLocaleTimeString() : 'Recently';
-    console.log(`[TikTok Anti-Ban] SKIPPED: Last posted at ${lastTime}. Must wait 6 hours between posts to prevent shadowban/rate-limit.`);
-    return;
-  }
 
   if (!fs.existsSync(tiktokCookiesPath)) {
     console.error('❌ Error: data/tiktok_cookies.json not found!');
-    return;
+    return false;
   }
 
   const item = getNextTikTokVideo();
   const videoPath = path.join(__dirname, '..', 'media', item.game, 'videos', item.file);
   const captionText = `${item.title} ${hashtags[item.hashtagKey]}`;
-  const commentText = EnglishPinnedComments[item.hashtagKey];
 
-  console.log(`[TikTok Safe Queue] Selected Video: ${item.file} (${item.game.toUpperCase()})`);
+  console.log(`[TikTok Queue] Selected Video: ${item.file} (${item.game.toUpperCase()})`);
   console.log(`[TikTok Caption]: "${captionText}"`);
 
   const rawCookies = JSON.parse(fs.readFileSync(tiktokCookiesPath, 'utf8'));
@@ -146,7 +118,7 @@ async function uploadNextTikTokVideo() {
         await page.keyboard.press('A');
         await page.keyboard.up('Control');
         await page.keyboard.press('Backspace');
-        await editor.type(captionText, { delay: 40 });
+        await editor.type(captionText, { delay: 30 });
       }
     } catch (e) {}
 
@@ -172,11 +144,12 @@ async function uploadNextTikTokVideo() {
     }
 
     console.log('===========================================================');
-    console.log(`🎉 TIKTOK SAFE POST SUCCESSFUL! Next post in 6 hours.`);
+    console.log(`🎉 TIKTOK VIDEO POSTED SUCCESSFULLY!`);
     console.log('===========================================================');
-
+    return true;
   } catch (err) {
     console.error('[TikTok Studio Error]', err.message);
+    return false;
   } finally {
     await browser.close();
   }
