@@ -1,8 +1,8 @@
 /**
- * 24/7 High-Volume 1:1 Evenly Alternating Master Daemon (Day 2 1-Click Redirect Link Cards)
- * - YouTube Posts: 100% Clickable Link Card (Clicking image instantly opens YouTube https://youtu.be/u6O5FnfPezY)
- * - Game Posts: Original 11 3D Video Files
- * - Alternating 1:1 across ALL 51 Pages from ALL 3 Meta Accounts!
+ * 24/7 High-Volume 1:1 Evenly Alternating Master Daemon
+ * Active YouTube Video: https://youtu.be/4cQJAv9zW-k (Room13 New Video)
+ * Active Game Videos: 11 Original 3D Animal Videos
+ * Alternates 1:1 across ALL 51 Facebook Pages across all 3 Meta Accounts!
  */
 const fs = require('fs');
 const path = require('path');
@@ -41,7 +41,8 @@ function saveState(state) {
   fs.writeFileSync(stateFilePath, JSON.stringify(state, null, 2));
 }
 
-const room13Day2Caption = `🎬 Tap the image to watch Day 2 gameplay on YouTube! 👇
+const room13Caption = `🎬 Tap the image to watch new gameplay video on YouTube! 👇
+👉 https://youtu.be/4cQJAv9zW-k
 
 🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
 
@@ -56,15 +57,15 @@ Important: this is only an expression of interest. No profit or revenue is guara
 
 Subscribe to follow the development of Room13.
 
-👉 https://youtu.be/u6O5FnfPezY`;
+👉 https://youtu.be/4cQJAv9zW-k`;
 
-const youtubeLink = 'https://www.youtube.com/watch?v=u6O5FnfPezY';
+const youtubeLink = 'https://www.youtube.com/watch?v=4cQJAv9zW-k';
 
 // 11 Original Game Videos Pool
 const gameVideos = [
   { game: 'game1', file: 'block_puzzle_ad_dog_2232.mp4', cap: 'Can you beat this block puzzle high score? 🧩' },
   { game: 'game2', file: 'flappy_ad_raccoon_2259.mp4', cap: 'Raccoon flying challenge in Flappy Earn! 🦝' },
-  { game: 'game1', file: 'block_puzzle_ad_cat_2223.mp4', cap: 'Cat masterclass in Block Puzzle! 🐱' },
+  { game: 'game1', file: 'block_puzzle_ad_cat_2223.mp4', cap: 'Cat masterclass in Block Royale! 🐱' },
   { game: 'game2', file: 'flappy_ad_parrot_2258.mp4', cap: 'Parrot gaming session in Flappy Earn! 🦜' },
   { game: 'game1', file: 'block_puzzle_ad_dog_2229.mp4', cap: 'Satisfying block placement! 🐶' },
   { game: 'game2', file: 'flappy_ad_otter_2310.mp4', cap: 'Otter high score run! 🦦' },
@@ -77,8 +78,8 @@ const gameVideos = [
 
 async function execute20x20AlternatingRun() {
   console.log('===========================================================');
-  console.log('🚀 EXECUTING 1-CLICK YOUTUBE + GAME ALTERNATING RUN (51 PAGES ACROSS 3 ACCOUNTS)');
-  console.log('Link: https://youtu.be/u6O5FnfPezY (Clicking image opens YouTube immediately!)');
+  console.log('🚀 EXECUTING 1-CLICK YOUTUBE (4cQJAv9zW-k) + 11 ANIMAL VIDEOS');
+  console.log('Link: https://youtu.be/4cQJAv9zW-k');
   console.log('===========================================================');
 
   const rawTokens = (process.env.META_USER_ACCESS_TOKEN || process.env.META_USER_ACCESS_TOKENS || '').split(',');
@@ -101,13 +102,13 @@ async function execute20x20AlternatingRun() {
     const isYouTubeSlot = (i % 2 === 0);
 
     if (isYouTubeSlot && ytCount < 20) {
-      console.log(`\n[YT #${ytCount + 1}/20] Publishing 1-Click YouTube Link Card to: ${page.name}...`);
+      console.log(`\n[YT #${ytCount + 1}/20] Publishing 1-Click YouTube Card (4cQJAv9zW-k) to: ${page.name}...`);
       try {
         const res = await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            message: room13Day2Caption,
+            message: room13Caption,
             link: youtubeLink,
             access_token: page.access_token
           })
@@ -123,7 +124,7 @@ async function execute20x20AlternatingRun() {
     } else if (!isYouTubeSlot && gameCount < 20) {
       const videoItem = gameVideos[gameCount % gameVideos.length];
       const videoPath = path.join(__dirname, '..', 'media', videoItem.game, 'videos', videoItem.file);
-      console.log(`\n[GAME #${gameCount + 1}/20] Publishing Game Video (${videoItem.file}) to: ${page.name}...`);
+      console.log(`\n[GAME #${gameCount + 1}/20] Publishing Animal Game Video (${videoItem.file}) to: ${page.name}...`);
 
       try {
         if (fs.existsSync(videoPath)) {
@@ -156,7 +157,8 @@ async function execute20x20AlternatingRun() {
 
 async function startMasterEqualDaemon(intervalMinutes = 5) {
   console.log('===========================================================');
-  console.log('🚀 24/7 20x20 EQUAL ALTERNATING MASTER DAEMON ACTIVATED (DAY 2 1-CLICK)');
+  console.log('🚀 24/7 20x20 EQUAL ALTERNATING MASTER DAEMON ACTIVATED');
+  console.log('New Video: https://youtu.be/4cQJAv9zW-k + 11 Animal Videos');
   console.log('===========================================================');
 
   const executeLoop = async () => {
