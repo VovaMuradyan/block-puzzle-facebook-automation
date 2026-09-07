@@ -122,12 +122,12 @@ Subscribe to follow the development of Room13.
       continue;
     }
 
-    // Rule 1b: Daily cap per page (max 30 posts/day per page, then skip)
+    // Rule 1b: Daily cap per page (max 48 posts/day per page, then skip)
     const dailyHistory = state.history.filter(e =>
       e.page_id === pageId && e.status === 'SUCCESS' &&
       new Date(e.timestamp).getTime() > Date.now() - 24 * 60 * 60 * 1000
     );
-    if (dailyHistory.length >= 30) {
+    if (dailyHistory.length >= 48) {
       console.log(`[Publisher] SKIPPED ${pageName}: Already posted ${dailyHistory.length} times in last 24h (daily cap reached).`);
       continue;
     }
