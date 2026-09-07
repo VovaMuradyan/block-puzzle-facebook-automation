@@ -157,9 +157,9 @@ Subscribe to follow the development of Room13.
       continue;
     }
 
-    // Anti-ban Stagger Delay between consecutive page posts (15-35 seconds pause)
+    // Anti-ban Stagger Delay between consecutive page posts (8-15 seconds pause)
     if (postsPublishedThisRun > 0) {
-      const staggerSeconds = Math.floor(Math.random() * 21) + 15;
+      const staggerSeconds = Math.floor(Math.random() * 8) + 8;
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
     }

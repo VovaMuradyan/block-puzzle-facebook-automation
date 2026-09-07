@@ -1,9 +1,7 @@
 name: Facebook Pages Automation Publisher
 
 on:
-  schedule:
-    - cron: '5,25,45 * * * *' # Every 20 min, offset from hour to spread load
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  workflow_dispatch: # Triggered every 30 min by external cron service (24/7, no PC needed)
 
 concurrency:
   group: facebook-publisher
