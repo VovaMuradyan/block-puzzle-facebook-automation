@@ -2,12 +2,12 @@ name: Facebook Pages Automation Publisher
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes
+    - cron: '5,25,45 * * * *' # Every 20 min, offset from hour to spread load
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 concurrency:
   group: facebook-publisher
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write

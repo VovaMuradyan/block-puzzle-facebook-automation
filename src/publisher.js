@@ -84,10 +84,20 @@ async function runPublisher() {
     const pageToken = page.access_token;
     const pageState = state.pages[pageId] || {};
 
-    // Rule 1: Allow frequent posting (5 minutes between posts per page)
-    if (!canPostToPage(pageState, 5)) {
+    // Rule 1: Allow frequent posting (10 minutes between posts per page)
+    if (!canPostToPage(pageState, 10)) {
       const lastPostTime = pageState.last_post_at ? new Date(pageState.last_post_at).toLocaleTimeString() : 'Never';
-      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 5 minutes between posts.`);
+      console.log(`[Publisher] SKIPPED ${pageName}: Last posted at ${lastPostTime}. Must wait 10 minutes between posts.`);
+      continue;
+    }
+
+    // Rule 1b: Daily cap per page (max 30 posts/day per page, then skip)
+    const dailyHistory = state.history.filter(e =>
+      e.page_id === pageId && e.status === 'SUCCESS' &&
+      new Date(e.timestamp).getTime() > Date.now() - 24 * 60 * 60 * 1000
+    );
+    if (dailyHistory.length >= 30) {
+      console.log(`[Publisher] SKIPPED ${pageName}: Already posted ${dailyHistory.length} times in last 24h (daily cap reached).`);
       continue;
     }
 
@@ -116,9 +126,9 @@ async function runPublisher() {
       continue;
     }
 
-    // Anti-ban Stagger Delay between consecutive page posts (5-10 seconds pause)
+    // Anti-ban Stagger Delay between consecutive page posts (15-35 seconds pause)
     if (postsPublishedThisRun > 0) {
-      const staggerSeconds = Math.floor(Math.random() * 6) + 5;
+      const staggerSeconds = Math.floor(Math.random() * 21) + 15;
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
     }

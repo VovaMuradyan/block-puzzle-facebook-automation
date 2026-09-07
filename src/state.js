@@ -90,6 +90,10 @@ function logPublishEvent(state, pageId, pageName, fbPostId, mediaFilename, capti
     error: errorMsg || null
   });
 
+  // Trim history to last 30 days to keep state.json small
+  const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  state.history = state.history.filter(e => new Date(e.timestamp).getTime() > cutoff);
+
   saveState(state);
 }
 
