@@ -44,6 +44,37 @@ async function runPublisher() {
   const gameName = (currentGame === 'game1') ? 'Block Puzzle: Blast & Drop' : 'Flappy Earn';
   console.log(`[Multi-Game] Active Game for this 30-min run: [${currentGame.toUpperCase()}] (${gameName})`);
 
+  // Room13 rotation: every N-th run publishes the latest Room13 devlog post instead of game videos.
+  const ROOM13_EVERY_RUNS = 4; // 1 in every 4 GitHub Actions runs = ~1 Room13 post every 80 min
+  state.room13RunCounter = (state.room13RunCounter || 0) + 1;
+  const isRoom13Run = (state.room13RunCounter % ROOM13_EVERY_RUNS === 0);
+  saveState(state);
+
+  // Latest Room13 devlog (Day 4) post config
+  const room13Caption = `🎬 WATCH THE LATEST ROOM13 DEVLOG ON YOUTUBE! 👇
+👉 https://youtu.be/eNjMIOMpRoU
+
+🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
+
+In this video I’m showing the latest gameplay and development progress — camera, movement, lighting, and the growing atmosphere of the Room13 hotel.
+
+The game is still in development, so you may see work-in-progress features and improvements.
+
+Want to support Room13 or discuss possible investment / revenue-share participation?
+You can find the interest form link in my channel profile or in the pinned comment.
+
+Important: this is only an expression of interest. No profit or revenue is guaranteed. Any participation requires discussion and a written agreement.
+
+Subscribe to follow the development of Room13.
+
+👉 https://youtu.be/eNjMIOMpRoU`;
+  const room13Photo = path.join(__dirname, '..', 'media', 'room13', 'room13_day4_thumbnail.png');
+  const room13Exists = fs.existsSync(room13Photo);
+
+  if (isRoom13Run && room13Exists) {
+    console.log(`🎮 [Room13] This is a ROOM13 devlog run (run #${state.room13RunCounter}). Publishing Room13 post with latest video: https://youtu.be/eNjMIOMpRoU`);
+  }
+
   // Load game-specific captions
   const captionsFile = (currentGame === 'game1') ? 'game1_captions.json' : 'game2_captions.json';
   let captionsPath = path.join(__dirname, '..', 'data', captionsFile);
@@ -131,6 +162,35 @@ async function runPublisher() {
       const staggerSeconds = Math.floor(Math.random() * 21) + 15;
       console.log(`[Anti-Ban Stagger] Pausing for ${staggerSeconds} seconds before posting to next page (${pageName})...`);
       await sleep(staggerSeconds * 1000);
+    }
+
+    // ROOM13 SLOT: If this is a Room13 run, publish the Room13 devlog photo post instead of a game video.
+    if (isRoom13Run && room13Exists) {
+      console.log(`\n--- [Room13] Publishing latest devlog post to: ${pageName} (${pageId}) ---`);
+      try {
+        const fbPostId = await publishPhotoPost(pageId, pageToken, room13Photo, room13Caption);
+        console.log(`\n========================================`);
+        console.log(`${new Date().toISOString()}`);
+        console.log(`Game: Room13 Devlog`);
+        console.log(`Page: ${pageName}`);
+        console.log(`POSTED (Room13)`);
+        console.log(`YouTube: https://youtu.be/eNjMIOMpRoU`);
+        console.log(`Facebook ID: ${fbPostId}`);
+        console.log(`========================================\n`);
+
+        logPublishEvent(state, pageId, pageName, fbPostId, 'room13_day4_thumbnail.png', 'room13_day4', 'SUCCESS', null, 'room13');
+        saveState(state);
+        postsPublishedThisRun++;
+      } catch (err) {
+        console.error(`\n========================================`);
+        console.error(`FAILED (Room13)`);
+        console.error(`Page: ${pageName}`);
+        console.error(`Reason: ${err.message}`);
+        console.error(`========================================\n`);
+        logPublishEvent(state, pageId, pageName, null, 'room13_day4_thumbnail.png', 'room13_day4', 'FAILED', err.message, 'room13');
+        saveState(state);
+      }
+      continue;
     }
 
     // Pick media file and caption not recently used

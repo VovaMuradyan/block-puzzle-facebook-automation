@@ -40,7 +40,8 @@ function loadHybridState() {
     initialRoom13RunsDone: 0,
     gameVideosCountSinceLastRoom13: 0,
     totalRoom13Published: 0,
-    totalGameVideosPublished: 0
+    totalGameVideosPublished: 0,
+    room13QueueIndex: 0
   };
 }
 
@@ -48,8 +49,11 @@ function saveHybridState(state) {
   fs.writeFileSync(stateFilePath, JSON.stringify(state, null, 2));
 }
 
-// Room13 Caption with YouTube link at the VERY TOP
-const room13TopLinkCaption = `🎬 WATCH FULL GAMEPLAY ON YOUTUBE:
+// Room13 rotation queue: alternates between old (Day2) and new (Day4) video
+const room13Queue = [
+  {
+    id: 'day2',
+    caption: `🎬 WATCH FULL GAMEPLAY ON YOUTUBE:
 👉 https://youtu.be/pAMgsCMQ8Cw
 
 🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
@@ -65,9 +69,33 @@ Important: this is only an expression of interest. No profit or revenue is guara
 
 Subscribe to follow the development of Room13.
 
-👉 https://youtu.be/pAMgsCMQ8Cw`;
+👉 https://youtu.be/pAMgsCMQ8Cw`,
+    link: 'https://youtu.be/pAMgsCMQ8Cw',
+    photo: 'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\8670c2bf-bbad-4d7d-bf87-bb54a9e054f2\\.user_uploaded\\media_1788037844054.jpg'
+  },
+  {
+    id: 'day4',
+    caption: `🎬 WATCH THE LATEST ROOM13 DEVLOG ON YOUTUBE! 👇
+👉 https://youtu.be/eNjMIOMpRoU
 
-const photoPath = 'C:\\Users\\Vov\\.gemini\\antigravity\\brain\\8670c2bf-bbad-4d7d-bf87-bb54a9e054f2\\.user_uploaded\\media_1788037844054.jpg';
+🎮 Room13 is an indie third-person horror game set in a mysterious old hotel.
+
+In this video I’m showing the latest gameplay and development progress — camera, movement, lighting, and the growing atmosphere of the Room13 hotel.
+
+The game is still in development, so you may see work-in-progress features and improvements.
+
+Want to support Room13 or discuss possible investment / revenue-share participation?
+You can find the interest form link in my channel profile or in the pinned comment.
+
+Important: this is only an expression of interest. No profit or revenue is guaranteed. Any participation requires discussion and a written agreement.
+
+Subscribe to follow the development of Room13.
+
+👉 https://youtu.be/eNjMIOMpRoU`,
+    link: 'https://youtu.be/eNjMIOMpRoU',
+    photo: path.join(__dirname, '..', 'media', 'room13', 'room13_day4_thumbnail.png')
+  }
+];
 
 async function publishRoom13Run() {
   console.log('===========================================================');
@@ -82,6 +110,16 @@ async function publishRoom13Run() {
     return;
   }
 
+  // Pick the next post in the rotation queue (alternate Day2 / Day4)
+  const hybridState = loadHybridState();
+  const room13Idx = hybridState.room13QueueIndex || 0;
+  const item = room13Queue[room13Idx % room13Queue.length];
+  hybridState.room13QueueIndex = (room13Idx + 1) % room13Queue.length;
+  saveHybridState(hybridState);
+
+  console.log(`[Room13] Posting ${item.id} (${item.link})`);
+  const photoPath = item.photo;
+
   const pages = await getAllPagesGrouped(userTokens);
   console.log(`[Room13] Publishing across ${pages.length} Facebook Pages...`);
 
@@ -90,14 +128,14 @@ async function publishRoom13Run() {
     const page = pages[i];
     try {
       if (fs.existsSync(photoPath)) {
-        await publishPhotoPost(page.id, page.access_token, photoPath, room13TopLinkCaption);
+        await publishPhotoPost(page.id, page.access_token, photoPath, item.caption);
       } else {
         await fetch(`https://graph.facebook.com/v20.0/${page.id}/feed`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            message: room13TopLinkCaption,
-            link: 'https://youtu.be/pAMgsCMQ8Cw',
+            message: item.caption,
+            link: item.link,
             access_token: page.access_token
           })
         });
