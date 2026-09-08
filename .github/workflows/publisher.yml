@@ -2,12 +2,12 @@ name: Facebook Pages Automation Publisher
 
 on:
   schedule:
-    - cron: '0,30 * * * *' # Exceptional fallback: GitHub may delay/skip these
-  workflow_dispatch: # Primary: triggered every 30 min by external cron service (24/7, no PC needed)
+    - cron: '0,30 * * * *' # Fallback safety net: GitHub may delay/skip
+  workflow_dispatch: # Primary: self-triggering loop every 30 min. 24/7, no PC needed.
 
 concurrency:
   group: facebook-publisher
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -42,4 +42,32 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/state.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update publisher state [skip ci]" && git push)
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "Auto-update publisher state [skip ci]"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "Push conflict, retrying ($i/5)..."
+              sleep 5
+              git pull --rebase --autostash
+            done
+          fi
+
+      - name: Sleep until next 30-min slot and self-trigger next run
+        if: always()
+        env:
+          PUBLISHER_TRIGGER_TOKEN: ${{ secrets.PUBLISHER_TRIGGER_TOKEN }}
+        run: |
+          now=$(date +%s)
+          slot=$(( (now / 1800 + 1) * 1800 ))
+          sleep $(( slot - now + 15 ))
+          echo "Triggering next dispatch at slot $(date -u -d @${slot} +%H:%M)"
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${PUBLISHER_TRIGGER_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/VovaMuradyan/block-puzzle-facebook-automation/actions/workflows/publisher.yml/dispatches" \
+            -d '{"ref":"main"}'
