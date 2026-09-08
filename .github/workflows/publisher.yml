@@ -1,7 +1,9 @@
 name: Facebook Pages Automation Publisher
 
 on:
-  workflow_dispatch: # Triggered every 30 min by external cron service (24/7, no PC needed)
+  schedule:
+    - cron: '0,30 * * * *' # Exceptional fallback: GitHub may delay/skip these
+  workflow_dispatch: # Primary: triggered every 30 min by external cron service (24/7, no PC needed)
 
 concurrency:
   group: facebook-publisher
