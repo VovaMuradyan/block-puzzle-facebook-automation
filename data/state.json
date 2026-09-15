@@ -4,15 +4,15 @@
       "page_id": "1065551069968804",
       "page_name": "Հետաքրքիր Պատմություններ",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:01:01.267Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_076",
-      "last_success_at": "2026-09-15T17:01:01.267Z",
+      "last_post_at": "2026-09-15T17:30:52.484Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_060",
+      "last_success_at": "2026-09-15T17:30:52.484Z",
       "last_error": null,
-      "total_posts": 445,
-      "last_game": "game2",
+      "total_posts": 446,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1261572070372241": {
       "page_id": "1261572070372241",
@@ -38,21 +38,21 @@
       "last_success_at": null,
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_dog_2229.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
     },
     "1046502328538724": {
       "page_id": "1046502328538724",
       "page_name": "Интересные истории",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:01:40.494Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_028",
-      "last_success_at": "2026-09-15T17:01:40.494Z",
+      "last_post_at": "2026-09-15T17:31:11.309Z",
+      "last_media_id": "block_puzzle_ad_dog_2232.mp4",
+      "last_caption_id": "cap_100",
+      "last_success_at": "2026-09-15T17:31:11.309Z",
       "last_error": null,
-      "total_posts": 447,
-      "last_game": "game2",
+      "total_posts": 448,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2232.mp4"
     },
     "1081652578373833": {
       "page_id": "1081652578373833",
@@ -79,22 +79,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 242,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1007616745768998": {
       "page_id": "1007616745768998",
       "page_name": "Life Story",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:02:19.068Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_047",
-      "last_success_at": "2026-09-15T17:02:19.068Z",
+      "last_post_at": "2026-09-15T17:31:24.254Z",
+      "last_media_id": "block_puzzle_ad_dog_2232.mp4",
+      "last_caption_id": "cap_070",
+      "last_success_at": "2026-09-15T17:31:24.254Z",
       "last_error": null,
-      "total_posts": 447,
-      "last_game": "game2",
+      "total_posts": 448,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2232.mp4"
     },
     "1025467117317668": {
       "page_id": "1025467117317668",
@@ -121,22 +121,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 242,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1010457232146746": {
       "page_id": "1010457232146746",
       "page_name": "News USA",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:02:53.680Z",
-      "last_media_id": "flappy_ad_raccoon_2259.mp4",
-      "last_caption_id": "flappy_cap_119",
-      "last_success_at": "2026-09-15T17:02:53.680Z",
+      "last_post_at": "2026-09-15T17:31:41.203Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_114",
+      "last_success_at": "2026-09-15T17:31:41.203Z",
       "last_error": null,
-      "total_posts": 446,
-      "last_game": "game2",
+      "total_posts": 447,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1044570355399595": {
       "page_id": "1044570355399595",
@@ -148,7 +148,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2232.mp4"
     },
     "1015023978356570": {
       "page_id": "1015023978356570",
@@ -161,22 +161,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 240,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
     },
     "1063747036814448": {
       "page_id": "1063747036814448",
       "page_name": "NewsFrance",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:03:49.779Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_046",
-      "last_success_at": "2026-09-15T17:03:49.779Z",
+      "last_post_at": "2026-09-15T17:32:32.571Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_117",
+      "last_success_at": "2026-09-15T17:32:32.571Z",
       "last_error": null,
-      "total_posts": 445,
-      "last_game": "game2",
+      "total_posts": 446,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "955889374282401": {
       "page_id": "955889374282401",
@@ -188,7 +188,7 @@
       "last_success_at": null,
       "last_error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2232.mp4"
     },
     "967869283082164": {
       "page_id": "967869283082164",
@@ -201,7 +201,7 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 240,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
     },
     "992311910635065": {
@@ -243,7 +243,7 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 240,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
+      "last_flappy_video": "flappy_ad_parrot_2258.mp4",
       "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
     },
     "967202876485164": {
@@ -285,22 +285,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 239,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "956483270889278": {
       "page_id": "956483270889278",
       "page_name": "Sports News",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:05:44.766Z",
-      "last_media_id": "flappy_ad_raccoon_2259.mp4",
-      "last_caption_id": "flappy_cap_006",
-      "last_success_at": "2026-09-15T17:05:44.766Z",
+      "last_post_at": "2026-09-15T17:33:21.966Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_156",
+      "last_success_at": "2026-09-15T17:33:21.966Z",
       "last_error": null,
-      "total_posts": 443,
-      "last_game": "game2",
+      "total_posts": 444,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "981754708359714": {
       "page_id": "981754708359714",
@@ -327,22 +327,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 239,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1049972611526514": {
       "page_id": "1049972611526514",
       "page_name": "Arm News",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:06:19.517Z",
-      "last_media_id": "flappy_ad_raccoon_2259.mp4",
-      "last_caption_id": "flappy_cap_011",
-      "last_success_at": "2026-09-15T17:06:19.517Z",
+      "last_post_at": "2026-09-15T17:33:41.977Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_053",
+      "last_success_at": "2026-09-15T17:33:41.977Z",
       "last_error": null,
-      "total_posts": 443,
-      "last_game": "game2",
+      "total_posts": 444,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1013596608500462": {
       "page_id": "1013596608500462",
@@ -369,22 +369,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 239,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
+      "last_flappy_video": "flappy_ad_parrot_2258.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "986803337854211": {
       "page_id": "986803337854211",
       "page_name": "Новости Армении",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:06:57.051Z",
-      "last_media_id": "flappy_ad_raccoon_2259.mp4",
-      "last_caption_id": "flappy_cap_072",
-      "last_success_at": "2026-09-15T17:06:57.051Z",
+      "last_post_at": "2026-09-15T17:33:58.235Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_200",
+      "last_success_at": "2026-09-15T17:33:58.235Z",
       "last_error": null,
-      "total_posts": 443,
-      "last_game": "game2",
+      "total_posts": 444,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "1028439447014510": {
       "page_id": "1028439447014510",
@@ -410,21 +410,21 @@
       "last_success_at": null,
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 0,
-      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2232.mp4"
     },
     "999052209960184": {
       "page_id": "999052209960184",
       "page_name": "World News Politic",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:07:32.366Z",
-      "last_media_id": "flappy_ad_raccoon_2259.mp4",
-      "last_caption_id": "flappy_cap_014",
-      "last_success_at": "2026-09-15T17:07:32.366Z",
+      "last_post_at": "2026-09-15T17:34:13.756Z",
+      "last_media_id": "block_puzzle_ad_dog_2223.mp4",
+      "last_caption_id": "cap_128",
+      "last_success_at": "2026-09-15T17:34:13.756Z",
       "last_error": null,
-      "total_posts": 443,
-      "last_game": "game2",
+      "total_posts": 444,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
-      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
+      "last_puzzle_video": "block_puzzle_ad_dog_2223.mp4"
     },
     "976336998902044": {
       "page_id": "976336998902044",
@@ -451,7 +451,7 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 239,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
+      "last_flappy_video": "flappy_ad_parrot_2258.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1005746672623466": {
@@ -472,15 +472,15 @@
       "page_id": "1019171044609911",
       "page_name": "World News Politic",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:08:33.521Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_107",
-      "last_success_at": "2026-09-15T17:08:33.521Z",
+      "last_post_at": "2026-09-15T17:34:33.204Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_032",
+      "last_success_at": "2026-09-15T17:34:33.204Z",
       "last_error": null,
-      "total_posts": 441,
-      "last_game": "game2",
+      "total_posts": 442,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "994685927058225": {
       "page_id": "994685927058225",
@@ -493,36 +493,36 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 238,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1003187416210293": {
       "page_id": "1003187416210293",
       "page_name": "News World",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:08:53.134Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_041",
-      "last_success_at": "2026-09-15T17:08:53.134Z",
+      "last_post_at": "2026-09-15T17:34:53.404Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_078",
+      "last_success_at": "2026-09-15T17:34:53.404Z",
       "last_error": null,
-      "total_posts": 441,
-      "last_game": "game2",
+      "total_posts": 442,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "971929612675846": {
       "page_id": "971929612675846",
       "page_name": "News Germany",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:09:09.460Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_073",
-      "last_success_at": "2026-09-15T17:09:09.460Z",
+      "last_post_at": "2026-09-15T17:35:10.193Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_041",
+      "last_success_at": "2026-09-15T17:35:10.193Z",
       "last_error": null,
-      "total_posts": 440,
-      "last_game": "game2",
+      "total_posts": 441,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "969864446213380": {
       "page_id": "969864446213380",
@@ -535,22 +535,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 238,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1059370087250374": {
       "page_id": "1059370087250374",
       "page_name": "Armenian News",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:09:29.453Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_055",
-      "last_success_at": "2026-09-15T17:09:29.453Z",
+      "last_post_at": "2026-09-15T17:35:30.485Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_167",
+      "last_success_at": "2026-09-15T17:35:30.485Z",
       "last_error": null,
-      "total_posts": 441,
-      "last_game": "game2",
+      "total_posts": 442,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1011810412013184": {
       "page_id": "1011810412013184",
@@ -577,22 +577,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 238,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "932708589935603": {
       "page_id": "932708589935603",
       "page_name": "News UK",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:10:02.172Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_070",
-      "last_success_at": "2026-09-15T17:10:02.172Z",
+      "last_post_at": "2026-09-15T17:35:48.727Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_155",
+      "last_success_at": "2026-09-15T17:35:48.727Z",
       "last_error": null,
-      "total_posts": 441,
-      "last_game": "game2",
+      "total_posts": 442,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "934080953130911": {
       "page_id": "934080953130911",
@@ -619,22 +619,22 @@
       "last_error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible.",
       "total_posts": 238,
       "last_game": "game1",
-      "last_flappy_video": "flappy_ad_capybara_2308.mp4",
+      "last_flappy_video": "flappy_ad_raccoon_2259.mp4",
       "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "659612323900011": {
       "page_id": "659612323900011",
       "page_name": "Vova",
       "enabled": true,
-      "last_post_at": "2026-09-15T17:10:34.746Z",
-      "last_media_id": "flappy_ad_capybara_2308.mp4",
-      "last_caption_id": "flappy_cap_046",
-      "last_success_at": "2026-09-15T17:10:34.746Z",
+      "last_post_at": "2026-09-15T17:36:03.375Z",
+      "last_media_id": "block_puzzle_ad_cat_2223.mp4",
+      "last_caption_id": "cap_011",
+      "last_success_at": "2026-09-15T17:36:03.375Z",
       "last_error": null,
-      "total_posts": 441,
-      "last_game": "game2",
+      "total_posts": 442,
+      "last_game": "game1",
       "last_flappy_video": "flappy_ad_capybara_2308.mp4",
-      "last_puzzle_video": "block_puzzle_ad_dog_2224.mp4"
+      "last_puzzle_video": "block_puzzle_ad_cat_2223.mp4"
     },
     "1026560763869287": {
       "page_id": "1026560763869287",
@@ -708,314 +708,6 @@
     }
   },
   "history": [
-    {
-      "id": "post_1786901412061_x9d0s",
-      "page_id": "1065551069968804",
-      "page_name": "Հետաքրքիր Պատմություններ",
-      "timestamp": "2026-08-16T17:30:12.061Z",
-      "fb_post_id": "2229221727853995",
-      "media_filename": "clip_v1_6_9x16.mp4",
-      "caption_id": "cap_012",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901424193_h7ouv",
-      "page_id": "1261572070372241",
-      "page_name": "Block Puzzle: Block Royale",
-      "timestamp": "2026-08-16T17:30:24.193Z",
-      "fb_post_id": "1774477420650570",
-      "media_filename": "clip_v3_32_9x16.mp4",
-      "caption_id": "cap_007",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901469785_ames5",
-      "page_id": "1010279908836025",
-      "page_name": "Life Story",
-      "timestamp": "2026-08-16T17:31:09.785Z",
-      "fb_post_id": null,
-      "media_filename": "clip_v3_31_9x16.mp4",
-      "caption_id": "cap_190",
-      "status": "FAILED",
-      "error": "Meta Error (368): Confirm your identity before you can publish as this Page. Open the Facebook app on your phone and follow the instructions."
-    },
-    {
-      "id": "post_1786901488545_w6ces",
-      "page_id": "1046502328538724",
-      "page_name": "Интересные истории",
-      "timestamp": "2026-08-16T17:31:28.545Z",
-      "fb_post_id": "2506020616570709",
-      "media_filename": "clip_v3_36_9x16.mp4",
-      "caption_id": "cap_029",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901500269_vmjmt",
-      "page_id": "1081652578373833",
-      "page_name": "Sona Hovsepyan photography ",
-      "timestamp": "2026-08-16T17:31:40.269Z",
-      "fb_post_id": "2166358330601275",
-      "media_filename": "clip_v2_15_1x1.mp4",
-      "caption_id": "cap_126",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901509969_6439o",
-      "page_id": "941948625677476",
-      "page_name": "World News Politic",
-      "timestamp": "2026-08-16T17:31:49.969Z",
-      "fb_post_id": "1962808244419881",
-      "media_filename": "clip_v1_7_9x16.mp4",
-      "caption_id": "cap_019",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901523607_20hvf",
-      "page_id": "1007616745768998",
-      "page_name": "Life Story",
-      "timestamp": "2026-08-16T17:32:03.607Z",
-      "fb_post_id": "2385343305328953",
-      "media_filename": "clip_v2_12_1x1.mp4",
-      "caption_id": "cap_068",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901538488_ccbdq",
-      "page_id": "1025467117317668",
-      "page_name": "Интересные Новости",
-      "timestamp": "2026-08-16T17:32:18.488Z",
-      "fb_post_id": "2247185492488798",
-      "media_filename": "clip_v2_19_9x16.mp4",
-      "caption_id": "cap_164",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901552600_buvo6",
-      "page_id": "1023729887487860",
-      "page_name": "News USA",
-      "timestamp": "2026-08-16T17:32:32.600Z",
-      "fb_post_id": "1854225986009186",
-      "media_filename": "clip_v1_9_1x1.mp4",
-      "caption_id": "cap_014",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901567273_5c9mz",
-      "page_id": "1010457232146746",
-      "page_name": "News USA",
-      "timestamp": "2026-08-16T17:32:47.273Z",
-      "fb_post_id": "1390451325950401",
-      "media_filename": "clip_v1_5_9x16.mp4",
-      "caption_id": "cap_172",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901618861_jjaty",
-      "page_id": "1044570355399595",
-      "page_name": "Life Story",
-      "timestamp": "2026-08-16T17:33:38.861Z",
-      "fb_post_id": null,
-      "media_filename": "clip_v1_2_9x16.mp4",
-      "caption_id": "cap_134",
-      "status": "FAILED",
-      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
-    },
-    {
-      "id": "post_1786901637969_qcvh9",
-      "page_id": "1015023978356570",
-      "page_name": "News  UK",
-      "timestamp": "2026-08-16T17:33:57.969Z",
-      "fb_post_id": "1618241386609430",
-      "media_filename": "clip_v3_34_9x16.mp4",
-      "caption_id": "cap_043",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901656563_w2sf0",
-      "page_id": "1063747036814448",
-      "page_name": "NewsFrance",
-      "timestamp": "2026-08-16T17:34:16.563Z",
-      "fb_post_id": "944462928670437",
-      "media_filename": "clip_v1_6_9x16.mp4",
-      "caption_id": "cap_013",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901696841_n7ccf",
-      "page_id": "955889374282401",
-      "page_name": "News USA",
-      "timestamp": "2026-08-16T17:34:56.841Z",
-      "fb_post_id": null,
-      "media_filename": "clip_v1_2_1x1.mp4",
-      "caption_id": "cap_004",
-      "status": "FAILED",
-      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
-    },
-    {
-      "id": "post_1786901713521_tzmqw",
-      "page_id": "967869283082164",
-      "page_name": "News Germany ",
-      "timestamp": "2026-08-16T17:35:13.521Z",
-      "fb_post_id": "1575156467409883",
-      "media_filename": "clip_v1_3_1x1.mp4",
-      "caption_id": "cap_015",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901726493_xieu6",
-      "page_id": "992311910635065",
-      "page_name": "Techno News",
-      "timestamp": "2026-08-16T17:35:26.493Z",
-      "fb_post_id": "1374606254053688",
-      "media_filename": "clip_v2_12_1x1.mp4",
-      "caption_id": "cap_063",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901741966_3q604",
-      "page_id": "980891351776683",
-      "page_name": "NewsFrance",
-      "timestamp": "2026-08-16T17:35:41.966Z",
-      "fb_post_id": "1752408255897753",
-      "media_filename": "clip_v3_24_1x1.mp4",
-      "caption_id": "cap_156",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901760147_gs55c",
-      "page_id": "1029051096955450",
-      "page_name": "newsFrance",
-      "timestamp": "2026-08-16T17:36:00.147Z",
-      "fb_post_id": "1569745077986470",
-      "media_filename": "clip_v1_5_9x16.mp4",
-      "caption_id": "cap_111",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901774347_9uo93",
-      "page_id": "967202876485164",
-      "page_name": "Finance News",
-      "timestamp": "2026-08-16T17:36:14.347Z",
-      "fb_post_id": "1378697367570660",
-      "media_filename": "clip_v3_24_1x1.mp4",
-      "caption_id": "cap_151",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901789242_n1cxj",
-      "page_id": "972279415972899",
-      "page_name": "Techno News",
-      "timestamp": "2026-08-16T17:36:29.242Z",
-      "fb_post_id": "942576082197256",
-      "media_filename": "clip_v3_33_1x1.mp4",
-      "caption_id": "cap_121",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901804682_gok2r",
-      "page_id": "1041013719091165",
-      "page_name": "Armenian News",
-      "timestamp": "2026-08-16T17:36:44.682Z",
-      "fb_post_id": "1437165251578963",
-      "media_filename": "clip_v1_5_9x16.mp4",
-      "caption_id": "cap_145",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901820572_84tyo",
-      "page_id": "956483270889278",
-      "page_name": "Sports News",
-      "timestamp": "2026-08-16T17:37:00.572Z",
-      "fb_post_id": "2057774365101707",
-      "media_filename": "clip_v3_24_1x1.mp4",
-      "caption_id": "cap_008",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901837471_44dlw",
-      "page_id": "981754708359714",
-      "page_name": "Finance News",
-      "timestamp": "2026-08-16T17:37:17.471Z",
-      "fb_post_id": "1739322370442148",
-      "media_filename": "clip_v2_20_9x16.mp4",
-      "caption_id": "cap_051",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901847199_lb8f4",
-      "page_id": "1026989580492051",
-      "page_name": "Новости Армении",
-      "timestamp": "2026-08-16T17:37:27.199Z",
-      "fb_post_id": "1609522804100850",
-      "media_filename": "clip_v3_37_9x16.mp4",
-      "caption_id": "cap_030",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901872424_jdn68",
-      "page_id": "1049972611526514",
-      "page_name": "Arm News",
-      "timestamp": "2026-08-16T17:37:52.424Z",
-      "fb_post_id": "1609645657386046",
-      "media_filename": "flappy_v3_20_9x16.mp4",
-      "caption_id": "flappy_cap_038",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901902883_abdpt",
-      "page_id": "1013596608500462",
-      "page_name": "Sports News",
-      "timestamp": "2026-08-16T17:38:22.883Z",
-      "fb_post_id": "1554826426379217",
-      "media_filename": "flappy_v6_46_9x16.mp4",
-      "caption_id": "flappy_cap_095",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901918411_5smeg",
-      "page_id": "1003689749492949",
-      "page_name": "Arm News",
-      "timestamp": "2026-08-16T17:38:38.411Z",
-      "fb_post_id": "1504465054817184",
-      "media_filename": "flappy_v6_45_9x16.mp4",
-      "caption_id": "flappy_cap_094",
-      "status": "SUCCESS",
-      "error": null
-    },
-    {
-      "id": "post_1786901930665_5xymz",
-      "page_id": "986803337854211",
-      "page_name": "Новости Армении",
-      "timestamp": "2026-08-16T17:38:50.665Z",
-      "fb_post_id": "1588896139528787",
-      "media_filename": "flappy_v2_12_9x16.mp4",
-      "caption_id": "flappy_cap_005",
-      "status": "SUCCESS",
-      "error": null
-    },
     {
       "id": "post_1786901944257_5bnvo",
       "page_id": "1028439447014510",
@@ -249901,8 +249593,360 @@
       "caption_id": "flappy_cap_080",
       "status": "FAILED",
       "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493452484_msoj0",
+      "page_id": "1065551069968804",
+      "page_name": "Հետաքրքիր Պատմություններ",
+      "timestamp": "2026-09-15T17:30:52.484Z",
+      "fb_post_id": "1110215751693811",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_060",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493471309_i4x1v",
+      "page_id": "1046502328538724",
+      "page_name": "Интересные истории",
+      "timestamp": "2026-09-15T17:31:11.309Z",
+      "fb_post_id": "28263812269940156",
+      "media_filename": "block_puzzle_ad_dog_2232.mp4",
+      "caption_id": "cap_100",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493484254_11btw",
+      "page_id": "1007616745768998",
+      "page_name": "Life Story",
+      "timestamp": "2026-09-15T17:31:24.254Z",
+      "fb_post_id": "1085479450514832",
+      "media_filename": "block_puzzle_ad_dog_2232.mp4",
+      "caption_id": "cap_070",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493501203_bx52n",
+      "page_id": "1010457232146746",
+      "page_name": "News USA",
+      "timestamp": "2026-09-15T17:31:41.203Z",
+      "fb_post_id": "1388274730178565",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_114",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493532840_tv579",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-09-15T17:32:12.840Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2232.mp4",
+      "caption_id": "cap_177",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1789493552571_hyn4z",
+      "page_id": "1063747036814448",
+      "page_name": "NewsFrance",
+      "timestamp": "2026-09-15T17:32:32.571Z",
+      "fb_post_id": "2297123787689429",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_117",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493583277_2mrp8",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-09-15T17:33:03.277Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2232.mp4",
+      "caption_id": "cap_112",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1789493601966_umy5s",
+      "page_id": "956483270889278",
+      "page_name": "Sports News",
+      "timestamp": "2026-09-15T17:33:21.966Z",
+      "fb_post_id": "1834040967589247",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_156",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493621977_fewqe",
+      "page_id": "1049972611526514",
+      "page_name": "Arm News",
+      "timestamp": "2026-09-15T17:33:41.977Z",
+      "fb_post_id": "1615233920183911",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_053",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493638235_oxylc",
+      "page_id": "986803337854211",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-09-15T17:33:58.235Z",
+      "fb_post_id": "1387733736870940",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_200",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493653756_zpj7n",
+      "page_id": "999052209960184",
+      "page_name": "World News Politic",
+      "timestamp": "2026-09-15T17:34:13.756Z",
+      "fb_post_id": "2152813825619175",
+      "media_filename": "block_puzzle_ad_dog_2223.mp4",
+      "caption_id": "cap_128",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493673204_13y2d",
+      "page_id": "1019171044609911",
+      "page_name": "World News Politic",
+      "timestamp": "2026-09-15T17:34:33.204Z",
+      "fb_post_id": "27792083550470086",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_032",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493693404_csjya",
+      "page_id": "1003187416210293",
+      "page_name": "News World",
+      "timestamp": "2026-09-15T17:34:53.404Z",
+      "fb_post_id": "946323075206817",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_078",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493710193_lktah",
+      "page_id": "971929612675846",
+      "page_name": "News Germany",
+      "timestamp": "2026-09-15T17:35:10.193Z",
+      "fb_post_id": "2535097326996212",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_041",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493730485_38dxr",
+      "page_id": "1059370087250374",
+      "page_name": "Armenian News",
+      "timestamp": "2026-09-15T17:35:30.485Z",
+      "fb_post_id": "1817981519385968",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_167",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493748727_59l8q",
+      "page_id": "932708589935603",
+      "page_name": "News UK",
+      "timestamp": "2026-09-15T17:35:48.727Z",
+      "fb_post_id": "903339602618473",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_155",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493763375_vg0dn",
+      "page_id": "659612323900011",
+      "page_name": "Vova",
+      "timestamp": "2026-09-15T17:36:03.375Z",
+      "fb_post_id": "1069323252619987",
+      "media_filename": "block_puzzle_ad_cat_2223.mp4",
+      "caption_id": "cap_011",
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "id": "post_1789493774759_n804r",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-09-15T17:36:14.759Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2224.mp4",
+      "caption_id": "cap_064",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493786129_y0a0u",
+      "page_id": "941948625677476",
+      "page_name": "World News Politic",
+      "timestamp": "2026-09-15T17:36:26.129Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_085",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493796493_b4dmt",
+      "page_id": "1023729887487860",
+      "page_name": "News USA",
+      "timestamp": "2026-09-15T17:36:36.493Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_029",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493810863_ch7yk",
+      "page_id": "1015023978356570",
+      "page_name": "News  UK",
+      "timestamp": "2026-09-15T17:36:50.863Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_044",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493819302_z9swn",
+      "page_id": "967869283082164",
+      "page_name": "News Germany ",
+      "timestamp": "2026-09-15T17:36:59.302Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_106",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493834664_eb6km",
+      "page_id": "1029051096955450",
+      "page_name": "newsFrance",
+      "timestamp": "2026-09-15T17:37:14.664Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_parrot_2258.mp4",
+      "caption_id": "flappy_cap_002",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493850049_ewfnb",
+      "page_id": "1041013719091165",
+      "page_name": "Armenian News",
+      "timestamp": "2026-09-15T17:37:30.049Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_082",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493859371_nxr74",
+      "page_id": "1026989580492051",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-09-15T17:37:39.371Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_026",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493867762_d70ea",
+      "page_id": "1003689749492949",
+      "page_name": "Arm News",
+      "timestamp": "2026-09-15T17:37:47.762Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_parrot_2258.mp4",
+      "caption_id": "flappy_cap_061",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493877357_8y3n2",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-09-15T17:37:57.357Z",
+      "fb_post_id": null,
+      "media_filename": "block_puzzle_ad_dog_2232.mp4",
+      "caption_id": "cap_195",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493892074_9467w",
+      "page_id": "898082573399487",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-09-15T17:38:12.074Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_parrot_2258.mp4",
+      "caption_id": "flappy_cap_085",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493902647_rm1c1",
+      "page_id": "994685927058225",
+      "page_name": "News World",
+      "timestamp": "2026-09-15T17:38:22.647Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_106",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493915248_xsysb",
+      "page_id": "969864446213380",
+      "page_name": "Finance News",
+      "timestamp": "2026-09-15T17:38:35.248Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_017",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493929113_mim1c",
+      "page_id": "1015641344967912",
+      "page_name": "Sports News",
+      "timestamp": "2026-09-15T17:38:49.113Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_046",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1789493937800_p2oqt",
+      "page_id": "934176896453645",
+      "page_name": "Techno News",
+      "timestamp": "2026-09-15T17:38:57.800Z",
+      "fb_post_id": null,
+      "media_filename": "flappy_ad_raccoon_2259.mp4",
+      "caption_id": "flappy_cap_060",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
     }
   ],
-  "last_active_game": "game1",
-  "room13RunCounter": 346
+  "last_active_game": "game2",
+  "room13RunCounter": 347
 }
