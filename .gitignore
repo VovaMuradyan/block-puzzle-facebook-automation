@@ -1,5 +1,6 @@
 node_modules/
 .env
-tools/get_meta_token.js
-data/gemini_key.json 
-data/gemini_key.json 
+data/chrome_*
+data/state.json
+data/state_remote*.json
+*.log
