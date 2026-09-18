@@ -3,4 +3,7 @@ node_modules/
 data/chrome_*
 data/state.json
 data/state_remote*.json
+media/
+*.mp4
+*.part
 *.log
