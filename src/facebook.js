@@ -139,10 +139,7 @@ async function publishVideoPost(pageId, pageAccessToken, videoPath, caption, isR
       const formData = new FormData();
       formData.append('access_token', pageAccessToken);
       formData.append('description', caption);
-      // Extract CTA link from caption
-      let ctaUrl = 'https://rebrand.ly/BlockPuzzlePlay-';
-      const match = caption.match(/https:\/\/rebrand\.ly\/[^\s\n]+/);
-      if (match) ctaUrl = match[0];
+      const ctaUrl = 'https://play.google.com/store/apps/details?id=com.tetris.royale';
 
       // Attach English Call-To-Action button ("Install Now" / "Play Game") directly to Facebook Video/Reel
       const ctaPayload = JSON.stringify({

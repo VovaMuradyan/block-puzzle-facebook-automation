@@ -28,7 +28,7 @@ const hashtags = {
   game2: '#Shorts #FlappyEarn #Capybara #Raccoon #TalkingAnimals #MobileGaming #EarnGames #ArcadeGame'
 };
 
-const gameLink = 'https://clck.ru/3VTmnq';
+const gameLink = 'https://play.google.com/store/apps/details?id=com.tetris.royale';
 
 function canPostToYouTube(minHoursInterval = 6) {
   if (!fs.existsSync(socialStatePath)) return true;
