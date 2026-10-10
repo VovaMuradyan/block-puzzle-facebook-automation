@@ -584906,8 +584906,195 @@
       "caption_id": "cap_079",
       "status": "FAILED",
       "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669662642_tqmca",
+      "page_id": "1044570355399595",
+      "page_name": "Life Story",
+      "timestamp": "2026-10-10T22:01:02.642Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1791669679510_igpi6",
+      "page_id": "955889374282401",
+      "page_name": "News USA",
+      "timestamp": "2026-10-10T22:01:19.510Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Error (368): Подтвердите личность, прежде чем размещать публикации от имени этой Страницы. Откройте приложение Facebook на телефоне и следуйте инструкциям."
+    },
+    {
+      "id": "post_1791669680038_fien3",
+      "page_id": "1010279908836025",
+      "page_name": "Life Story",
+      "timestamp": "2026-10-10T22:01:20.038Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669680569_wne1p",
+      "page_id": "941948625677476",
+      "page_name": "World News Politic",
+      "timestamp": "2026-10-10T22:01:20.569Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669680873_22mul",
+      "page_id": "1023729887487860",
+      "page_name": "News USA",
+      "timestamp": "2026-10-10T22:01:20.873Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669681201_zpull",
+      "page_id": "1015023978356570",
+      "page_name": "News  UK",
+      "timestamp": "2026-10-10T22:01:21.201Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669681478_ekor9",
+      "page_id": "967869283082164",
+      "page_name": "News Germany ",
+      "timestamp": "2026-10-10T22:01:21.478Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669681778_p8w3l",
+      "page_id": "1029051096955450",
+      "page_name": "newsFrance",
+      "timestamp": "2026-10-10T22:01:21.778Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669682071_hjht7",
+      "page_id": "1041013719091165",
+      "page_name": "Armenian News",
+      "timestamp": "2026-10-10T22:01:22.071Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669682385_i0ywo",
+      "page_id": "1026989580492051",
+      "page_name": "Новости Армении",
+      "timestamp": "2026-10-10T22:01:22.385Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669682782_ijdum",
+      "page_id": "1003689749492949",
+      "page_name": "Arm News",
+      "timestamp": "2026-10-10T22:01:22.782Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669683066_s93w3",
+      "page_id": "906871965852313",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-10-10T22:01:23.066Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669683354_agei7",
+      "page_id": "898082573399487",
+      "page_name": "Shoply Deals",
+      "timestamp": "2026-10-10T22:01:23.354Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669683674_vb95m",
+      "page_id": "994685927058225",
+      "page_name": "News World",
+      "timestamp": "2026-10-10T22:01:23.674Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669683946_1mbok",
+      "page_id": "969864446213380",
+      "page_name": "Finance News",
+      "timestamp": "2026-10-10T22:01:23.946Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669684223_dxohg",
+      "page_id": "1015641344967912",
+      "page_name": "Sports News",
+      "timestamp": "2026-10-10T22:01:24.223Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
+    },
+    {
+      "id": "post_1791669684518_plheb",
+      "page_id": "934176896453645",
+      "page_name": "Techno News",
+      "timestamp": "2026-10-10T22:01:24.518Z",
+      "fb_post_id": null,
+      "media_filename": "room13_day4_thumbnail.png",
+      "caption_id": "room13_day4",
+      "status": "FAILED",
+      "error": "Meta Token Expiry/Logout (190): This Page access token belongs to a Page that is not accessible."
     }
   ],
-  "last_active_game": "game2",
-  "room13RunCounter": 1055
+  "last_active_game": "game1",
+  "room13RunCounter": 1056
 }
